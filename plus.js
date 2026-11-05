@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   const transport = (...args) => window.smTransport ? window.smTransport.request(...args) : fetch(...args);
-  const build = "bab7941abd665828";
+  const build = "5f449b3f6163a6e1";
   const message = document.querySelector("#message");
   const controls = {
     effect_scale: document.querySelector("#effect-scale"),

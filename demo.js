@@ -77,10 +77,16 @@ document.addEventListener('click',event=>{
     event.preventDefault();state.openPlus(new URL(a.href).searchParams.get('entry')||'');
   }
 });
+const failures=new Set();
+function failed(path){failures.add(path);if(failures.size===2)byId('compatibility').hidden=false;}
 byId('choose').onclick=async()=>{
-  if(!window.showDirectoryPicker){byId('folder').click();return;}
+  if(!window.showDirectoryPicker){byId('compatibility').hidden=false;byId('folder').click();return;}
   try{await select(await filesFromHandle(await showDirectoryPicker({mode:'read'})));}
-  catch(error){if(error.name!=='AbortError')notice('Folder selection failed: '+error.message,true);}
+  // Chrome reports a refused system folder (Program Files) and a cancel the same way.
+  catch(error){
+    notice('This dialog cannot open Program Files, where GOG installs. Drag the folder here instead.');
+    failed('choose');
+  }
 };
 byId('folder').onchange=()=>void select([...byId('folder').files].map(file=>({file,path:file.webkitRelativePath||file.name})));
 const drop=byId('drop-zone');
@@ -89,10 +95,9 @@ drop.ondragleave=()=>drop.classList.remove('over');
 drop.ondrop=event=>{
   event.preventDefault();drop.classList.remove('over');
   const items=[...event.dataTransfer.items].filter(i=>i.kind==='file');
-  // Capture handles/entries in the drop event, before awaiting any traversal.
-  const work=items.map(item=>item.getAsFileSystemHandle?item.getAsFileSystemHandle().then(h=>h?filesFromHandle(h):[]):
-    item.webkitGetAsEntry?filesFromEntry(item.webkitGetAsEntry()):Promise.resolve([{file:item.getAsFile(),path:item.getAsFile().name}]));
-  void Promise.all(work).then(groups=>select(groups.flat())).catch(error=>notice(error.message,true));
+  // Entries, not getAsFileSystemHandle: the handle API refuses Program Files. Capture them before awaiting any traversal.
+  const work=items.map(item=>{const entry=item.webkitGetAsEntry?.();return entry?filesFromEntry(entry):Promise.resolve([{file:item.getAsFile(),path:item.getAsFile().name}]);});
+  void Promise.all(work).then(groups=>select(groups.flat())).catch(error=>{notice(error.message,true);failed('drop');});
 };
 byId('resume').onclick=()=>void start(true);byId('new-game').onclick=()=>void start(false);
 byId('plus-tile').onclick=()=>state.openPlus();byId('close-plus').onclick=state.closePlus;

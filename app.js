@@ -8,7 +8,7 @@
 
 (() => {
   const transport = (...args) => window.smTransport ? window.smTransport.request(...args) : fetch(...args);
-  const build = "bab7941abd665828";
+  const build = "5f449b3f6163a6e1";
   const canvas = document.querySelector("canvas");
   const focusHint = document.querySelector("#focus-hint");
   const context = canvas.getContext("2d", {alpha: false});
@@ -32,7 +32,7 @@
   let blurred = false, focusAt = -Infinity, swallowClick = false;
   const REFOCUS_MS = 400;
   const focusText = focusHint.textContent;
-  let modCanvas, modFrame, modToken;
+  let modCanvas, modFrame, modToken, modObserver;
   const modImages = new Map();
 
   async function modImage(source) {
@@ -47,7 +47,8 @@
   async function prepareMods(token) {
     if (!token) return null;
     if (token === modToken) return modFrame;
-    const response = await request(`/overlay?id=${encodeURIComponent(token)}`);
+    const response = await request(`/overlay?id=${encodeURIComponent(token)}`, {}, [404]);
+    if (response.status === 404) return undefined; // Another tab may have advanced beyond the retained snapshots.
     const data = await response.json();
     const draws = await Promise.all(data.draws.map(async draw => ({...draw,
       bitmap: draw.image ? await modImage(draw.image) : null})));
@@ -64,6 +65,8 @@
       modCanvas.setAttribute('aria-hidden', 'true');
       Object.assign(modCanvas.style, {position: 'absolute', pointerEvents: 'none', imageRendering: 'auto', margin: '0'});
       document.body.appendChild(modCanvas);
+      modObserver = new ResizeObserver(() => paintMods());
+      modObserver.observe(canvas);
     }
     const bounds = canvas.getBoundingClientRect();
     modCanvas.width = Math.round(bounds.width); modCanvas.height = Math.round(bounds.height);
@@ -206,7 +209,7 @@
     reconnect();
   }
 
-  async function request(path, options = {}) {
+  async function request(path, options = {}, accepted = []) {
     const response = await transport(path, {cache: "no-store", signal: AbortSignal.timeout(15000), ...options,
       headers: {"X-SM-Build": build, ...options.headers}});
     if (response.status === 409) {
@@ -214,7 +217,7 @@
       reloadOnce(await response.json());
       throw new Error("Server build changed");
     }
-    if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+    if (!response.ok && !accepted.includes(response.status)) throw new Error(`${path}: HTTP ${response.status}`);
     return response;
   }
 
@@ -255,6 +258,7 @@
     }
     const nextModToken = response.headers?.get('X-SM-Overlay') || null;
     const nextMods = await prepareMods(nextModToken);
+    if (nextMods === undefined) { frameRequested = true; return; }
     if (running) {
       layout = nextLayout;
       const links = document.querySelector('#journal-links');

@@ -1,84 +1,84 @@
 {
-  "build": "bab7941abd665828",
+  "build": "5f449b3f6163a6e1",
   "pyodide": "0.28.3",
-  "bytes": 12842022,
-  "gzip_bytes": 5939384,
+  "bytes": 12844867,
+  "gzip_bytes": 5940462,
   "files": {
     "app.js": {
-      "bytes": 19245,
-      "sha256": "bb08713faeaf92b3dec3005d15aece41e7fb48b41bc1f5b22845a54126cb6512"
+      "bytes": 19603,
+      "sha256": "c3b537d026b4f23144da775c193c7ee20021c12c3be49b4d0d19387a6198e08d"
     },
     "demo.css": {
-      "bytes": 3187,
-      "sha256": "8e9bf8c8ac4e6b52499b5c0445a307a63fc3192987434cec2cddbf8b606e3757"
+      "bytes": 3188,
+      "sha256": "e9e18aefdc66c9207ff9277c2f14c237519bd29c629c363745eac1243474f703"
     },
     "demo.js": {
-      "bytes": 8573,
-      "sha256": "1267c08bed7b957bfd37fa4a2b33150309b278553cdab8cf7b74723468c2d06f"
+      "bytes": 8847,
+      "sha256": "7f11723fee5c92b200b368d8b1294249449a61507c3c12b3fb013ce124a6e0cb"
     },
     "engine.zip": {
-      "bytes": 450813,
-      "sha256": "cb448f320deb12ed1cbfec222e19b1c24b9224942f8d623eaed10c5efd6cb6a6"
+      "bytes": 451273,
+      "sha256": "4c33315770a8725911fff4a512d4b0aede550c86af4b1e86e08407c1f3823baf"
     },
     "index.html": {
-      "bytes": 3591,
-      "sha256": "c18692f78065eb78ba633e6cf808059a146fc66d5367ea8e1042c9d6884b7870"
+      "bytes": 3687,
+      "sha256": "2906f1776931f532cc19a6ab18ed4c8073569060565fa921f1f6d0b550e7da5d"
     },
     "journal.css": {
-      "bytes": 936,
-      "sha256": "edb0e2d183e9e43ade60a28cbf66c1141b609261d7d7b0a0148d38cec2cd5c6e"
+      "bytes": 947,
+      "sha256": "4e07001f0115a6623cbc62da0b006dec4c527e8a9fda4f01aa8b01c1a5a400d3"
     },
     "journal.js": {
-      "bytes": 8676,
-      "sha256": "e4ffbfe4eebb2dd11780b2cfb316d2cee195e24ae7862b7f7605463cd2b36041"
+      "bytes": 8808,
+      "sha256": "98b14ad89c7b46106103eee98208c6b18b6c78b3ba24db653999df3661ede457"
     },
     "LICENSE": {
-      "bytes": 1063,
-      "sha256": "035f7868d27f62a26db39630613b684c25accf2174262fe9c29d1f66891454cc"
+      "bytes": 1084,
+      "sha256": "996dd27cf2b744a227eff392c1e3db6b3cfb6a47da3ce64def4003239a9e6cd4"
     },
     "plus-bridge.js": {
-      "bytes": 446,
-      "sha256": "26f6bb8d27c3bd411b2535feac49cf10231751d9f48096f8b67b79684fd0c941"
+      "bytes": 459,
+      "sha256": "9ad99df0050adc9f98986f14a493639a89b39f1a2eedb9b250b59dfeae106c89"
     },
     "plus.css": {
-      "bytes": 2498,
-      "sha256": "241315f9b890582d6034755ad43e1be6ff2ac0ab8bd8c497a5b456263d7230a0"
+      "bytes": 2531,
+      "sha256": "6c8cec54831aba90931ae047bcb95eec7bab5b1674bc080e964c739202f84581"
     },
     "plus.html": {
-      "bytes": 5833,
-      "sha256": "400de812c9ecee9215b6f19a83d68c3e9ba6ceb252012eb0fca7ee17650e3b9c"
+      "bytes": 5910,
+      "sha256": "9a6e5c4ec5be28dee8760f8d8d8aac103205246a89a70398446b4a864b56d0b7"
     },
     "plus.js": {
-      "bytes": 22397,
-      "sha256": "9b340f52acdfae4b8c17f229640e457dc67b6b84828356e61cb45607dff890d2"
+      "bytes": 22643,
+      "sha256": "6c828d42346ca263aec63e18c60da3ae0995b0614d33e0f214177d3a482142f1"
     },
     "RUNTIME-NOTICES.txt": {
       "bytes": 304,
       "sha256": "9ee0c8f8e0cf43c0ec2c4ae3c7d71466c0a70c242563849f64b99aa8ff2f01e9"
     },
     "storage.js": {
-      "bytes": 1181,
-      "sha256": "0919fd9ef27116e11a7bd89beba7077443d8af1b36d211700dd9c90a3f12c18e"
+      "bytes": 1209,
+      "sha256": "c8e8dc5d79b64148cdc05c80e759556c13f72502526de4018cb98e11089e87bd"
     },
     "worker.js": {
-      "bytes": 8096,
-      "sha256": "74e5e86f618cbecc1424360c8fd02bcc68ed5aab10448d93acd29428287681bb"
+      "bytes": 8246,
+      "sha256": "b4b7edad136964b53b7c0c9287ff4050748602cfc503593d26f90c5fd0d03f07"
     },
     "licenses/EMSCRIPTEN-LICENSE.txt": {
-      "bytes": 5093,
-      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+      "bytes": 5195,
+      "sha256": "51a110c35dd90d7b882df62864f256859c4d6ad51023da42ae8138a130c890cf"
     },
     "licenses/MUSL-COPYRIGHT.txt": {
-      "bytes": 6204,
-      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+      "bytes": 6397,
+      "sha256": "5f7c882fccb097ee08aa9ff223cff44e4d5b284dedb85a8cc09d80768b2ecef9"
     },
     "licenses/PYODIDE-LICENSE.txt": {
-      "bytes": 16725,
-      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+      "bytes": 17098,
+      "sha256": "2684de17300e0a434686f1ec7f8af6045207a4b457a3fe04b2b9ce655e7c5d50"
     },
     "licenses/PYTHON-LICENSE.txt": {
-      "bytes": 13809,
-      "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+      "bytes": 14086,
+      "sha256": "77121f04e144538c0d1a0eb896dd84151132e819d796f47cc4f914e7f44ca41e"
     },
     "licenses/SOURCES.json": {
       "bytes": 423,
@@ -106,29 +106,29 @@
     }
   },
   "sources": {
-    "LICENSE": "035f7868d27f62a26db39630613b684c25accf2174262fe9c29d1f66891454cc",
-    "README.md": "5c34b67f2d625ed83007dcb83d675b7991f3f67288d1f7776ce55537d703bcbb",
-    "docs/ALPHA_BUG_REPORT.md": "abf84f411fd66d4b4f197e3729eaec1cb9db507ce31c79ead433415dcdad63a0",
+    "LICENSE": "996dd27cf2b744a227eff392c1e3db6b3cfb6a47da3ce64def4003239a9e6cd4",
+    "README.md": "413dd579b52f6d11acc38e29198c7afdfb204ddb41692eea200ddede47e10ce3",
+    "docs/ALPHA_BUG_REPORT.md": "ac2bb860cd83eb198f6a3fd04eecb5af34cd52fa2df2c616806a350669fa1ddd",
     "sm/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "sm/__main__.py": "9c0d3f03136894e7c70c12d098154c3d6ba6549fe7b61a8dde2a994a5729210f",
-    "sm/_engine_test.py": "b38f47371111fcdbf5a4efc94147d921b5c1fbbbf70fe2d27f4ec5eb8bd8c08a",
-    "sm/_release_test.py": "add40c37b30c322de6c95e6aa5204e549a3656231a6c1f5dc118374801abdc7b",
-    "sm/_replay_test.py": "b4ddfaa2ac833151583225b920d7219f8add3101a2a691d895215dee66fc7f84",
-    "sm/_search_test.py": "bd68d5d2c15ab094a92cdbb579910f7f0ec608cb07025b596f508b43d9676a5e",
+    "sm/_engine_test.py": "b1fe11206a7aac3b4b0ffd309e2101d5891a700ff74f80e02b7c8cd5dae38c47",
+    "sm/_release_test.py": "46ae46533075bbe9169364aedc696730941ba307dabc2877178ff7dea514112f",
+    "sm/_replay_test.py": "d9c6a6babefa0142e3d6c5327d90c4da87d886878bd9e99bb62055c62965d1af",
+    "sm/_search_test.py": "87d7d49270390000a609ddce713b46c61a01cc51c843ea24c9361ce1feace9e7",
     "sm/dax.py": "2ef36b08a0e3ca37f268a1fbeaa43eae22c251c187b6b67cf84ef2f7b6d133db",
     "sm/ecl.py": "c26ddfb6dfa3e93e0dc27c5adde6359441deebe55e5d1458c44b2f469ebc73b1",
-    "sm/engine.py": "683c3d149b5e52bbf80ea900d8ceeeee956f1a1927181f78e4d78eb83612c7bb",
+    "sm/engine.py": "4364a7358487eca59aa80bde9dd14b5b888e6d88c6e377bd09bac8bd2c1b8c5d",
     "sm/files.py": "eee00647b590f9d6927cda481030cced941d23e94cbe2814c491cfc9ff1a9364",
     "sm/rec.py": "0e67de392468cbc853516bcb18d23adc4eb8802e805901b09a18a524903729df",
-    "sm/release.py": "200d331a9260bcb6e9d349bd789b1ee94a8438224b0c96d7341653004acc4352",
+    "sm/release.py": "4907b751ce7163747dc28d3e7b516176ee66dca067a63aee1efd04cf7d502659",
     "sm/release_manifest.json": "59ee9087aa5b94400f77123f50f2b127ab01a7a85f396a7fd87e2e61535b236f",
-    "sm/replay.py": "d47ba6d162a31fa13d1a7675019391715424cf5a2ce8d0d058b39a6e652398b6",
-    "sm/search.py": "629bcab6754503634190f17ca6e15f69ce011b6903c67da1e9d71d29312382c3",
+    "sm/replay.py": "47893942dc1c08b7df4084537860079f877d5f46187f185e28c28d575cdee075",
+    "sm/search.py": "8eef259cd4c65ff8237e5b5619f32356d2d96b5c6d67371327ff72c98fbbfce8",
     "sm/text.py": "2d8800a68010fc47df26181d66b2a65c5e4cf5716e0ba3f2d3bead6dc413a63d",
-    "sm/titles/__init__.py": "00898cca464c4cfc0dbd3acd9585e8f673af327149c2b75073ca688226285063",
+    "sm/titles/__init__.py": "434c3d38f96b056c00e639f99343d43f154c35e434e1a35a601c1a26160a37ca",
     "sm/titles/ssb/__init__.py": "bdf1249e86478bb048c0ec512e26e82958f337319a7f86281c7355844e2ab237",
     "sm/titles/ssb/_cli.py": "5709d29280181da944b27a3a0d4003857716bdc75f06290f0da0f26e74080f44",
-    "sm/titles/ssb/_intake_test.py": "8bd224ff107646a363199f6180fd5a71238f068b4d07c7581e507bc81756d909",
+    "sm/titles/ssb/_intake_test.py": "8ca2376b6fc6570f9b05f654bbb82e80b930685f081b92eca0a4f0dc05c0d8e5",
     "sm/titles/ssb/_start_test.py": "dd6b92431ebb7999c3a09da7b43117e7f0c2a535f04fd1fb49c8a135dc8b298b",
     "sm/titles/ssb/art.py": "ade763569530be0586180b74a50529cf0c515b6046cbe75f6acc9c35ddcc257c",
     "sm/titles/ssb/data.py": "e756e385dd190dc01f511d5dbc172a81876f899c21f313b0a28d9813dc424dc3",
@@ -146,7 +146,7 @@
     "sm/titles/ssb/ui/_combat_pass_test.py": "d517d8f0f99712f8794ac29d2d44e524cd7672579b07eca8c36bdfdd312d0611",
     "sm/titles/ssb/ui/_fight_test.py": "0d1e307af3d981549ab7945a7bae497cc521998f6e67132e8bda5631cb825e5a",
     "sm/titles/ssb/ui/_icons_test.py": "3c0cc7c6b9bad8cf4c5090b0225e0e14442da48adaad2181a9ce6f08db6b966e",
-    "sm/titles/ssb/ui/_journal_test.py": "8ca44693c5041e4f41fdf92ebb95b1ef7f83d6c136dc96cd0677c21769cfc7fb",
+    "sm/titles/ssb/ui/_journal_test.py": "581d440f725664d7db389f6f2edd6949fa62cda7ea622f78510e60097f916ff8",
     "sm/titles/ssb/ui/_menus_test.py": "81e7d49203579bd6d66142dcbc99f15c93e2aa17609625e62b925c12437b1378",
     "sm/titles/ssb/ui/_panels_test.py": "26aa2940b43876827b9f5c3a055f36bb53b90e41da3535e83e822c7a36f0c3b1",
     "sm/titles/ssb/ui/_player_screens_test.py": "e5edb822a3fd4706a05c37dffde015d9eef9214bb1723f14715e842b27e40c76",
@@ -156,14 +156,14 @@
     "sm/titles/ssb/ui/_saves_test.py": "4be46f12e0a93a744f336c12603a6071183057562149526681f039023fe8eb63",
     "sm/titles/ssb/ui/_server_test.py": "bbfb9621cea1455b51533e8e3032090d58f7337b5fd22431b9ebe99bd93d7d42",
     "sm/titles/ssb/ui/_test.py": "01c75a842ea0834879e2bce71e5e2517ba6f17dc6f0f003ef5888dbbdc8918bf",
-    "sm/titles/ssb/ui/_vga_test.py": "aa75bf1719c5e0592369a0408f2fb63b4039f879fd5f12d0659a38a9d626607e",
+    "sm/titles/ssb/ui/_vga_test.py": "43950d62070b29a3125e62ac80fe4d3354891274f0e27784c59d433f6da5a26f",
     "sm/titles/ssb/ui/_view_test.py": "eaa5de5d732f8ed19125a0629bdafadfb85fba7782243f360115158ce03eeef6",
     "sm/titles/ssb/ui/_web_test.py": "f16fd29946bb7b12f70767949ad88dc41894c38bf894d494661e82b9d20ff058",
-    "sm/titles/ssb/ui/plus.py": "9e96778a3a81c7b3b0a13ae7ec1b4917c2734e8fedde1252375c290a35b8a904",
+    "sm/titles/ssb/ui/plus.py": "59b26212a6507f767aaca9f746ff88f9a13807c02f24531043a9b092fc5ac079",
     "sm/titles/ssb/ui/screen.py": "0d15f188357d5e9862f6d85f147094905dd6258e17c4e32301c71a7cde595d8a",
-    "sm/titles/ssb/ui/vga.py": "7389fe3c26ba428f24a38c85c7980b99532a029ad565059bc37868a8e0dd23e9",
+    "sm/titles/ssb/ui/vga.py": "2805589703d26bc85babe15265ae59ee5a1d1bf180267ee52addfa494a7f22a8",
     "sm/titles/ssb/ui/view3d.py": "474026334dc4763c358bea51189dff40a59454429cdad8c661bb35e0c7ca6fd3",
-    "sm/titles/ssb/units/__init__.py": "7fbb987d7bf09c0d7e1f7ab780624a36cf623f3c3f70c49c4b7cd19fa9eb54e1",
+    "sm/titles/ssb/units/__init__.py": "fd0823fe3947c3b6ff73ef6333b8a82e7cd349e70d357b9234a061363b412941",
     "sm/titles/ssb/units/_c3_test.py": "1fa61b5fe4967d644da3bf62e0d89f47de01e21f3cec5f22e59dca39ceb6098d",
     "sm/titles/ssb/units/_combat_test.py": "2bcf0b4d135397ab3d2045df3c83401b2c8343614a4a8c919edaece98cba3833",
     "sm/titles/ssb/units/_magic_test.py": "a9548cbece9ce5be8dcd93b646594c3ec9311b6d27a1a14299c56157efcf5565",
@@ -175,30 +175,30 @@
     "sm/titles/ssb/units/shops.py": "5ab6895579bf6852f6427612def8a8e86c8ef208f741d450fc4b3fe919799aed",
     "sm/titles/ssb/vm.py": "0c9a995326ac983ba79c1c99e7da110b41868f0c379bcd976aeffc95fa4688cb",
     "sm/titles/ssb/walk.py": "66816e6daf8b6674e9648726b71fd493801dfe5b835971a861edf9efb9070adf",
-    "sm/ui/MODS.md": "45c5b0290d694af115d281a11ba0962aa644ad8e0ac7d7e890bc5c09293aa082",
+    "sm/ui/MODS.md": "c8c333ff8bbdb10a987178bae97fcde2c3370297250879966ad63c0bcced4035",
     "sm/ui/__init__.py": "3fd4f05c2d2fe6dd400680973189b04291bba980b57fc6cc59231a945739f58a",
     "sm/ui/__main__.py": "794feb101d7849f89d910042a1f5ab5b0c50c0ee92a91856407da52339f2765f",
     "sm/ui/art.py": "9466fd9e63e82fa00d59738ef248ad7a59c1b3545825df9c04bbdc87f8bb1178",
-    "sm/ui/folders.py": "83c4bc7b279b5ec953fffa91f05181382c0036483a8fdacba412dee39fc97368",
+    "sm/ui/folders.py": "5fbca48862108e76c0208295d09871666e0f55cbfa59e1ce2fbcd9e128b7f174",
     "sm/ui/hlib.py": "da076a7103453aa1ba828a3eccdd0733344fccde6fddb807458c1ead660f96b9",
-    "sm/ui/journal.py": "300c9ea97f151e55504e8ee620cabc92eb6349dc385f5a29d8e82838a72201f9",
-    "sm/ui/plus.py": "50e80856c15a3a605e3463901cae71242e960c8dcedec415c08c24d964eaee45",
-    "sm/ui/png.py": "1ae8fd10b5424f519336ea089d638ac42bbd3a18895d266feebf4a65a9fa4408",
-    "sm/ui/vga_skin.py": "f658d7f59cb1454f5e900322dd1f6f4e80644fb9fe746e1cfa8be088ae7fb3d2",
+    "sm/ui/journal.py": "a13718624bfff3234e8372886466b28d185a87d49c524189ca185562f8286120",
+    "sm/ui/plus.py": "ac4d4bcc00e42fb9f25ecbc7333b17cd191a4c2d42bec11caf2a67708af6af9a",
+    "sm/ui/png.py": "032e5c943e0278524fe35df2dd6aea4cbd20418b9320f8d447ce21f06366a89f",
+    "sm/ui/vga_skin.py": "d716b35b90881acf826155fc8ff40f833966f2f4746c18ffb791772948dc3bc1",
     "sm/ui/vga_tile.py": "9681cc685b55112fc58146e7fa14399cd8496f6d8be355f3224fe72dd195b4ff",
     "sm/ui/web.py": "ac3a62522e8f1f246c7612e394a8a02c53886fcf2e9ea1f506c0c90bb3a2bd28",
-    "sm/ui/web/app.js": "328abe8774d85a0d5331c9ea0bbbb10ef3df01de97983d988501a6fb3f38b60f",
-    "sm/ui/web/index.html": "05dae7c333cf630d95c6aacd8453d7225456afd7fbb6f4b915b4006a3935ce31",
-    "sm/ui/web/journal.css": "edb0e2d183e9e43ade60a28cbf66c1141b609261d7d7b0a0148d38cec2cd5c6e",
-    "sm/ui/web/journal.js": "a01ba77d731e5357e979c5b79d423f450d2d8745d1b4937997d26a163b7f279f",
-    "sm/ui/web/plus.css": "241315f9b890582d6034755ad43e1be6ff2ac0ab8bd8c497a5b456263d7230a0",
-    "sm/ui/web/plus.html": "81b332b9e9efec196ee838b05543c8c7f87700c3418b14b36aec1d82e8a4bde6",
-    "sm/ui/web/plus.js": "d9154498a201c5bd5a336ac11e243f9f93c0279ab00259611960e7e36dad3952",
-    "sm/ui/web/setup.html": "55be1878b073fff116f524a48d652829fc18fdab4a69ea04f608e67a90bdddfb",
+    "sm/ui/web/app.js": "b443ff0216ca68d2aa39a524420a0b93bdb3fbad474b36415b07dcabdabd2740",
+    "sm/ui/web/index.html": "d2bc7ff267f8942b37f1724de99b1965b13a4b686c40ae7bff0d3809d633bb05",
+    "sm/ui/web/journal.css": "4e07001f0115a6623cbc62da0b006dec4c527e8a9fda4f01aa8b01c1a5a400d3",
+    "sm/ui/web/journal.js": "9d5612b295b53975a1794103ea1789537e4c308d5983ab2125df15467854662c",
+    "sm/ui/web/plus.css": "6c8cec54831aba90931ae047bcb95eec7bab5b1674bc080e964c739202f84581",
+    "sm/ui/web/plus.html": "fd4402195bbb55712de1b2ceb9d07503206d9db5bc86f952b6a3c2c2916c0ac5",
+    "sm/ui/web/plus.js": "8456eb68ec90bedff872fd1c581f275394acc12ae4dfa454d6b66f1324bbf3b0",
+    "sm/ui/web/setup.html": "b3eb1edbb4fb44b88bf4e07c355694efd2a8849d3d54265b43d18c1977250afa",
     "sm/ui/web/setup.js": "fb79e2fb4de3098085cd2555577845c445ad4e574484b6322f3022ee0be9d751",
-    "sm/web/api.py": "47454eb9a68acb9eecbfcdabd02a92028878b703ccad7ec7972e6c5d5647ba2e",
-    "sm/web/saves.py": "feb08e4dbb5cb245d61460685c2f611a7921b5dd4967fe795c766208682a1fe2",
-    "sm/web/session.py": "1f0244486633b0eb88609a30940cdebc44260d1cc9ae66d0c6f148fce23fb3e4",
-    "sm/web/__init__.py": "79d426c6b46797d3b68392664ccc9a4887899062870ebb7dbef5903b649adc4a"
+    "sm/web/api.py": "593d444daad69216f05eddf8f65ba159a176bfd537a19c470e9d5336bcb89255",
+    "sm/web/saves.py": "2c29bba728809a19692ed160e5f672bd8032faec7f6babd030f74e5eca1a26dd",
+    "sm/web/session.py": "827b382b2e6b943c2140f516a6d6df7499def58beb6bcc9695b51d30015761ff",
+    "sm/web/__init__.py": "1553f4bde2e4a797ea58928654a17c443ad5e222bab0fbb58f8416e73e014c32"
   }
 }
