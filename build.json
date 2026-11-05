@@ -1,0 +1,204 @@
+{
+  "build": "bab7941abd665828",
+  "pyodide": "0.28.3",
+  "bytes": 12842022,
+  "gzip_bytes": 5939384,
+  "files": {
+    "app.js": {
+      "bytes": 19245,
+      "sha256": "bb08713faeaf92b3dec3005d15aece41e7fb48b41bc1f5b22845a54126cb6512"
+    },
+    "demo.css": {
+      "bytes": 3187,
+      "sha256": "8e9bf8c8ac4e6b52499b5c0445a307a63fc3192987434cec2cddbf8b606e3757"
+    },
+    "demo.js": {
+      "bytes": 8573,
+      "sha256": "1267c08bed7b957bfd37fa4a2b33150309b278553cdab8cf7b74723468c2d06f"
+    },
+    "engine.zip": {
+      "bytes": 450813,
+      "sha256": "cb448f320deb12ed1cbfec222e19b1c24b9224942f8d623eaed10c5efd6cb6a6"
+    },
+    "index.html": {
+      "bytes": 3591,
+      "sha256": "c18692f78065eb78ba633e6cf808059a146fc66d5367ea8e1042c9d6884b7870"
+    },
+    "journal.css": {
+      "bytes": 936,
+      "sha256": "edb0e2d183e9e43ade60a28cbf66c1141b609261d7d7b0a0148d38cec2cd5c6e"
+    },
+    "journal.js": {
+      "bytes": 8676,
+      "sha256": "e4ffbfe4eebb2dd11780b2cfb316d2cee195e24ae7862b7f7605463cd2b36041"
+    },
+    "LICENSE": {
+      "bytes": 1063,
+      "sha256": "035f7868d27f62a26db39630613b684c25accf2174262fe9c29d1f66891454cc"
+    },
+    "plus-bridge.js": {
+      "bytes": 446,
+      "sha256": "26f6bb8d27c3bd411b2535feac49cf10231751d9f48096f8b67b79684fd0c941"
+    },
+    "plus.css": {
+      "bytes": 2498,
+      "sha256": "241315f9b890582d6034755ad43e1be6ff2ac0ab8bd8c497a5b456263d7230a0"
+    },
+    "plus.html": {
+      "bytes": 5833,
+      "sha256": "400de812c9ecee9215b6f19a83d68c3e9ba6ceb252012eb0fca7ee17650e3b9c"
+    },
+    "plus.js": {
+      "bytes": 22397,
+      "sha256": "9b340f52acdfae4b8c17f229640e457dc67b6b84828356e61cb45607dff890d2"
+    },
+    "RUNTIME-NOTICES.txt": {
+      "bytes": 304,
+      "sha256": "9ee0c8f8e0cf43c0ec2c4ae3c7d71466c0a70c242563849f64b99aa8ff2f01e9"
+    },
+    "storage.js": {
+      "bytes": 1181,
+      "sha256": "0919fd9ef27116e11a7bd89beba7077443d8af1b36d211700dd9c90a3f12c18e"
+    },
+    "worker.js": {
+      "bytes": 8096,
+      "sha256": "74e5e86f618cbecc1424360c8fd02bcc68ed5aab10448d93acd29428287681bb"
+    },
+    "licenses/EMSCRIPTEN-LICENSE.txt": {
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    "licenses/MUSL-COPYRIGHT.txt": {
+      "bytes": 6204,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    "licenses/PYODIDE-LICENSE.txt": {
+      "bytes": 16725,
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+    },
+    "licenses/PYTHON-LICENSE.txt": {
+      "bytes": 13809,
+      "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+    },
+    "licenses/SOURCES.json": {
+      "bytes": 423,
+      "sha256": "3a9d5ae681cbc570cf92eefb7f26b4088824247041ca6e1b262eebb981ea87af"
+    },
+    "runtime/pyodide-lock.json": {
+      "bytes": 109732,
+      "sha256": "f6e6f42f451f42affbbcddb00e8c9a3278dcbf399f57aab9f3f568839a7ff4a6"
+    },
+    "runtime/pyodide.asm.js": {
+      "bytes": 1073033,
+      "sha256": "b22e5831eade9ff10e6fe2c811c68688cd91f10154377b4f80debcf5bafa1e56"
+    },
+    "runtime/pyodide.asm.wasm": {
+      "bytes": 8645967,
+      "sha256": "5effb6a1a6cc4a1a85bec4622701aa797c031e1de923cbbaf2ad47abdc4ab325"
+    },
+    "runtime/pyodide.js": {
+      "bytes": 17331,
+      "sha256": "24a458425dcb4ea9836eb5ce26701d18cb769374e2b79247602ba605bf093278"
+    },
+    "runtime/python_stdlib.zip": {
+      "bytes": 2416866,
+      "sha256": "71fee17f88a6260ec8c9c7c063533ee59c021fdc88a1ce76247378d3c4a35f4c"
+    }
+  },
+  "sources": {
+    "LICENSE": "035f7868d27f62a26db39630613b684c25accf2174262fe9c29d1f66891454cc",
+    "README.md": "5c34b67f2d625ed83007dcb83d675b7991f3f67288d1f7776ce55537d703bcbb",
+    "docs/ALPHA_BUG_REPORT.md": "abf84f411fd66d4b4f197e3729eaec1cb9db507ce31c79ead433415dcdad63a0",
+    "sm/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sm/__main__.py": "9c0d3f03136894e7c70c12d098154c3d6ba6549fe7b61a8dde2a994a5729210f",
+    "sm/_engine_test.py": "b38f47371111fcdbf5a4efc94147d921b5c1fbbbf70fe2d27f4ec5eb8bd8c08a",
+    "sm/_release_test.py": "add40c37b30c322de6c95e6aa5204e549a3656231a6c1f5dc118374801abdc7b",
+    "sm/_replay_test.py": "b4ddfaa2ac833151583225b920d7219f8add3101a2a691d895215dee66fc7f84",
+    "sm/_search_test.py": "bd68d5d2c15ab094a92cdbb579910f7f0ec608cb07025b596f508b43d9676a5e",
+    "sm/dax.py": "2ef36b08a0e3ca37f268a1fbeaa43eae22c251c187b6b67cf84ef2f7b6d133db",
+    "sm/ecl.py": "c26ddfb6dfa3e93e0dc27c5adde6359441deebe55e5d1458c44b2f469ebc73b1",
+    "sm/engine.py": "683c3d149b5e52bbf80ea900d8ceeeee956f1a1927181f78e4d78eb83612c7bb",
+    "sm/files.py": "eee00647b590f9d6927cda481030cced941d23e94cbe2814c491cfc9ff1a9364",
+    "sm/rec.py": "0e67de392468cbc853516bcb18d23adc4eb8802e805901b09a18a524903729df",
+    "sm/release.py": "200d331a9260bcb6e9d349bd789b1ee94a8438224b0c96d7341653004acc4352",
+    "sm/release_manifest.json": "59ee9087aa5b94400f77123f50f2b127ab01a7a85f396a7fd87e2e61535b236f",
+    "sm/replay.py": "d47ba6d162a31fa13d1a7675019391715424cf5a2ce8d0d058b39a6e652398b6",
+    "sm/search.py": "629bcab6754503634190f17ca6e15f69ce011b6903c67da1e9d71d29312382c3",
+    "sm/text.py": "2d8800a68010fc47df26181d66b2a65c5e4cf5716e0ba3f2d3bead6dc413a63d",
+    "sm/titles/__init__.py": "00898cca464c4cfc0dbd3acd9585e8f673af327149c2b75073ca688226285063",
+    "sm/titles/ssb/__init__.py": "bdf1249e86478bb048c0ec512e26e82958f337319a7f86281c7355844e2ab237",
+    "sm/titles/ssb/_cli.py": "5709d29280181da944b27a3a0d4003857716bdc75f06290f0da0f26e74080f44",
+    "sm/titles/ssb/_intake_test.py": "8bd224ff107646a363199f6180fd5a71238f068b4d07c7581e507bc81756d909",
+    "sm/titles/ssb/_start_test.py": "dd6b92431ebb7999c3a09da7b43117e7f0c2a535f04fd1fb49c8a135dc8b298b",
+    "sm/titles/ssb/art.py": "ade763569530be0586180b74a50529cf0c515b6046cbe75f6acc9c35ddcc257c",
+    "sm/titles/ssb/data.py": "e756e385dd190dc01f511d5dbc172a81876f899c21f313b0a28d9813dc424dc3",
+    "sm/titles/ssb/host.py": "818c02eb62265224aeff4b8b7966562ec214e720e1e88dbc26cf700ddcf55d63",
+    "sm/titles/ssb/intake.py": "55599965979b1fa1fb839930e1ac449a04cfe3925f4b1ef4182b4fad82cfdf36",
+    "sm/titles/ssb/player.py": "48c723149718218fb82b7710755d0cb96f5892f82aacb30cae7c4e7c8d58254b",
+    "sm/titles/ssb/rec.py": "13baf2a8cf1ec62c9eec78bac3d52b80c2c7151b729d72e95f3c69baa35eb101",
+    "sm/titles/ssb/resolve.py": "f2178fac3655d23a25e0efc74369271c5dcb8d3cde8182ad12c11f9194760a91",
+    "sm/titles/ssb/route.py": "3cb859b0c0836764616e7f9423dc9c7181a5e21de8daec1a57f1800c41cadc70",
+    "sm/titles/ssb/save.py": "6664b3aba4e33931d44d82a7be3f0c4d30068b5add47d74386a87ef07f87c5fa",
+    "sm/titles/ssb/state.py": "b347318d8e43b494fd471a5150244641afebc6e7be82f5f0010b8a0bd5b5db7e",
+    "sm/titles/ssb/supported_versions.json": "cca2b0fd8a01de3e35330f4a4ccc13594e965d3fc62c68f120681b3b838dc484",
+    "sm/titles/ssb/ui/__init__.py": "7eb4c18879a1cad0c1eb0f749499fb132c59ba28944b6834e60b6fb1de33d454",
+    "sm/titles/ssb/ui/_art_test.py": "184ce95d2914b33743caeb38d497edff340c1dde97ac7ddb9c32ffc947bd4bd9",
+    "sm/titles/ssb/ui/_combat_pass_test.py": "d517d8f0f99712f8794ac29d2d44e524cd7672579b07eca8c36bdfdd312d0611",
+    "sm/titles/ssb/ui/_fight_test.py": "0d1e307af3d981549ab7945a7bae497cc521998f6e67132e8bda5631cb825e5a",
+    "sm/titles/ssb/ui/_icons_test.py": "3c0cc7c6b9bad8cf4c5090b0225e0e14442da48adaad2181a9ce6f08db6b966e",
+    "sm/titles/ssb/ui/_journal_test.py": "8ca44693c5041e4f41fdf92ebb95b1ef7f83d6c136dc96cd0677c21769cfc7fb",
+    "sm/titles/ssb/ui/_menus_test.py": "81e7d49203579bd6d66142dcbc99f15c93e2aa17609625e62b925c12437b1378",
+    "sm/titles/ssb/ui/_panels_test.py": "26aa2940b43876827b9f5c3a055f36bb53b90e41da3535e83e822c7a36f0c3b1",
+    "sm/titles/ssb/ui/_player_screens_test.py": "e5edb822a3fd4706a05c37dffde015d9eef9214bb1723f14715e842b27e40c76",
+    "sm/titles/ssb/ui/_plus_test.py": "0621406bdfb98d2d53ea5bb0ed53071345ddda6c8cee39d397304801be33a159",
+    "sm/titles/ssb/ui/_presentation_test.py": "58f197225a2eab9b2a2a5b65954d7ac4e13f1aa374ac55e2076f4d47fe0092f5",
+    "sm/titles/ssb/ui/_prompts_test.py": "87398dd40ad7d616d16967b158a942cce82a8e5d813442fbd8b22559db0e5caa",
+    "sm/titles/ssb/ui/_saves_test.py": "4be46f12e0a93a744f336c12603a6071183057562149526681f039023fe8eb63",
+    "sm/titles/ssb/ui/_server_test.py": "bbfb9621cea1455b51533e8e3032090d58f7337b5fd22431b9ebe99bd93d7d42",
+    "sm/titles/ssb/ui/_test.py": "01c75a842ea0834879e2bce71e5e2517ba6f17dc6f0f003ef5888dbbdc8918bf",
+    "sm/titles/ssb/ui/_vga_test.py": "aa75bf1719c5e0592369a0408f2fb63b4039f879fd5f12d0659a38a9d626607e",
+    "sm/titles/ssb/ui/_view_test.py": "eaa5de5d732f8ed19125a0629bdafadfb85fba7782243f360115158ce03eeef6",
+    "sm/titles/ssb/ui/_web_test.py": "f16fd29946bb7b12f70767949ad88dc41894c38bf894d494661e82b9d20ff058",
+    "sm/titles/ssb/ui/plus.py": "9e96778a3a81c7b3b0a13ae7ec1b4917c2734e8fedde1252375c290a35b8a904",
+    "sm/titles/ssb/ui/screen.py": "0d15f188357d5e9862f6d85f147094905dd6258e17c4e32301c71a7cde595d8a",
+    "sm/titles/ssb/ui/vga.py": "7389fe3c26ba428f24a38c85c7980b99532a029ad565059bc37868a8e0dd23e9",
+    "sm/titles/ssb/ui/view3d.py": "474026334dc4763c358bea51189dff40a59454429cdad8c661bb35e0c7ca6fd3",
+    "sm/titles/ssb/units/__init__.py": "7fbb987d7bf09c0d7e1f7ab780624a36cf623f3c3f70c49c4b7cd19fa9eb54e1",
+    "sm/titles/ssb/units/_c3_test.py": "1fa61b5fe4967d644da3bf62e0d89f47de01e21f3cec5f22e59dca39ceb6098d",
+    "sm/titles/ssb/units/_combat_test.py": "2bcf0b4d135397ab3d2045df3c83401b2c8343614a4a8c919edaece98cba3833",
+    "sm/titles/ssb/units/_magic_test.py": "a9548cbece9ce5be8dcd93b646594c3ec9311b6d27a1a14299c56157efcf5565",
+    "sm/titles/ssb/units/_services_test.py": "9ae6226145d309cbaac42d33f34819a2b66162f0abe877db270442e9e72b777d",
+    "sm/titles/ssb/units/camp.py": "7f261018254e117c4351c94bc7fc9e7708668e74d35d537cc2dffd398b360cac",
+    "sm/titles/ssb/units/combat.py": "e41005cc06bc4912d39b13f74b433e7533c0849e611a60a4e03eb770d71028cd",
+    "sm/titles/ssb/units/creation.py": "3109026ddb6b4037c2ba5ce9d1de85d70e41a03a1f91e86425483a421af209e4",
+    "sm/titles/ssb/units/magic.py": "18afc2bf8aa5579296582b11ea55a6df26abef98128347ec100ce653274f9e05",
+    "sm/titles/ssb/units/shops.py": "5ab6895579bf6852f6427612def8a8e86c8ef208f741d450fc4b3fe919799aed",
+    "sm/titles/ssb/vm.py": "0c9a995326ac983ba79c1c99e7da110b41868f0c379bcd976aeffc95fa4688cb",
+    "sm/titles/ssb/walk.py": "66816e6daf8b6674e9648726b71fd493801dfe5b835971a861edf9efb9070adf",
+    "sm/ui/MODS.md": "45c5b0290d694af115d281a11ba0962aa644ad8e0ac7d7e890bc5c09293aa082",
+    "sm/ui/__init__.py": "3fd4f05c2d2fe6dd400680973189b04291bba980b57fc6cc59231a945739f58a",
+    "sm/ui/__main__.py": "794feb101d7849f89d910042a1f5ab5b0c50c0ee92a91856407da52339f2765f",
+    "sm/ui/art.py": "9466fd9e63e82fa00d59738ef248ad7a59c1b3545825df9c04bbdc87f8bb1178",
+    "sm/ui/folders.py": "83c4bc7b279b5ec953fffa91f05181382c0036483a8fdacba412dee39fc97368",
+    "sm/ui/hlib.py": "da076a7103453aa1ba828a3eccdd0733344fccde6fddb807458c1ead660f96b9",
+    "sm/ui/journal.py": "300c9ea97f151e55504e8ee620cabc92eb6349dc385f5a29d8e82838a72201f9",
+    "sm/ui/plus.py": "50e80856c15a3a605e3463901cae71242e960c8dcedec415c08c24d964eaee45",
+    "sm/ui/png.py": "1ae8fd10b5424f519336ea089d638ac42bbd3a18895d266feebf4a65a9fa4408",
+    "sm/ui/vga_skin.py": "f658d7f59cb1454f5e900322dd1f6f4e80644fb9fe746e1cfa8be088ae7fb3d2",
+    "sm/ui/vga_tile.py": "9681cc685b55112fc58146e7fa14399cd8496f6d8be355f3224fe72dd195b4ff",
+    "sm/ui/web.py": "ac3a62522e8f1f246c7612e394a8a02c53886fcf2e9ea1f506c0c90bb3a2bd28",
+    "sm/ui/web/app.js": "328abe8774d85a0d5331c9ea0bbbb10ef3df01de97983d988501a6fb3f38b60f",
+    "sm/ui/web/index.html": "05dae7c333cf630d95c6aacd8453d7225456afd7fbb6f4b915b4006a3935ce31",
+    "sm/ui/web/journal.css": "edb0e2d183e9e43ade60a28cbf66c1141b609261d7d7b0a0148d38cec2cd5c6e",
+    "sm/ui/web/journal.js": "a01ba77d731e5357e979c5b79d423f450d2d8745d1b4937997d26a163b7f279f",
+    "sm/ui/web/plus.css": "241315f9b890582d6034755ad43e1be6ff2ac0ab8bd8c497a5b456263d7230a0",
+    "sm/ui/web/plus.html": "81b332b9e9efec196ee838b05543c8c7f87700c3418b14b36aec1d82e8a4bde6",
+    "sm/ui/web/plus.js": "d9154498a201c5bd5a336ac11e243f9f93c0279ab00259611960e7e36dad3952",
+    "sm/ui/web/setup.html": "55be1878b073fff116f524a48d652829fc18fdab4a69ea04f608e67a90bdddfb",
+    "sm/ui/web/setup.js": "fb79e2fb4de3098085cd2555577845c445ad4e574484b6322f3022ee0be9d751",
+    "sm/web/api.py": "47454eb9a68acb9eecbfcdabd02a92028878b703ccad7ec7972e6c5d5647ba2e",
+    "sm/web/saves.py": "feb08e4dbb5cb245d61460685c2f611a7921b5dd4967fe795c766208682a1fe2",
+    "sm/web/session.py": "1f0244486633b0eb88609a30940cdebc44260d1cc9ae66d0c6f148fce23fb3e4",
+    "sm/web/__init__.py": "79d426c6b46797d3b68392664ccc9a4887899062870ebb7dbef5903b649adc4a"
+  }
+}

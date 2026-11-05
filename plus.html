@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="plus-bridge.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SilverMachine Alpha — Plus</title>
+  <style>
+    :root { color-scheme: dark; font: 16px/1.5 system-ui, sans-serif; background: #101820; color: #e8edf2; }
+    body { max-width: 42rem; margin: 3rem auto; padding: 0 1.5rem; }
+    a { color: #a5dfef; } h1 { margin-bottom: 0; }
+    .meta { color: #b6c5d3; font-size: .9rem; }
+    label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; border-bottom: 1px solid #3a5165; }
+    select, input { font: inherit; } input { width: 1.2rem; height: 1.2rem; }
+    .coming { color: #8895a1; } #message { min-height: 1.5em; }
+  </style>
+  <link rel="stylesheet" href="plus.css">
+  <link rel="stylesheet" href="journal.css">
+  <script src="plus.js" defer></script>
+  <script src="journal.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Plus</h1>
+    <p class="meta">SilverMachine · Browser demo · Build bab7941abd665828</p>
+    <p class="meta">plays the SSI Gold Box games from your own copy.</p>
+    <p class="meta">Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.</p>
+    <p><a href="/">Back to game</a> · <a href="/setup">Game folder</a></p>
+  </header>
+  <main>
+    <nav class="tabs" role="tablist" aria-label="Plus tabs">
+      <button role="tab" id="tab-journal" aria-controls="journal" data-tab="journal">Journal</button>
+      <button role="tab" id="tab-map" aria-controls="map" data-tab="map">Area map</button>
+      <button role="tab" id="tab-help" aria-controls="help" data-tab="help">Help</button>
+      <button role="tab" id="tab-rules" aria-controls="rules" data-tab="rules">Rules</button>
+      <button role="tab" id="tab-bug" aria-controls="bug" data-tab="bug">Bug</button>
+      <button role="tab" id="tab-gallery" aria-controls="gallery" data-tab="gallery">Gallery</button>
+      <button role="tab" id="tab-guide" aria-controls="guide" data-tab="guide">Guide &amp; Campaign roster</button>
+    </nav>
+    <section id="journal" role="tabpanel" aria-labelledby="tab-journal"><div id="journal-panel"></div></section>
+    <section id="map" role="tabpanel" aria-labelledby="tab-map" hidden></section>
+    <section id="help" role="tabpanel" aria-labelledby="tab-help" hidden></section>
+    <section id="rules" role="tabpanel" aria-labelledby="tab-rules" hidden></section>
+    <section id="bug" role="tabpanel" aria-labelledby="tab-bug" hidden></section>
+    <section id="gallery" role="tabpanel" aria-labelledby="tab-gallery" hidden></section>
+    <section id="guide" role="tabpanel" aria-labelledby="tab-guide" hidden></section>
+    <details id="options"><summary>Plus options</summary>
+    <p>Optional display settings. Original look, original timings and an unchecked box keep the original presentation.</p>
+    <label title="Scale effect playback time. 1× keeps the original timing; none shows each frame without a hold.">Effect time
+      <select id="effect-scale" disabled><option value="0">none</option><option value="0.25">×0.25</option><option value="0.5">×0.5</option><option value="1" selected>×1 original</option><option value="2">×2</option><option value="4">×4</option></select>
+    </label>
+    <label title="Hold service results, menu flashes and Not Here longer. 400 ms keeps the original timing. Effect time also scales these holds.">Message hold
+      <select id="message-hold" disabled><option value="400" selected>400 ms original</option><option value="800">800 ms</option><option value="1200">1200 ms</option><option value="2000">2000 ms</option></select>
+    </label>
+    <label title="Show the readied weapon and shield in the combat icon. Your Alter > Icon body choice wins. Crossbows use a bow shape, two-handed swords a sword, and darts a dagger. Saves keep their original icon.">Icon follows readied weapon and shield
+      <input id="equipment-icon" type="checkbox" disabled>
+    </label>
+    <label class="coming" title="coming: requires a verified SSB side-quest reward table">Side-quest power list <input type="checkbox" disabled></label>
+    <label title="Original keeps SSB's original pixels. VGA enables 256-colour presentation and full-colour PNG mods.">Look
+      <select id="look" disabled><option value="original">Original</option><option value="vga">VGA</option></select>
+    </label>
+    <label title="Dark Queen frame and font require your own configured Dark Queen copy. SSB scenery and pictures stay SSB's.">VGA frame and font
+      <select id="vga-frame" disabled><option value="ssb">SSB</option><option value="dqk">Dark Queen</option></select>
+    </label>
+    <p id="look-note" class="meta"></p>
+    <label class="coming" title="coming: requires another supported title and verified import rules">Party transfer between titles <input type="checkbox" disabled></label>
+    <label title="VGA only. Choose your own folder containing mods.json and PNG replacements. Nothing is included with SilverMachine." for="mods-folder">Mods folder</label>
+    <div class="toolbar"><input id="mods-folder" type="text" placeholder="Folder containing mods.json" disabled>
+      <button id="mods-browse" type="button" disabled>Browse…</button>
+      <button id="mods-apply" type="button" disabled>Apply folder</button>
+      <button id="mods-clear" type="button" disabled>Clear</button></div>
+    <p class="meta">Mods apply only in VGA. Use a mods.json list with file, id and png entries; for example
+      <code>{"file":"CPIC1","id":1,"png":"monster.png"}</code>. Paths may point to your existing PNGs.</p>
+    <p id="message" role="status" aria-live="polite">Loading settings…</p>
+    </details>
+  </main>
+</body>
+</html>

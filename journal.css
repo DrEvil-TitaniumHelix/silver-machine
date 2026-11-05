@@ -1,0 +1,11 @@
+#journal-panel [hidden] { display: none; }
+#journal-panel .journal-tabs, #journal-index { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+#journal-panel button { font: inherit; padding: .5rem .85rem; cursor: pointer; }
+#journal-panel [role=tab][aria-selected=true] { background: #a5dfef; color: #10202a; border-color: #a5dfef; }
+#journal-panel article { border: 1px solid #3a5165; border-radius: .4rem; padding: 1rem; margin: .8rem 0; }
+#journal-panel article p { white-space: pre-wrap; }
+#journal-panel small { color: #b6c5d3; }
+#journal-panel textarea { display: block; box-sizing: border-box; width: 100%; min-height: 6rem; font: inherit; }
+#journal-panel .journal-pin { display: flex; justify-content: flex-start; gap: .5rem; padding: .5rem 0; }
+#journal-reader { width: 100%; height: 75vh; min-height: 480px; border: 1px solid #3a5165; background: white; }
+#journal-panel .journal-selected { border-color: #a5dfef; }
