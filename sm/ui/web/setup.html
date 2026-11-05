@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SilverMachine Alpha — Choose your copy</title>
+  <style>
+    :root { color-scheme: dark; font: 16px/1.5 system-ui, sans-serif; background: #101820; color: #e8edf2; }
+    body { max-width: 48rem; margin: 4rem auto; padding: 0 1.5rem; }
+    h1 { margin-bottom: 0; font-size: 2.4rem; }
+    h2 { margin-top: 2rem; }
+    .meta, .notice { color: #b6c5d3; font-size: .9rem; }
+    form { padding: 1.5rem; background: #1a2733; border: 1px solid #3a5165; border-radius: .5rem; }
+    label { display: block; font-weight: 600; }
+    input { box-sizing: border-box; width: 100%; padding: .8rem; margin: .5rem 0 1rem; border: 1px solid #7894aa; border-radius: .25rem; font: inherit; }
+    button { padding: .7rem 1.2rem; background: #a5dfef; color: #10202a; border: 0; border-radius: .25rem; font: inherit; font-weight: 600; cursor: pointer; }
+    button:disabled { opacity: .6; }
+    a { color: #a5dfef; }
+    #message { white-space: pre-wrap; }
+    #differences { overflow-wrap: anywhere; font-size: .85rem; }
+    li { margin-bottom: .7rem; }
+    [hidden] { display: none; }
+  </style>
+  <script src="/setup.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>SilverMachine</h1>
+    <p>plays the SSI Gold Box games from your own copy.</p>
+    <p class="notice">Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.</p>
+    <p class="meta">__SM_VERSION__ · Build __SM_BUILD_ID__ · Copy: __SM_CONTENT__</p>
+  </header>
+  <main>
+    <h2>Choose your game folder</h2>
+    <p>Enter the folder containing the data files from your own PC/DOS copy. Files stay on this computer.</p>
+    <p>Supported: the GOG release (recommended, buy it) or the original Collector's CD.</p>
+    <p id="supported">Checking supported editions…</p>
+    <p>We recommend the GOG releases as the supported way to own the games: Forgotten Realms: The Archives Collection One and Two, and Dungeons &amp; Dragons: Krynn Series.</p>
+    <form id="folder-form">
+      <label for="folder">Game folder</label>
+      <input id="folder" name="folder" type="text" required autocomplete="off" spellcheck="false" placeholder="Full path to your game data folder">
+      <p class="notice">Usual locations: GOG under <code>C:\Program Files (x86)\GOG Galaxy\Games\</code> or <code>C:\GOG Games\</code>; Collector's CD under <code>WIZWORKS\SECRET</code>.</p>
+      <button id="browse" type="button">Browse…</button>
+      <button type="submit">Verify and continue</button>
+    </form>
+    <p id="message" role="status" aria-live="polite"></p>
+    <ul id="differences"></ul>
+    <p><a id="return" href="/" hidden>Return to the game</a></p>
+    <p class="notice">You can change this folder later using “Game folder” on the game page. Changes to an active game take effect after restarting the server.</p>
+  </main>
+</body>
+</html>

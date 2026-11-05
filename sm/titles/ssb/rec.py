@@ -1,0 +1,553 @@
+"""Lossless SECRET records; decode/secret/RECORD.md sections 1-3.
+
+Named scalars are unsigned little-endian integers (signed=True is explicit).
+Arrays, Pascal names and unresolved blocks are bytes; no padding or pointers are
+normalised. Unknown meanings remain unknown, including the spell-slot split.
+"""
+from sm.titles.ssb import data as ssb_data
+
+from sm.rec import Record as _Record
+
+FIELDS = {
+    'name': (0x000, 16), 'abilities': (0x010, 12),
+    'str_exc_max': (0x01C, 1), 'str_exc': (0x01D, 1),
+    'mem_spell': (0x01E, 75), 'rest_need': (0x069, 1),
+    'base_thac0': (0x06A, 1), 'race': (0x06B, 1), 'class': (0x06C, 1),
+    'cures_left': (0x06D, 1), 'age': (0x06E, 2), 'hp_max': (0x070, 1),
+    'known_spell': (0x071, 117), 'fighter_lvl_eff': (0x0E6, 1),
+    'size': (0x0E7, 1), 'save': (0x0E8, 5), 'base_move': (0x0ED, 1),
+    'level_main': (0x0EE, 1), 'level_main_at_change': (0x0EF, 1),
+    'levels_drained': (0x0F0, 1), 'hp_drained': (0x0F1, 1),
+    'undead': (0x0F2, 1), 'thief_skill': (0x0F3, 8),
+    'effects': (0x0FB, 4), 'npc_morale': (0x0FF, 1),
+    'unknown_100': (0x100, 3), 'money': (0x103, 14),
+    'level': (0x111, 7), 'old_level': (0x118, 7),
+    'gender': (0x11F, 1), 'alignment': (0x120, 1),
+    'attacks': (0x121, 1), 'attacks2': (0x122, 1),
+    'base_damage': (0x123, 6), 'base_ac': (0x129, 1),
+    'str_bonus': (0x12A, 1), 'id': (0x12B, 1), 'xp': (0x12C, 4),
+    'class_mask': (0x130, 1), 'hp_rolled': (0x131, 1),
+    'spell_slots': (0x132, 28), 'xp_value': (0x14E, 2),
+    'xp_per_hp': (0x150, 1), 'head_pic': (0x151, 1),
+    'body_pic': (0x152, 1), 'icon_head': (0x153, 1),
+    'icon_body': (0x154, 1), 'unknown_155': (0x155, 1),
+    'icon_size': (0x156, 1), 'icon_colours': (0x157, 6),
+    'unknown_15d': (0x15D, 2), 'monster_flags': (0x15F, 1),
+    'item_count': (0x160, 1), 'items': (0x161, 4),
+    'readied': (0x165, 52), 'hands_used': (0x199, 1),
+    'ac_item_bonus': (0x19A, 1), 'encumbrance': (0x19B, 2),
+    'next': (0x19D, 4), 'combatant': (0x1A1, 4),
+    'unknown_1a5': (0x1A5, 1), 'status': (0x1A6, 1),
+    'active': (0x1A7, 1), 'side': (0x1A8, 1),
+    'controlled': (0x1A9, 1), 'thac0': (0x1AA, 1),
+    'ac': (0x1AB, 1), 'ac_rear': (0x1AC, 1),
+    'attacks_left': (0x1AD, 2), 'damage': (0x1AF, 6),
+    'hp': (0x1B5, 1), 'move': (0x1B6, 1),
+}
+# Section 1: six max/current ability pairs, in this order.
+for _i, _ability in enumerate(('str', 'int', 'wis', 'dex', 'con', 'cha')):
+    FIELDS[_ability + '_max'] = (0x10 + 2 * _i, 1)
+    FIELDS[_ability] = (0x11 + 2 * _i, 1)
+
+ITEM_FIELDS = {
+    'name': (0x00, 41), 'unknown_29': (0x29, 1),
+    'pointer_2a': (0x2A, 4), 'type': (0x2E, 1),
+    # RECORD section 2 calls 2F..31 "words" but gives no coherent split.
+    'unknown_2f': (0x2F, 3), 'plus': (0x32, 1), 'plus2': (0x33, 1),
+    'readied': (0x34, 1), 'hidden': (0x35, 1), 'flags': (0x36, 1),
+    'weight': (0x37, 2), 'count': (0x39, 1), 'value': (0x3A, 1),
+    'powers': (0x3B, 4), 'next': (0x3F, 4),
+}
+# Section 3: field order has medium confidence; sizes total nine bytes.
+EFFECT_FIELDS = {
+    'type': (0, 1), 'duration': (1, 2), 'p3': (3, 1),
+    'call_on_remove': (4, 1), 'next': (5, 4),
+}
+
+
+
+
+class Rec(_Record):
+    SIZE, FIELDS = 439, FIELDS
+    BLOCKS = frozenset(('unknown_15d', 'attacks_left'))
+
+    def __init__(self, data=None):
+        super().__init__(data)
+        # Live lists are separate from the stale far pointers exposed by get().
+        self.items, self.effects = [], []
+
+
+class Item(_Record):
+    SIZE, FIELDS = 67, ITEM_FIELDS
+    BLOCKS = frozenset(('powers',))
+
+
+class Effect(_Record):
+    SIZE, FIELDS = 9, EFFECT_FIELDS
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+# Derived-stat recalculation over a sm.titles.ssb.state.Char (bytearray .b, .items 67-B, .effects 9-B), tables from ST.EXE's data segment
+# (ssb_data.stexe(), DS offsets) and the ITEMS block (ssb_data.items_table(), DS:7524 + 16 * item type). Decode: GBU decode/secret/ENGINE_READ_w6.md
+# (ov27) and ENGINE_READ_w3.md (ov26). Byte arithmetic is the 8086's: stores are `and 0xFF`, compares as the listing has them.
+from sm import dax
+sx = lambda v: (v & 0xFF ^ 0x80) - 0x80
+sx16 = lambda v: (v & 0xFFFF ^ 0x8000) - 0x8000
+rdw = lambda b, o: b[o] | b[o + 1] << 8
+def wrw(b, o, v): b[o] = v & 0xFF; b[o + 1] = v >> 8 & 0xFF
+def _T(it, col): return ssb_data.items_table()[it[0x2E] * 16 + col]
+def has_effect(c, t): return any(e[0] == t for e in c.effects)             # ov26:28C8 HasEffect
+
+def dual(c):
+    """DualClassActive ov27:0D6B = FirstClassLevel ov27:0CF9 > +EFh: human (+6Bh = 6), the level of the first class 0..5 with a level."""
+    b = c.b
+    return int(b[0x6B] == 6 and next((b[0x111 + i] for i in range(6) if b[0x111 + i]), 0) > b[0xEF])
+
+def loaded_character(c, party_bonus=0):
+    """ReadCharacter ov20:1CEB: reset paladin cures (1DD4), then RecalcCharacter/RecalcLevels (22A2/22AD)."""
+    if c.b[0x114] > 0 or (c.b[0x101] == 3 and dual(c)): c.b[0x6D] = 1
+    recalc_character(c, party_bonus); recalc_levels(c)                    # ov26:2141 then ov27:0366, in this order
+
+def readied(c):
+    """The 13 readied slots RecalcCharacter ov26:21A4..22E3 fills (kept live, not as the record's stale +165h pointers): slot := ITEMS
+    col 0 of the type for 0..8; 9 -> the first free of slots 9/10; type 1Eh -> 11; type 0Ch -> 12."""
+    r = [None] * 13
+    for it in c.items:
+        if not it[0x34]: continue
+        sl = _T(it, 0)
+        if sl <= 8: r[sl] = it
+        elif sl == 9:
+            if r[9] is None: r[9] = it
+            elif r[10] is None: r[10] = it
+        if it[0x2E] == 0x1E: r[11] = it
+        if it[0x2E] == 0x0C: r[12] = it
+    return r
+
+def recalc_levels(c):
+    """RecalcLevels ov27:0366: base THAC0 +6Ah, level_main +EEh, attacks +121h, spell slots / known spells (e12), saves (e4), thief skills
+    (e5), class mask +130h, un-ready items the mask forbids, the former class's attacks / THAC0 when dual-classed."""
+    b, D = c.b, ssb_data.stexe()
+    b[0x6A] = 0
+    for i in range(7):
+        lv = b[0x111 + i]; t = D[0x4C0C + 19 * i + lv]
+        if t > b[0x6A]: b[0x6A] = t
+        if sx(b[0xEE]) < sx(lv): b[0xEE] = lv
+        if i in (2, 3):
+            if sx(lv) > 6: b[0x121] = 3
+            if sx(lv) > 12: b[0x121] = 4
+        elif i == 4:
+            if sx(lv) > 7: b[0x121] = 3
+            if sx(lv) > 14: b[0x121] = 4
+    rebuild_known_spells(c); recalc_saves(c)
+    if sx(b[0x117]) > 0: recalc_thief_skills(c)
+    b[0x130] = 0
+    for i in range(7):
+        if sx(b[0x111 + i]) > 0 or (sx(b[0x118 + i]) > 0 and sx(b[0x118 + i]) < sx(b[0xEE])): b[0x130] = (b[0x130] + D[0x4C92 + i]) & 0xFF
+    for it in readied(c):                                                  # 04C7..054B
+        if it is not None and not (_T(it, 0xD) & b[0x130]) and it[0x36] == 0: it[0x34] = 0
+    if dual(c):                                                            # 054D..0623
+        for i in range(7):
+            lv = b[0x118 + i]
+            if i in (2, 3):
+                if sx(lv) >= 13: b[0x121] = 4
+                elif sx(lv) >= 7: b[0x121] = 3
+            elif i == 4:
+                if sx(lv) >= 15: b[0x121] = 4
+                elif sx(lv) >= 8: b[0x121] = 3
+            elif i == 6 and sx(lv) > 0: recalc_thief_skills(c)
+            t = D[0x4C0C + 19 * i + lv]
+            if t > b[0x6A]: b[0x6A] = t
+
+def rebuild_known_spells(c):
+    """ov27:0000 (e12): spell slots +132h..+14Dh and known spells +70h+id from the class levels; spell table DS:449D + 16*id (byte 0 class,
+    byte 1 level); slot tables 7 B per level: cleric 50A1 (via e2 062C), paladin 52D2 (levels 9+), ranger 538D (8+), magic-user 5448."""
+    b, D = c.b, ssb_data.stexe(); dl = dual(c)
+    b[0x132:0x14E] = bytes(0x1C)
+    for i in range(7):
+        lv = b[0x118 + i] if dl and b[0x118 + i] else b[0x111 + i]
+        if sx(lv) <= 0: continue
+        if i == 0:
+            cleric_slots(c)
+            for sid in range(1, 0x76):
+                sp = D[0x449D + 16 * sid:0x449D + 16 * sid + 2]
+                if sp[0] == 0 and b[0x131 + sp[1]] > 0: b[0x70 + sid] = 1
+        elif i == 3 and sx(lv) > 8:
+            for L in range(9, lv + 1):
+                for k in range(1, 8): b[0x131 + k] = (b[0x131 + k] + D[0x52D2 + 7 * L + k]) & 0xFF
+            for sid in range(1, 0x76):
+                sp = D[0x449D + 16 * sid:0x449D + 16 * sid + 2]
+                if sp[0] == 0 and b[0x131 + sp[1]] > 0: b[0x70 + sid] = 1
+        elif i == 4 and sx(lv) > 7:
+            for L in range(8, lv + 1):
+                for k in range(1, 4): b[0x138 + k] = (b[0x138 + k] + D[0x538D + 7 * L + k]) & 0xFF
+                for k in range(4, 6): b[0x146 + k - 3] = (b[0x146 + k - 3] + D[0x538D + 7 * L + k]) & 0xFF
+            for sid in range(1, 0x76):
+                sp = D[0x449D + 16 * sid:0x449D + 16 * sid + 2]
+                if (sp[0] == 1 and b[0x138 + sp[1]] > 0) or (sp[0] == 3 and b[0x146 + sp[1]] > 0): b[0x70 + sid] = 1
+        elif i == 5:
+            b[0x147] = (b[0x147] + 1) & 0xFF
+            for L in range(2, lv + 1):
+                for k in range(1, 8): b[0x146 + k] = (b[0x146 + k] + D[0x5448 + 7 * L + k]) & 0xFF
+            if b[0x13] < 12: b[0x14C] = 0                                  # e3 07BE: INT caps the two top magic-user slots
+            if b[0x13] < 14: b[0x14D] = 0
+    for it in c.items:                                                     # 0313..035E
+        if it[0x3E] == 0x81 and it[0x34]: b[0x14B] = (b[0x14B] * 2) & 0xFF
+
+def cleric_slots(c):
+    """ov27:062C (e2): cleric slots +132h..+138h from DS:50A1 by level (+ the former cleric level when dual-classed), WIS +15h bonuses."""
+    b, D = c.b, ssb_data.stexe(); lv = (b[0x111] + dual(c) * b[0x118]) & 0xFF
+    if sx(lv) <= 0: return
+    b[0x133:0x139] = bytes(6); b[0x132] = 1
+    for L in range(2, lv + 1):
+        for k in range(1, 8): b[0x131 + k] = (b[0x131 + k] + D[0x50A1 + 7 * L + k]) & 0xFF
+    w = b[0x15]
+    for lim, o in ((12, 0x132), (13, 0x132), (14, 0x133), (15, 0x133), (16, 0x134), (17, 0x135)):
+        if w > lim and b[o] > 0: b[o] = (b[o] + 1) & 0xFF
+    if w < 17: b[0x137] = 0
+    if w < 18: b[0x138] = 0
+
+def recalc_saves(c):
+    """RecalcSaves ov27:07F9: +E8h..+ECh := min over the classes with a level of SAVES[class][level][s] (DS:5592 + 90*class + 5*level + s), then
+    once for class 6: level[6] > old_level[6] -> SAVES[6][old_level[6]]; save 0: CON +19h bonus (+ a readied item of power 6)."""
+    b, D = c.b, ssb_data.stexe()
+    sp6 = any(it[0x34] and it[0x3E] > 0x80 and it[0x3E] & 0x7F == 6 for it in c.items)
+    for s in range(5):
+        v = 20
+        for i in range(7):
+            lv = b[0x111 + i]
+            if sx(lv) > 0: v = min(v, D[0x5592 + 90 * i + 5 * lv + s])
+        if sx(b[0x117]) > sx(b[0x11E]): v = min(v, D[0x5592 + 540 + 5 * b[0x11E] + s])
+        if s == 0:
+            con = b[0x19]
+            if sp6: v += 1 if 4 <= con <= 6 else 2 if 7 <= con <= 10 else 3 if 11 <= con <= 13 else 4 if 14 <= con <= 17 else 5 if con == 18 else 0
+            v += 1 if con in (19, 20) else 2 if con in (21, 22) else 3 if con in (23, 24) else 4 if con == 25 else 0
+        b[0xE8 + s] = v & 0xFF
+
+def recalc_thief_skills(c):
+    """RecalcThiefSkills ov27:0AC6: +F3h..+FAh := table DS:4CAD + 8*level + skill, racial DS:4D3D + 8*race + skill (a negative racial larger
+    than the base zeroes the skill), DEX DS:4D48 + 5*DEX + skill for skills 1..5."""
+    b, D = c.b, ssb_data.stexe(); lv = (b[0x117] + dual(c) * b[0x11E]) & 0xFF
+    for s in range(1, 9):
+        r, base = sx(D[0x4D3D + 8 * b[0x6B] + s]), D[0x4CAD + 8 * lv + s]
+        if r < 0 and base < -r: b[0xF2 + s] = 0; continue
+        v = base + r
+        if s <= 5: v += sx(D[0x4D48 + 5 * b[0x17] + s])
+        b[0xF2 + s] = v & 0xFF
+
+def dex_ac(c):                                                             # ov26:10FA
+    d = c.b[0x17]
+    return -4 if 1 <= d <= 3 else d - 7 if 4 <= d <= 6 else d - 14 if 15 <= d <= 18 else 4 if d in (19, 20) else 5 if 21 <= d <= 23 else 6 if d in (24, 25) else 0
+def dex_hit(c):                                                            # ov26:117C
+    d = c.b[0x17]
+    return -4 if d <= 2 else d - 6 if 3 <= d <= 5 else d - 15 if 16 <= d <= 18 else 3 if d in (19, 20) else 4 if 21 <= d <= 23 else 5 if d in (24, 25) else 0
+def str_index(c):                                                          # ov26:11FE (uninitialised result -> 0 for 18/>100 and STR > 25)
+    s, e = c.b[0x11], c.b[0x1C]
+    if s <= 0x11: return s
+    if s == 0x12: return 0x12 if e == 0 else 0x13 if e <= 0x32 else 0x14 if e <= 0x4B else 0x15 if e <= 0x5A else 0x16 if e <= 0x63 else 0x17 if e == 0x64 else 0
+    return s + 5 if 0x13 <= s <= 0x19 else 0
+def str_hit(c):                                                            # ov26:1296
+    if not c.b[0x12A]: return 0
+    i = str_index(c)
+    return -3 if 1 <= i <= 3 else -2 if i in (4, 5) else -1 if i in (6, 7) else 1 if 0x11 <= i <= 0x13 else 2 if 0x14 <= i <= 0x16 else 3 if 0x17 <= i <= 0x19 else 4 if i in (0x1A, 0x1B) else i - 0x17 if 0x1C <= i <= 0x1E else 0
+def str_dmg(c):                                                            # ov26:1339
+    if not c.b[0x12A]: return 0
+    i = str_index(c)
+    return -2 if i in (1, 2) else -1 if 3 <= i <= 5 else 1 if i == 0x10 else i - 0x10 if 0x11 <= i <= 0x13 else i - 0x11 if 0x14 <= i <= 0x1D else 0xE if i == 0x1E else 0
+def carry(c):                                                              # ov26:13BF (signed word)
+    i = str_index(c)
+    return (-350 if 1 <= i <= 3 else -250 if i in (4, 5) else -150 if i in (6, 7) else 100 if i in (0xC, 0xD) else 200 if i in (0xE, 0xF) else 350 if i == 0x10
+            else (i - 0x11) * 250 + 500 if 0x11 <= i <= 0x15 else (i - 0x16) * 1000 + 2000 if 0x16 <= i <= 0x1A else 7500 if i == 0x1B
+            else (i - 0x1C) * 3000 + 9000 if 0x1C <= i <= 0x1E else 0)
+
+def compute_move(c, party_bonus=0):
+    """ComputeMove ov26:25EA: +1B6h := base +EDh, armour (01EE) and encumbrance (0396) limits, x2 / div 2 / x2 for effects 27h / 2Ah / 4Ah;
+    the result adds the party move cell [7F72] (party_bonus, side +1A8h = 0 only) and doubles. Returns the doubled value (byte)."""
+    b = c.b; b[0x1B6] = b[0xED]
+    for it in c.items:                                                     # 01EE armour weight class
+        if it[0x34] and _T(it, 0) == 2:
+            w = rdw(it, 0x37); b[0x1B6] = b[0xED] if w <= 0x96 else 9 if w <= 0x18F else 6
+            if it[0x32] and b[0x1B6] <= 9: b[0x1B6] = (b[0x1B6] + 3) & 0xFF
+    over = max(sx16(rdw(b, 0x19B) - carry(c)), 0)                          # 0396
+    m = b[0x1B6] if over <= 0x200 else 9 if over <= 0x300 else 6 if over <= 0x400 else 3
+    if m < b[0x1B6]: b[0x1B6] = m
+    if has_effect(c, 0x27): b[0x1B6] = (b[0x1B6] * 2) & 0xFF
+    if has_effect(c, 0x2A): b[0x1B6] //= 2
+    if has_effect(c, 0x4A): b[0x1B6] = (b[0x1B6] * 2) & 0xFF
+    r = b[0x1B6]
+    if b[0x1A8] == 0: r = (r + party_bonus) & 0xFF
+    return (r * 2) & 0xFF
+
+def _weapon(c, sl):
+    """ov26:0000 (e49): THAC0 +1AAh and damage +1AFh/+1B1h/+1B3h from the readied weapon's ITEMS row (col E flags: 2 DEX to-hit, 4 STR,
+    bit 7 adds the +195h item's plus, 1 adds the +191h item's plus; cols 9/A dice, B bonus)."""
+    b, w = c.b, sl[0]
+    if w is None: return
+    f = _T(w, 0xE); b[0x1AA] = b[0x6A]
+    if f & 2: b[0x1AA] = (b[0x1AA] + dex_hit(c)) & 0xFF
+    b[0x1B3] = _T(w, 0xB)
+    if f & 4: b[0x1AA] = (b[0x1AA] + str_hit(c)) & 0xFF; b[0x1B3] = (sx(b[0x1B3]) + str_dmg(c)) & 0xFF
+    plus = w[0x32]
+    if f > 0x7F and sl[12] is not None: plus = (sx(plus) + sx(sl[12][0x32])) & 0xFF
+    if f & 1 and sl[11] is not None: plus = (sx(plus) + sx(sl[11][0x32])) & 0xFF
+    b[0x1B3] = (sx(b[0x1B3]) + sx(plus)) & 0xFF
+    if 0x16 <= w[0x2E] <= 0x1A or w[0x2E] in (0x12, 0x13): plus = (plus + 1) & 0xFF
+    b[0x1AA] = (b[0x1AA] + sx(plus)) & 0xFF
+    b[0x1AF] = _T(w, 9); b[0x1B1] = _T(w, 0xA)
+
+def _item_bonus(c, it, loc):
+    """ov26:0278: per readied item with ITEMS col 6 bit 7: class 1 (weapon) -> loc[1] := plus + bonus class; bonus class 0: slot class 9 ->
+    loc[3] := max(plus) else loc[2] += plus, +19Ah += plus2 +33h; else loc[4] := max(plus + class), armour (col 0 = 2) with a plus -> flag."""
+    b = c.b; bc = _T(it, 6); flag = 0
+    if bc <= 0x7F: return 0
+    bc &= 0x7F; cls = _T(it, 0); plus = sx(it[0x32])
+    if cls == 1: loc[1] = (plus + bc) & 0xFF
+    elif bc == 0:
+        if cls == 9:
+            if plus > sx(loc[3]): loc[3] = it[0x32]
+        else: loc[2] = (plus + sx(loc[2])) & 0xFF
+        b[0x19A] = (sx(b[0x19A]) + sx(it[0x33])) & 0xFF
+    elif plus + bc > sx(loc[4]):
+        loc[4] = (plus + bc) & 0xFF
+        if plus > 0 and cls == 2: flag = 1
+    return flag
+
+def recalc_character(c, party_bonus=0):
+    """RecalcCharacter ov26:2141: item count +160h, hands +199h, encumbrance +19Bh (+ money), current attacks/damage +1AEh..+1B4h from the
+    base, ac_item_bonus +19Ah, AC +1ABh/+1ACh, THAC0 +1AAh, move +1B6h (ComputeMove div 2), fighter_lvl_eff +E6h. The readied far pointers
+    +165h..+198h are not written (heap addresses; readied() recomputes the slots)."""
+    b = c.b; b[0x160] = 0; b[0x199] = 0; enc = 0
+    for it in c.items:                                                     # 21A4..22F2
+        b[0x160] = (b[0x160] + 1) & 0xFF
+        w = rdw(it, 0x37)
+        if it[0x39]: w = (it[0x39] * w) & 0xFFFF
+        enc = (enc + w) & 0xFFFF
+        if it[0x34]: b[0x199] = (b[0x199] + _T(it, 1)) & 0xFF
+    for k in range(7): enc = (enc + rdw(b, 0x103 + 2 * k)) & 0xFFFF       # 22F5..2322
+    wrw(b, 0x19B, enc)
+    b[0x1AF:0x1B5] = b[0x123:0x129]                                        # 2324..238B
+    loc = [0] * 5; flag = 0
+    b[0x19A] = 0; b[0x1AB] = b[0x129]; b[0x1AA] = b[0x6A]
+    loc[0] = dex_ac(c) & 0xFF
+    sl = readied(c)
+    if sl[0] is None: b[0x1AA] = (b[0x1AA] + str_hit(c)) & 0xFF; b[0x1B3] = (sx(b[0x1B3]) + str_dmg(c)) & 0xFF
+    _weapon(c, sl)
+    for it in c.items:
+        if it[0x34]: flag |= _item_bonus(c, it, loc)
+    if flag: loc[3] = 0
+    b[0x1B6] = compute_move(c, party_bonus) // 2                           # 2490..24A5
+    if sx(loc[4]) < b[0x1AB]: loc[4] = b[0x1AB]
+    b[0x1AB] = sum(sx(v) for v in loc) & 0xFF
+    b[0x1AC] = (sx(loc[4]) + sx(loc[2]) + sx(loc[3]) - 2) & 0xFF
+    multi = sx(b[0x113]) > 0 or sx(b[0x114]) > 0 or sx(b[0x115]) > 0 or (sx(b[0x11A]) > 0 and dual(c))
+    if multi and b[0x6B] not in (0, 7): b[0xE6] = max(b[0x113], b[0x115], b[0x114])   # 2585..25D9
+    else: b[0xE6] = 1
+
+def oracle(slot, party_bonus=None):
+    """recalc_character + recalc_levels (the ReadCharacter ov20:22A2/22AD order) over every member of save `slot`; -> list of
+    (name, [record offsets that differ], items differ)."""
+    from sm.titles.ssb import save
+    from sm.titles.ssb.state import Char
+    st = save.load(slot=slot); bonus = st['r1'][0x372] if party_bonus is None else party_bonus
+    out = []
+    for r in st['party']:
+        c = Char(bytes(r), [bytes(i) for i in r.items], [bytes(e) for e in r.effects]); before, items = bytes(c.b), [bytes(i) for i in c.items]
+        for o, n in ((0xE6, 1), (0xE8, 5), (0xEE, 1), (0x130, 1), (0x132, 28), (0x160, 1), (0x199, 4), (0x1AA, 3), (0x1AF, 6), (0x1B6, 1)) +                     (((0xF3, 8),) if c.b[0x117] else ()):                # the fields the pair rebuilds from nothing are cleared first
+            c.b[o:o + n] = bytes(n)
+        # kept as loaded (the routines only raise or add to them, as the game does at load): +6Ah base THAC0 (RecalcCharacter's input before
+        # RecalcLevels recomputes it), +121h attacks (raised for warriors only), known spells +71h.. (set to 1, never cleared), +1B5h hp
+        recalc_character(c, bonus); recalc_levels(c)
+        out.append((before[1:1 + before[0]].decode('latin1'), [o for o in range(439) if c.b[o] != before[o]], [bytes(i) for i in c.items] != items))
+    return out
+
+
+def max_party(write=True, root=None):
+    """GU-69: save A's six identities, capped stats and native equipment; only local/saves/M is written.
+
+    ENGINE_READ2_g1 ov19:4B45 race limits; XP/level ceiling DS:5064 + BBh*class + 4*level
+    (first nonpositive next-level entry); ability bounds DS:4D9D/4DA1; maximum dice through
+    LevelUpHp ov19:4840, DS:09B0/09B7/4CA9/5052. Equipment comes from complete original
+    ITEM1..3 records (ov03:1E3D), with MakeTreasureItem's 67-byte layout, never type-only stubs.
+    The scope cut keeps existing spells and omits rings. No party RNG is consumed by setup.
+    """
+    from types import SimpleNamespace
+    from sm.titles.ssb import save
+    from sm.titles.ssb.state import State, Char
+    from sm.titles.ssb.units import creation, shops, combat
+    from sm.titles.ssb.ui import screen
+    data = save.load(slot='A'); s = State(); save.restore(s, data)
+    game = SimpleNamespace(s=s); ds = ssb_data.stexe()
+    stock = [bytearray(raw[j:j + 63] + bytes(4)) for area in (1, 2, 3)
+             for raw in dax.load('ITEM%d' % area, d=ssb_data.SECRET).values() for j in range(0, len(raw), 63)]
+    stock = [it for it in stock if len(it) == 67 and not it[0x36] and sx(it[0x32]) >= 0]
+    for c in s.party:                                                     # Goldsmith 18:38: Bruce's build has TWO magic-users: Epona (human, INT 18) -> magic-user
+        if bytes(c.b[1:1 + c.b[0]]) == b'EPONA': c.b[0x6C] = 5; c.b[0x111:0x118] = bytes([0, 0, 0, 0, 0, 1, 0]); c.b[0x118:0x11F] = bytes(7); c.b[0x121] = 2   # non-warrior attacks (ov27:0366 raises warriors only)
+    for c in s.party:
+        b = c.b; classes = [i for i, lv in enumerate(b[0x111:0x118]) if lv]
+        for a in range(6): b[0x10 + 2*a] = b[0x11 + 2*a] = min(18, creation.ability_limits(c, a)[1])
+        b[0x1C] = b[0x1D] = min(100, ds[0x4DA1 + b[0x6B]*16 + b[0x11F]]) if any(i in (2, 3, 4) for i in classes) and b[0x11] == 18 else 0
+        caps = [0] * 7
+        for i in classes:
+            b[0x111 + i] = 1
+            while not creation.capped(c, i) and creation.xp_for(i, b[0x111 + i] + 1) > 0:
+                b[0x111 + i] += 1
+            caps[i] = b[0x111 + i]
+        b[0x12C:0x130] = max(creation.xp_for(i, caps[i]) for i in classes).to_bytes(4, 'little')
+        b[0x70] = b[0x131] = b[0x1B5] = 0
+        b[0xF0] = b[0xF1] = 0
+        for level in range(1, max(caps) + 1):
+            b[0x111:0x118] = bytes(min(level, cap) for cap in caps)
+            mask = sum(ds[0x4C99 + i] for i in classes if caps[i] >= level)
+            creation.level_hp(SimpleNamespace(random=lambda n: n - 1), c, mask, len(classes))
+        c.items = []; b[0xEE] = b[0x199] = 0
+        recalc_levels(c); recalc_character(c, s.r1[0x372])
+        eligible = [it for it in stock if _T(it, 13) & b[0x130] and
+                    (it[0x3E] != 0x84 or it[0x3D] & 15 == b[0x120])]
+        shields = [it for it in eligible if _T(it, 0) == 1]
+        weapons = [it for it in eligible if _T(it, 0) == 0 and not _T(it, 14) & 8
+                   and _T(it, 1) <= (1 if shields else 2)]
+        armour = [it for it in eligible if _T(it, 0) == 2]
+        gear = []
+        if weapons: gear.append(max(weapons, key=lambda it: (combat.Combat.weapon_score(None, c, it), -rdw(it, 0x37))))
+        if armour: gear.append(max(armour, key=lambda it: ((_T(it, 6) & 127) + sx(it[0x32]), -rdw(it, 0x37))))
+        if shields: gear.append(max(shields, key=lambda it: (sx(it[0x32]), -rdw(it, 0x37))))
+        for source in gear:
+            it = bytearray(source); it[0x2A:0x2E] = bytes(4); it[0x3F:0x43] = bytes(4); it[0x34] = 0
+            c.items.append(it)
+            if not shops.ready(game, c, it): raise ValueError('max party equipment cannot be readied')
+        loaded_character(c, s.r1[0x372]); recalc_character(c, s.r1[0x372])
+        for slot_class, n in ((3, 1), (5, 1), (7, 1), (8, 1), (9, 2), (10, 1), (2, 1)):   # Goldsmith 18:38: helm, cloak, gauntlets, belt, 2 rings, misc,
+            for _ in range(n):                                            # armour for those without (bracers): kept only if AC improves
+                tried = set()
+                for it0 in sorted((it for it in eligible if _T(it, 0) == slot_class), key=lambda it: -sx(it[0x32])):
+                    if bytes(it0) in tried: continue
+                    tried.add(bytes(it0)); before = b[0x1AB]
+                    it = bytearray(it0); it[0x2A:0x2E] = bytes(4); it[0x3F:0x43] = bytes(4); it[0x34] = 0; c.items.append(it)
+                    if shops.ready(game, c, it):
+                        loaded_character(c, s.r1[0x372]); recalc_character(c, s.r1[0x372])
+                        if b[0x1AB] > before: break
+                        shops.ready(game, c, it) if it[0x34] else None
+                    c.items.remove(it); loaded_character(c, s.r1[0x372]); recalc_character(c, s.r1[0x372])
+        expert_spells(c)
+    data['slot'] = 'M'; data['names'] = ['CHRDATM%d' % (i + 1) for i in range(len(s.party))]
+    data['party'] = []
+    for c in s.party:
+        r = Rec(bytes(c.b)); r.items = [Item(bytes(it)) for it in c.items]; r.effects = [Effect(bytes(e)) for e in c.effects]
+        data['party'].append(r)
+    if write: screen.write_slot_files(save.dump(data), 'M', root or screen.SAVE_ROOT)
+    return data
+
+
+# Bruce 18:26: the expert loadout per spell level, ids from ENGINE_READ2_g2 (checked against the ST.EXE spell table DS:449D: byte 0 class 0 cleric
+# / 3 magic-user, byte 1 level). Slots per level: cleric +131h+L, magic-user +146h+L (ov27:0000 e12).
+LOADOUT = {0: {1: (3, 1), 2: (25, 23), 3: (42, 41), 4: (58,), 5: (74, 71, 73, 75), 6: (36,), 7: ()},
+           3: {1: (15, 13), 2: (34,), 3: (48, 47, 51, 46, 49), 4: (88, 87, 85), 5: (91, 92, 94), 6: (112, 113, 110), 7: (115, 117)}}
+
+def expert_spells(c):
+    """GU-69/70 maxed party: the spell book holds every spell of the class at a castable level (+70h+id; ov27:0000 sets the cleric ones, the
+    magic-user book is filled the same way), and every slot is memorized (+1Eh.., 75 entries) round-robin over the expert loadout, then any
+    other known spell of that level."""
+    b, D = c.b, ssb_data.stexe(); mem = []
+    for cls, base in ((0, 0x131), (3, 0x146)):
+        for sid in range(1, 0x76):
+            if D[0x449D + 16 * sid] == cls and b[base + D[0x449E + 16 * sid]] > 0: b[0x70 + sid] = 1
+        for L in range(1, 8):
+            n = b[base + L]
+            if not n: continue
+            pool = [x for x in LOADOUT[cls][L] if b[0x70 + x]] or [x for x in range(1, 0x76) if D[0x449D + 16 * x] == cls and D[0x449E + 16 * x] == L and b[0x70 + x]]
+            mem += [pool[k % len(pool)] for k in range(n)] if pool else []
+    mem = mem[:75]; b[0x1E:0x69] = bytes(mem + [0] * (75 - len(mem)))
+
+def test_max_party():
+    """Native codec and real Session load rederive every byte of the capped party identically."""
+    from unittest.mock import patch
+    from sm.titles.ssb import host, save
+    before = save.load(); data = max_party(write=False); files = save.dump(data)
+    data = save._load(files.get, 'M')
+    assert [list(r.data[0x111:0x118]) for r in data['party']] == [
+        [0, 0, 0, 15, 0, 0, 0], [0, 0, 0, 0, 15, 0, 0], [0, 0, 0, 0, 0, 15, 0],
+        [0, 0, 9, 0, 0, 0, 18], [15, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 15, 0]]
+    assert [r.data[0x70] for r in data['party']] == [144, 142, 70, 111, 112, 70]
+    for a, b in zip(before['party'], data['party']):
+        assert all(a.get(k) == b.get(k) for k in ('name', 'race', 'alignment'))
+        assert a.get('class') == b.get('class') or b.get('name') == a.get('name') and b.get('class') == 5   # Epona -> magic-user (Goldsmith 18:38)
+    with patch.object(save, 'load', return_value=data):
+        session = host.Session(slot='M', engines=True)
+        try:
+            for r, c in zip(data['party'], session.game.s.party):
+                assert bytes(r) == bytes(c.b), ('max party load changed record', r.get('name'))
+                assert [bytes(it) for it in r.items] == [bytes(it) for it in c.items]
+                before = bytes(c.b); loaded_character(c, session.game.s.r1[0x372])
+                assert before == bytes(c.b), 'max party recalculation is not stable'
+                assert c.b[0x199] <= 2 and all(_T(it, 13) & c.b[0x130] for it in c.items)
+        finally: session.close()
+
+
+def test():
+    """Every field plus 200 seeded random writes per layout, including padding; then the recalc oracle on saves A and B."""
+    _test_layout()
+    test_cleric_wisdom()
+    test_max_party()
+    bad = [(s, n, ['%03X' % o for o in d], i) for s in 'AB' for n, d, i in oracle(s) if d or i]
+    assert not bad, 'recalc oracle: %s' % bad
+
+def test_cleric_wisdom():
+    """ClericSpellSlots ov27:062C: WIS bonuses require base slots; levels 6/7 need WIS 17/18."""
+    from sm.titles.ssb.state import Char
+    c = Char(bytes(439)); c.b[0x111] = 18; c.b[0x15] = 12; cleric_slots(c)
+    base = list(c.b[0x132:0x137])
+    for wisdom, bonus in ((12, (0, 0, 0, 0, 0)), (13, (1, 0, 0, 0, 0)), (14, (2, 0, 0, 0, 0)),
+                          (15, (2, 1, 0, 0, 0)), (16, (2, 2, 0, 0, 0)), (17, (2, 2, 1, 0, 0)), (18, (2, 2, 1, 1, 0))):
+        c.b[0x15] = wisdom; cleric_slots(c)
+        assert list(c.b[0x132:0x137]) == [a + b for a, b in zip(base, bonus)]
+        assert bool(c.b[0x137]) == (wisdom >= 17) and bool(c.b[0x138]) == (wisdom >= 18)
+    expected = bytes(c.b[0x132:0x139])
+    c.b[0x111], c.b[0x118], c.b[0x113], c.b[0xEF], c.b[0x6B] = 0, 18, 19, 18, 6
+    cleric_slots(c); assert bytes(c.b[0x132:0x139]) == expected, 'active former cleric contributes its level'
+    c.b[0x113] = 18; c.b[0x132:0x139] = bytes([99] * 7)
+    cleric_slots(c); assert list(c.b[0x132:0x139]) == [99] * 7, 'inactive former cleric has no effective level'
+    c.b[0x111], c.b[0x118], c.b[0x113] = 1, 0, 0; cleric_slots(c)
+    assert list(c.b[0x132:0x139]) == [3, 0, 0, 0, 0, 0, 0], 'WIS must not grant an unavailable spell level'
+
+
+def _test_layout():
+    """Every field plus 200 seeded random writes per layout, including padding."""
+    import random
+    rng = random.Random(0x4396709)
+    for cls in (Rec, Item, Effect):
+        fields = list(cls.FIELDS)
+        covered = set()
+        for off, size in cls.FIELDS.values():
+            assert 0 <= off < off + size <= cls.SIZE
+            covered.update(range(off, off + size))
+        assert covered == set(range(cls.SIZE)), cls.__name__
+        rec = cls(rng.randbytes(cls.SIZE))
+        for name in fields + rng.choices(fields, k=200):
+            off, size = cls.FIELDS[name]
+            before = bytes(rec)
+            raw = rng.randbytes(size)
+            value = raw if isinstance(rec.get(name), bytes) else int.from_bytes(raw, 'little')
+            rec.set(name, value)
+            assert rec.get(name) == cls(bytes(rec)).get(name) == value, (cls.__name__, name, off)
+            assert bytes(rec) == before[:off] + raw + before[off + size:], (name, off)
+        for size in (0, cls.SIZE - 1, cls.SIZE + 1):
+            try: cls(bytes(size))
+            except ValueError: pass
+            else: raise AssertionError((cls.__name__, 'accepted size', size))
+        scalar = next(n for n, (_, size) in cls.FIELDS.items() if size == 1)
+        before = bytes(rec)
+        for value in (-1, 256):
+            try: rec.set(scalar, value)
+            except OverflowError: pass
+            else: raise AssertionError((scalar, 'accepted out-of-range value'))
+        assert bytes(rec) == before
+        try: rec.get('creature_type')
+        except KeyError: pass
+        else: raise AssertionError('unknown field accepted')
+    rec = Rec()
+    rec.set('xp', -1234, signed=True)
+    assert rec.get('xp', signed=True) == -1234
+    before = bytes(rec)
+    try: rec.set('name', b'bad size')
+    except ValueError: pass
+    else: raise AssertionError('short name accepted')
+    assert bytes(rec) == before
