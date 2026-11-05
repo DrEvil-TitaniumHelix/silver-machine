@@ -261,6 +261,12 @@
     if (nextMods === undefined) { frameRequested = true; return; }
     if (running) {
       layout = nextLayout;
+      const lookStatus = document.querySelector('#look-status');
+      if (lookStatus && lookStatus.textContent !== (layout.look_status || '')) {
+        lookStatus.textContent = layout.look_status || '';
+        lookStatus.hidden = !layout.look_status;
+        resize();
+      }
       const links = document.querySelector('#journal-links');
       const cited = JSON.stringify(layout.journal || []);
       if (links?.replaceChildren && links.dataset.cited !== cited) {

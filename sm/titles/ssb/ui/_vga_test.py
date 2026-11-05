@@ -74,7 +74,96 @@ def test():
             check_http(root)
             check_presentation(root)
             check_overlay(root)
+        with patch.dict(os.environ, SM_CONFIG_HOME=str(root/'copy-config'), DQK_ROOT=''):
+            check_dqk_copy(root)
     print('VGA: EGA identity, PNG alpha/colour/clip, packet, persistence and Original round-trip PASS')
+
+
+def check_look_note(browser):
+    note = json.loads(browser.request('/preferences')[0])['look_note']
+    assert all(text in note for text in ('full-colour PNG mods', 'row below', 'frame and font', 'only mods look different'))
+    page = browser.request('/plus')[0]
+    assert all(text in page for text in (b'Dark Queen copy', b'id="dqk-browse"', b'Verify and save', b'id="dqk-clear"'))
+    assert b'id="dqk-folder" type="text"' in page and b'Program Files (x86)' in page
+
+
+def check_look_status(browser, visible):
+    expected = ('VGA is using the Silver Blades frame (no Dark Queen copy set on the Plus page). '
+                'Only mods will look different.')
+    assert browser.layout()['look_status'] == (expected if visible else '')
+    assert b'id="look-status" role="status" hidden' in browser.request('/')[0]
+
+
+def check_dqk_copy(root):
+    from sm.ui import vga_skin
+    with Server(Session(engines=True), 0, save_root=root/'copy-saves') as server:
+        worker = Thread(target=server.serve, daemon=True); worker.start()
+        browser = Browser(server.server_port)
+        try:
+            original = browser.request('/frame?t=0')[0]
+            state = server.controller.session.game.state_hash()
+            check_look_note(browser)
+            check_look_status(browser, False)
+            assert json.loads(browser.request('/preferences')[0])['dqk_copy']['folder'] == ''
+            browser.request('/preferences', dict(look='vga'))
+            fallback = browser.request('/frame?t=0')[0]
+            assert fallback[784:] == original
+            check_look_status(browser, True)
+            fake = root/'wrong-copy'; fake.mkdir()
+            wrong = dict(folder=str(fake))
+            failed = json.loads(browser.request('/dqk-intake', wrong, status=422)[0])
+            assert not failed['ok'] and 'DISK1 and DISK3' in failed['message']
+            assert not vga_skin.config_path().exists()
+            browser.request('/dqk-intake', wrong, headers={'Origin': 'https://example.invalid'}, status=403)
+            browser.request('/dqk-intake', wrong, headers={'X-SM-Build': 'old'}, status=409)
+            for value in ({}, {'folder': 1}, {'folder': '\0'}, []):
+                browser.request('/dqk-intake', value, status=400)
+            # Exercise exactly the existing picker transport without opening a dialog in the suite.
+            with patch('sm.ui.folders.browse', return_value=(dict(ok=True, folder=str(fake), cancelled=False), 200)) as picker:
+                assert json.loads(browser.request('/browse', {})[0])['folder'] == str(fake)
+                picker.assert_called_once()
+            with patch.dict(os.environ, DQK_ROOT=str(fake)):
+                assert json.loads(browser.request('/preferences')[0])['dqk_copy']['source'] == 'DQK_ROOT'
+                browser.request('/dqk-intake', dict(folder=''), status=409)
+                check_look_status(browser, True)
+            # Original copies are read in place only; absence is an explicit clean skip.
+            candidates = [Path(os.environ.get('SM_DQK_TEST_ROOT', ''))] if os.environ.get('SM_DQK_TEST_ROOT') else [
+                Path('C:/Program Files/GOG Galaxy/Games/The Dark Queen of Krynn'),
+                Path('C:/Program Files (x86)/GOG Galaxy/Games/The Dark Queen of Krynn')]
+            copy = next((p for p in candidates if (p/'DISK1/GAME.FON').is_file()), None)
+            if copy is None:
+                print('SKIP Dark Queen copy success: no installed copy; failure/clear/status checks passed')
+            else:
+                result = json.loads(browser.request('/dqk-intake', dict(folder=str(copy)))[0])
+                assert result['dqk_frame'] and result['dqk_copy']['edition'] in ('GOG', "Collector's CD")
+                assert vga_skin.configured() == str(copy.resolve())
+                assert json.loads(vga_skin.config_path().read_text()) == dict(folder=str(copy.resolve()))
+                check_look_note(browser)
+                check_look_status(browser, False)
+                changed = browser.request('/frame?t=0')[0]
+                assert changed != fallback and server.controller._vga_assets.native is not None
+                native = server.controller._vga_assets.native
+                # Re-saving the same path must discard both levels of Skin cache.
+                browser.request('/dqk-intake', dict(folder=str(copy)))
+                assert browser.request('/frame?t=0')[0] == changed
+                assert server.controller._vga_assets.native is not native
+                browser.request('/dqk-intake', wrong, status=422)
+                assert vga_skin.configured() == str(copy.resolve())
+                assert browser.request('/frame?t=0')[0] == changed
+                browser.request('/preferences', dict(look='original'))
+                assert browser.request('/frame?t=0')[0] == original
+                check_look_status(browser, False)
+                browser.request('/preferences', dict(look='vga'))
+            browser.request('/dqk-intake', dict(folder=''))
+            assert vga_skin.configured() is None
+            assert browser.request('/frame?t=0')[0] == fallback
+            check_look_status(browser, True)
+            browser.request('/preferences', dict(look='original'))
+            assert browser.request('/frame?t=0')[0] == original
+            check_look_status(browser, False)
+            assert state == server.controller.session.game.state_hash()
+        finally:
+            server.stopping = True; worker.join(3); browser.close()
 
 
 def check_overlay(root):

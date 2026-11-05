@@ -98,18 +98,53 @@ class Server(ThreadingHTTPServer):
         if not self.plus and self.controller: options['effect_scale'] = self.controller.effect_scale
         extra = {}
         if self.plus:
-            from sm.titles.ssb.ui.vga import configured_dqk, skin
-            root = configured_dqk()
-            try:
-                available = bool(root and skin(root))
-                note = ''
-            except (OSError, ValueError) as error: available, note = False, str(error)
-            extra = dict(dqk_frame=available, look_note=note or ('Dark Queen frame and font available from your configured copy.' if available else
-                         'VGA uses the SSB frame and font. Configure your own Dark Queen copy to enable its frame and font.'))
+            copy = self.dqk_copy()
+            extra = dict(dqk_frame=copy['ok'], dqk_copy=copy,
+                         look_note='VGA enables full-colour PNG mods. With a verified Dark Queen copy in the row below, '
+                         'you can use its frame and font. Without one, the Silver Blades frame and font stay the same; '
+                         'only mods look different. SSB scenery and pictures stay SSB\'s.')
             if warning := getattr(getattr(self.controller, '_vga_assets', None), 'warning', ''):
                 extra['look_note'] += ' ' + warning
         return dict(options=options, persistent=self.plus is not None, **extra,
                     supported=list(DEFAULTS) if self.plus else ['effect_scale'] if self.controller else [])
+
+    def dqk_copy(self, folder=None):
+        from sm.titles.ssb.ui.vga import configured_dqk, skin
+        folder = (configured_dqk() or '') if folder is None else folder
+        result = dict(ok=False, folder=folder, edition=None,
+                      source='DQK_ROOT' if os.environ.get('DQK_ROOT', '').strip() else 'settings',
+                      message='No Dark Queen copy set. Browse to your copy, then verify and save.')
+        if not folder: return result
+        try:
+            native, _, _ = skin(folder)
+            result.update(ok=True, edition=native.edition,
+                          message=(native.edition or 'Unknown edition') + ' — Dark Queen frame and font verified.')
+        except OSError:
+            result['message'] = 'Cannot read the Dark Queen frame and font. Choose the game folder containing DISK1 and DISK3.'
+        except ValueError:
+            result['message'] = 'The Dark Queen frame or font could not be decoded. Choose another copy.'
+        if result['source'] == 'DQK_ROOT':
+            result['message'] += ' DQK_ROOT sets this folder. Unset it and restart to use the Plus controls.'
+        return result
+
+    def choose_dqk_copy(self, folder):
+        from sm.ui import vga_skin
+        from sm.titles.ssb.ui.vga import skin
+        if os.environ.get('DQK_ROOT', '').strip():
+            return dict(ok=False, message='DQK_ROOT overrides this folder. Unset it and restart to use the Plus controls.'), 409
+        folder = str(Path(folder.strip()).expanduser().resolve()) if folder.strip() else ''
+        # Reverify even a previously cached folder; then invalidate the live renderer.
+        skin.cache_clear()
+        vga_skin.Skin.picture.cache_clear()
+        vga_skin.Skin.rows.cache_clear()
+        result = self.dqk_copy(folder)
+        if folder and not result['ok']: return result, 422
+        vga_skin.remember(folder)
+        if self.controller:
+            self.controller._vga_key = None
+            self.controller._vga_assets = None
+        return dict(ok=True, message=result['message'] if folder else 'Dark Queen copy cleared.',
+                    **self.preferences()), 200
 
     def set_preferences(self, values):
         validate(values)
@@ -327,9 +362,13 @@ class Handler(BaseHTTPRequestHandler):
             self.json(dict(scale=self.server.controller.effect_scale))
         elif request.path == '/layout':
             layout = self.server.screen.layout(self.server.controller)
+            layout['look_status'] = ''
             if self.server.plus and self.server.plus.options['look'] == 'vga':
                 from sm.titles.ssb.ui.vga import revision_id
                 layout['frame_revision'] = revision_id(layout['revision'])
+                if not self.server.dqk_copy()['ok']:
+                    layout['look_status'] = ('VGA is using the Silver Blades frame (no Dark Queen copy set on the Plus page). '
+                                             'Only mods will look different.')
             if journal := getattr(self.server.controller, 'journal', None): layout['journal'] = journal.current()
             self.json(layout)
         elif request.path == '/overlay':
@@ -405,7 +444,7 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, UnicodeError) as error: self.json(dict(error=str(error)), status=400)
             except OSError: self.json(dict(error='Cannot write the local bug report.'), status=500)
             return
-        if urlsplit(self.path).path == '/intake':
+        if urlsplit(self.path).path in ('/intake', '/dqk-intake'):
             if not self.matching_build(): return
             if self.headers.get_content_type() != 'application/json':
                 self.send_error(415, 'Expected application/json')
@@ -413,12 +452,20 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 if not 0 < length <= 16384 or len(body) != length: raise ValueError('Invalid body size')
                 value = json.loads(body)
-                if not isinstance(value, dict) or not isinstance(value.get('folder'), str): raise ValueError('Expected folder')
+                if (not isinstance(value, dict) or not isinstance(value.get('folder'), str)
+                        or len(value['folder']) > 4096 or '\0' in value['folder']): raise ValueError('Expected folder')
             except (ValueError, UnicodeError):
                 self.json(dict(ok=False, message='Enter a folder path.'), status=400)
                 return
             with self.server.state_lock:
-                result, status = self.server.choose_folder(value['folder'])
+                if urlsplit(self.path).path == '/dqk-intake':
+                    if not self.server.plus:
+                        self.json(dict(ok=False, message='Dark Queen frame settings are unavailable for this title.'), status=409)
+                        return
+                    try: result, status = self.server.choose_dqk_copy(value['folder'])
+                    except OSError: result, status = dict(ok=False, message='Cannot save Dark Queen folder settings.'), 500
+                    except ValueError: result, status = dict(ok=False, message='Enter a valid folder path.'), 400
+                else: result, status = self.server.choose_folder(value['folder'])
                 self.json(result, status=status)
             return
         if urlsplit(self.path).path in ('/preferences', '/speed') and self.server.plus:

@@ -12,7 +12,8 @@ button:hover:enabled, button[aria-selected=true], button[aria-pressed=true] { ba
 [role=tabpanel] label { padding: .35rem 0; border: 0; justify-content: flex-start; }
 [role=tabpanel] input { width: auto; height: auto; }
 input[type=checkbox] { width: 1.2rem; height: 1.2rem; }
-#mods-folder { width: min(100%, 34rem); height: auto; flex: 1; }
+#mods-folder, #dqk-folder { width: min(100%, 34rem); min-width: 12rem; height: auto; flex: 1; }
+#dqk-hint { overflow-wrap: anywhere; }
 input[type=search], textarea { width: 100%; box-sizing: border-box; }
 textarea { min-height: 6rem; resize: vertical; }
 .source, .note { color: #b6c5d3; font-size: .9rem; }

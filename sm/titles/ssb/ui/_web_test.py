@@ -36,6 +36,7 @@ const windowEvents = new Map(), canvasEvents = new Map(), timers = new Map();
 let pending = 0, maximum = 0, posts = [], errors = [], scale = 1, wake, fetchReply, drawn = 0, focused = 0, reloads = 0, yellow = 0, clockAdvance = 0;
 const storage = new Map();
 const focusHint = {hidden: true};
+const lookStatus = {hidden: true, textContent: ''};
 const canvas = {width: 320, height: 200, style: {},
   focus: () => {focused++;},
   getBoundingClientRect: () => ({left: 37, top: 19, width: 320 * scale, height: 200 * scale}),
@@ -44,7 +45,7 @@ const canvas = {width: 320, height: 200, style: {},
   getContext: () => ({createImageData: () => ({data: new Uint8ClampedArray(256000)}),
     putImageData: image => {drawn++; yellow = 0; for (let i = 192 * 320 * 4; i < 256000; i += 4) if (image.data[i] === 255 && image.data[i + 1] === 255 && image.data[i + 2] === 85) yellow++;}})};
 function startPage() { vm.runInNewContext(fs.readFileSync(process.argv[1], "utf8").replaceAll("__SM_BUILD_ID__", process.argv[2]), {
-  document: {querySelector: selector => selector === "canvas" ? canvas : focusHint},
+  document: {querySelector: selector => selector === "canvas" ? canvas : selector === "#look-status" ? lookStatus : focusHint},
   performance: {now: () => performance.now() + clockAdvance}, Uint8Array,
   window: {innerWidth: 960, innerHeight: 600,
     addEventListener: (name, fn) => windowEvents.set(name, fn),
@@ -298,6 +299,7 @@ def frame_equal(mirror, elapsed=0):
     assert mirror.browser.decision() == before == normalized(mirror.session.decision)
     remote_layout = mirror.browser.layout()
     remote_layout.pop('journal', None)  # Browser-only citation links; checked by _journal_test.
+    assert remote_layout.pop('look_status') == ''  # Original has no VGA fallback notice.
     assert remote_layout == normalized(layout(mirror.controller))
     assert mirror.browser.decision() == before, 'layout advanced the game'
     return frame

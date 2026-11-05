@@ -4,7 +4,7 @@ plays the SSI Gold Box games from your own copy.
 
 Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.
 
-**Alpha 0.1.** PC (DOS) editions only. Supported: the GOG release (recommended, buy it) or the original Collector's CD. We recommend the GOG releases as the supported way to own the games: Forgotten Realms: The Archives Collection One and Two, and Dungeons & Dragons: Krynn Series.
+**Alpha 0.1.1.** PC (DOS) editions only. Supported: the GOG release (recommended, buy it) or the original Collector's CD. We recommend the GOG releases as the supported way to own the games: Forgotten Realms: The Archives Collection One and Two, and Dungeons & Dragons: Krynn Series.
 
 With Python 3.12 or newer installed, open a terminal in this folder and run:
 
@@ -22,6 +22,6 @@ The **Plus** tile opens Journal, maps, help and display options. When the game c
 
 Report problems using [the alpha bug-report template](docs/ALPHA_BUG_REPORT.md), including the version and build shown on screen.
 
-For a release review, run `python -m sm.release`. It checks `sm/release_manifest.json` and builds `local/silvermachine-alpha-0.1.zip`. The cut includes tests: set `SM_SECRET` to your verified copy and run `python -m sm test`. Checks requiring excluded developer routes or installed save fixtures print `SKIP` with the missing dependency; the pristine new-party check runs without those fixtures.
+For a release review, run `python -m sm.release`. It checks `sm/release_manifest.json` and builds `local/silvermachine-alpha-0.1.1.zip`. The cut includes tests: set `SM_SECRET` to your verified copy and run `python -m sm test`. Checks requiring excluded developer routes or installed save fixtures print `SKIP` with the missing dependency; the pristine new-party check runs without those fixtures.
 
 Code licensed under MIT (see LICENSE); this covers our code only, never game data.

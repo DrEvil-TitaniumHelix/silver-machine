@@ -12,11 +12,11 @@
   };
   let saved, dqkAvailable = false;
   async function request(path, value) {
-    const response = await transport(path, {cache: "no-store", signal: AbortSignal.timeout(15000),
+    const response = await transport(path, {cache: "no-store", ...(path === '/browse' ? {} : {signal: AbortSignal.timeout(15000)}),
       headers: {"X-SM-Build": build, "Content-Type": "application/json"},
       ...(value === undefined ? {} : {method: "POST", body: JSON.stringify(value)})});
     const result = await response.json();
-    if (!response.ok) throw new Error(result.error === "build-mismatch" ? "The server changed. Reload this page." : result.error || "Request failed. Try again.");
+    if (!response.ok) throw new Error(result.error === "build-mismatch" ? "The server changed. Reload this page." : result.message || result.error || "Request failed. Try again.");
     return result;
   }
   function display() {
@@ -31,19 +31,45 @@
   }
   async function start() {
     try {
-      const state = await request("/preferences");
-      saved = state.options;
-      dqkAvailable = Boolean(state.dqk_frame);
+      let state = await request("/preferences");
       const folder = document.querySelector('#mods-folder');
       const browse = document.querySelector('#mods-browse'), apply = document.querySelector('#mods-apply'), clear = document.querySelector('#mods-clear');
-      folder.value = saved.mods_folder || '';
-      document.querySelector('#look-note').textContent = state.look_note || '';
-      controls.vga_frame.querySelector('[value=dqk]').disabled = !state.dqk_frame;
-      controls.vga_frame.querySelector('[value=dqk]').hidden = !state.dqk_frame;
+      const dqkFolder = document.querySelector('#dqk-folder'), dqkMessage = document.querySelector('#dqk-message');
+      const dqkBrowse = document.querySelector('#dqk-browse'), dqkApply = document.querySelector('#dqk-apply'), dqkClear = document.querySelector('#dqk-clear');
+      function refresh(next) {
+        state = next; saved = state.options; dqkAvailable = Boolean(state.dqk_frame);
+        folder.value = saved.mods_folder || '';
+        dqkFolder.value = state.dqk_copy?.folder || '';
+        dqkMessage.textContent = state.dqk_copy?.message || '';
+        document.querySelector('#look-note').textContent = state.look_note || '';
+        controls.vga_frame.querySelector('[value=dqk]').disabled = !dqkAvailable;
+        controls.vga_frame.querySelector('[value=dqk]').hidden = !dqkAvailable;
+        display();
+      }
       function enable(busy = false) {
         for (const [key, control] of Object.entries(controls)) control.disabled = busy || !state.supported.includes(key) || key === 'vga_frame' && saved.look !== 'vga';
         for (const control of [folder, browse, apply, clear]) control.disabled = busy || !state.supported.includes('mods_folder') || saved.look !== 'vga';
+        for (const control of [dqkFolder, dqkBrowse, dqkApply, dqkClear]) control.disabled = busy || !state.dqk_copy || state.dqk_copy.source !== 'settings';
       }
+      async function setCopy(value) {
+        enable(true); dqkMessage.textContent = value ? 'Checking Dark Queen frame and font…' : 'Clearing Dark Queen copy…';
+        try { const result = await request('/dqk-intake', {folder: value}); refresh(result); dqkMessage.textContent = result.message; }
+        catch (error) { dqkMessage.textContent = error.message; }
+        finally { enable(); }
+      }
+      dqkApply.onclick = () => dqkFolder.value.trim() ? setCopy(dqkFolder.value.trim()) :
+        (dqkMessage.textContent = 'Choose your Dark Queen folder first.');
+      dqkClear.onclick = () => setCopy('');
+      dqkBrowse.onclick = async () => {
+        enable(true); dqkMessage.textContent = 'Choose your Dark Queen folder in the native folder dialog.';
+        try {
+          const result = await request('/browse', {});
+          if (!result.cancelled && result.folder) dqkFolder.value = result.folder;
+          dqkMessage.textContent = result.cancelled ? 'Cancelled. The saved copy is unchanged.' : 'Folder selected. Verify and save it to continue.';
+        } catch (error) { dqkMessage.textContent = error.message; }
+        finally { enable(); }
+      };
+      refresh(state);
       async function setFolder(value) {
         enable(true);
         try { await request('/preferences', {mods_folder: value}); saved.mods_folder = value; folder.value = value; message.textContent = value ? 'Mods folder saved.' : 'Mods cleared.'; }

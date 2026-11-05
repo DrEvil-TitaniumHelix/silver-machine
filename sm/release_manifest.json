@@ -104,6 +104,15 @@
   ],
   "allowed_phrases": [
     {
+      "text": "The Dark Queen of Krynn",
+      "paths": [
+        "sm/ui/web/plus.html",
+        "sm/titles/ssb/ui/_vga_test.py",
+        "sm/release_manifest.json"
+      ],
+      "reason": "ALPHA_FIX4: requested GOG installation path hint and read-only optional test input"
+    },
+    {
       "text": "plays the SSI Gold Box games from your own copy.",
       "paths": [
         "README.md",
