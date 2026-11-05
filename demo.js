@@ -17,9 +17,10 @@ window.smTransport={
     if(options.signal?.aborted)throw options.signal.reason;
     const value=await call('rpc',{path,method:options.method||'GET',body:options.body||'',build:options.headers?.['X-SM-Build']||build});
     if(value.persisted)notice('Saved in this browser.');
-    return new Response(value.kind==='application/octet-stream'?value.body:JSON.stringify(value.body),{status:value.status,headers:{'Content-Type':value.kind}});
+    return new Response(value.kind==='application/octet-stream'?value.body:JSON.stringify(value.body),{status:value.status,headers:{'Content-Type':value.kind,...(value.overlay?{'X-SM-Overlay':value.overlay}:{})}});
   },
   assetURL:path=>path==='/journal.pdf'?pdfURL:null,
+  folders:{connect:connectFolder},
   onFrame:layout=>{state.frames++;state.layout=layout;},
   onError:error=>notice('The game stopped: '+error.message+'. Export your saves or reload to resume.',true),
   onQuit:()=>notice('Game closed. Your last safe progress is saved in this browser. Reload to resume.')
@@ -35,6 +36,44 @@ async function filesFromEntry(entry,prefix=''){
   const result=[],reader=entry.createReader();
   while(true){const batch=await new Promise((yes,no)=>reader.readEntries(yes,no));if(!batch.length)break;for(const child of batch)result.push(...await filesFromEntry(child,prefix+entry.name+'/'));}
   return result;
+}
+function connectFolder({kind,folder,browse,apply,clear,message,refresh,enable}){
+  folder.readOnly=true;folder.placeholder='No folder selected';browse.textContent='Choose folder…';apply.hidden=true;
+  const doc=folder.ownerDocument,drop=doc.createElement('div'),compat=doc.createElement('input');
+  drop.id=kind+'-drop';drop.className='browser-folder-drop';drop.tabIndex=0;
+  drop.textContent=`Drag your ${kind==='dqk'?'Dark Queen':'Mods'} folder here (from Explorer or Finder)`;
+  const note=doc.createElement('p');note.className='meta';
+  note.textContent='Files stay in this browser, including after reload. Nothing uploads. Clear removes this pick.';
+  folder.parentElement.before(drop);folder.parentElement.after(note);
+  compat.type='file';compat.webkitdirectory=true;compat.multiple=true;compat.hidden=true;compat.id=kind+'-compatibility';note.after(compat);
+  const failed=new Set();const failure=path=>{failed.add(path);if(failed.size===2)compat.hidden=false;};
+  async function choose(files){
+    if(browse.disabled)return;
+    enable(true);message.textContent='Checking local files…';
+    try{const next=await call('assets',{kind,files});refresh(next);message.textContent=next.message;}
+    catch(error){message.textContent=error.message;}
+    finally{enable();}
+  }
+  browse.onclick=async()=>{
+    if(!window.showDirectoryPicker){compat.hidden=false;compat.click();return;}
+    try{await choose(await filesFromHandle(await showDirectoryPicker({mode:'read'})));}
+    catch(error){message.textContent='This dialog cannot open Program Files, where GOG installs. Drag the folder here instead.';failure('choose');}
+  };
+  compat.onchange=()=>void choose([...compat.files].map(file=>({file,path:file.webkitRelativePath||file.name})));
+  drop.ondragover=event=>{event.preventDefault();drop.classList.add('over');};
+  drop.ondragleave=()=>drop.classList.remove('over');
+  drop.ondrop=event=>{
+    event.preventDefault();drop.classList.remove('over');
+    if(browse.disabled){message.textContent='Choose VGA to enable Mods, or wait for the current check.';return;}
+    // Capture legacy entries while the drop is live; Program Files refuses the handle API.
+    const work=[...event.dataTransfer.items].filter(i=>i.kind==='file').map(item=>{
+      const entry=item.webkitGetAsEntry?.(),file=entry?null:item.getAsFile();
+      return entry?filesFromEntry(entry):Promise.resolve(file?[{file,path:file.name}]:[]);
+    });
+    void Promise.all(work).then(groups=>choose(groups.flat())).catch(error=>{message.textContent=error.message;failure('drop');});
+  };
+  clear.onclick=()=>void choose(null);
+  if(kind==='mods')note.textContent+=' Use relative PNG paths inside this folder in mods.json.';
 }
 async function select(files){
   if(selected||!state.ready||!hasLock)return;

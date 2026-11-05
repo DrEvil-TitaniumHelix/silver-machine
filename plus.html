@@ -22,7 +22,7 @@
 <body>
   <header>
     <h1>Plus</h1>
-    <p class="meta">SilverMachine · Browser demo · Build 5f449b3f6163a6e1</p>
+    <p class="meta">SilverMachine · Browser demo · Build ee53d79c075019b3</p>
     <p class="meta">plays the SSI Gold Box games from your own copy.</p>
     <p class="meta">Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.</p>
     <p><a href="/">Back to game</a> · <a href="/setup">Game folder</a></p>
@@ -63,6 +63,15 @@
       <select id="vga-frame" disabled><option value="ssb">SSB</option><option value="dqk">Dark Queen</option></select>
     </label>
     <p id="look-note" class="meta"></p>
+    <label for="dqk-folder">Dark Queen copy</label>
+    <div class="toolbar"><input id="dqk-folder" type="text" aria-describedby="dqk-hint dqk-message" disabled>
+      <button id="dqk-browse" type="button" disabled>Browse…</button>
+      <button id="dqk-apply" type="button" disabled>Verify and save</button>
+      <button id="dqk-clear" type="button" disabled>Clear</button></div>
+    <p id="dqk-hint" class="meta">Choose the folder containing DISK1 and DISK3. Usual GOG locations:
+      <code>C:\Program Files (x86)\GOG Galaxy\Games\The Dark Queen of Krynn</code> or
+      <code>C:\Program Files\GOG Galaxy\Games\The Dark Queen of Krynn</code>.</p>
+    <p id="dqk-message" role="status" aria-live="polite"></p>
     <label class="coming" title="coming: requires another supported title and verified import rules">Party transfer between titles <input type="checkbox" disabled></label>
     <label title="VGA only. Choose your own folder containing mods.json and PNG replacements. Nothing is included with SilverMachine." for="mods-folder">Mods folder</label>
     <div class="toolbar"><input id="mods-folder" type="text" placeholder="Folder containing mods.json" disabled>

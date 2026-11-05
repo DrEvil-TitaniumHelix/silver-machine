@@ -2,6 +2,7 @@
 importScripts('storage.js');
 let pyodide, runner, application, requests, checkpoint, info, serial = Promise.resolve(), mounted = false;
 let savedDigest, build, runtimeStart, stateReady = false, imported = false;
+let assetSequence=0, selections={}, assetRoots={};
 const waits = new Map(), tasks = new Map();
 const hex = data => [...new Uint8Array(data)].map(b=>b.toString(16).padStart(2,'0')).join('');
 const bytes = proxy => {const result=new Uint8Array(proxy.toJs());proxy.destroy();return result;};
@@ -45,6 +46,71 @@ async function persist() {
   const digest=hex(await crypto.subtle.digest('SHA-256',archive));
   if(digest!==savedDigest){await saveStore.put(archive);savedDigest=digest;}
   return archive;
+}
+function folderLabels(value){
+  value.browser_folders={dqk:selections.dqk?.label||'',mods:selections.mods?.label||''};
+  return value;
+}
+function removeTree(root){
+  if(!root?.startsWith('/assets/'))return;
+  for(const name of pyodide.FS.readdir(root)){
+    if(name==='.'||name==='..')continue;
+    const path=root+'/'+name;
+    if(pyodide.FS.isDir(pyodide.FS.stat(path).mode))removeTree(path);else pyodide.FS.unlink(path);
+  }
+  pyodide.FS.rmdir(root);
+}
+async function prepareAssets(kind,files){
+  const catalog=new Map();
+  for(const item of files){
+    if(typeof item.path!=='string'||item.path.includes('\\')||item.path.split('/').some(p=>!p||p==='.'||p==='..'))throw Error('Invalid folder path');
+    const key=kind==='dqk'?item.path.toUpperCase():item.path;
+    if(catalog.has(key))throw Error('Duplicate file path; choose one folder');
+    catalog.set(key,item);
+  }
+  let chosen,label;
+  if(kind==='dqk'){
+    const roots=[...catalog.keys()].filter(p=>p.endsWith('/DISK1/GAME.FON')).map(p=>p.slice(0,-'DISK1/GAME.FON'.length));
+    if(roots.length!==1)throw Error('Choose one Dark Queen folder containing DISK1 and DISK3.');
+    const root=roots[0],required=['DISK1/GAME.FON','DISK1/ALWAYS.TLB','DISK3/FRAME.TLB'];
+    if(required.some(p=>!catalog.has(root+p)))throw Error('Dark Queen copy needs GAME.FON, ALWAYS.TLB and FRAME.TLB in DISK1/DISK3.');
+    label=catalog.get(root+required[0]).path.slice(0,-('DISK1/GAME.FON'.length+1)).split('/').pop();
+    if(catalog.has(root+'DQK.EXE'))required.push('DQK.EXE');
+    chosen=required.map(path=>({file:catalog.get(root+path).file,path}));
+  }else{
+    const indexes=[...catalog.values()].filter(x=>x.path.split('/').pop()==='mods.json');
+    if(indexes.length!==1)throw Error('Choose one Mods folder containing mods.json and its PNG files.');
+    const index=indexes[0],prefix=index.path.slice(0,-'mods.json'.length);
+    if(index.file.size>1024*1024)throw Error('Mods index exceeds 1 MiB');
+    const entries=JSON.parse(await index.file.text());
+    if(!Array.isArray(entries)||entries.length>4096)throw Error('Expected a list of at most 4096 mods');
+    const paths=new Set(['mods.json']);
+    for(const entry of entries){
+      const png=entry?.png;
+      if(typeof png!=='string'||/[\\:]/.test(png)||png.split('/').some(p=>!p||p==='.'||p==='..')||!png.toLowerCase().endsWith('.png'))
+        throw Error('Use relative PNG paths inside the selected Mods folder.');
+      if(!catalog.has(prefix+png))throw Error('Missing mod PNG: '+png+'. Include it inside the Mods folder.');
+      paths.add(png);
+    }
+    label=prefix.slice(0,-1).split('/').pop()||'Mods';
+    chosen=[...paths].map(path=>({file:catalog.get(prefix+path).file,path}));
+  }
+  if(chosen.some(x=>x.file.size>16*1024*1024)||chosen.reduce((n,x)=>n+x.file.size,0)>64*1024*1024)throw Error('Selected assets exceed the 16 MiB file or 64 MiB folder limit.');
+  return {label,files:chosen};
+}
+async function mountAssets(kind,selection){
+  const root=selection?'/assets/'+kind+'-'+(++assetSequence):'';
+  try{
+    if(selection)for(const {file,path} of selection.files){
+      const target=root+'/'+path;pyodide.FS.mkdirTree(target.slice(0,target.lastIndexOf('/')));
+      pyodide.FS.writeFile(target,new Uint8Array(await file.arrayBuffer()));
+    }
+    const result=JSON.parse(await requests.callPromising(kind==='dqk'?'/dqk-intake':'/preferences','POST',JSON.stringify(kind==='dqk'?{folder:root}:{mods_folder:root}),build));
+    if(result.status>=400)throw Error(result.body.message||result.body.error||'Could not apply folder');
+  }catch(error){if(root&&pyodide.FS.analyzePath(root).exists)removeTree(root);throw error;}
+  const previous=assetRoots[kind];assetRoots[kind]=root;selections[kind]=selection;
+  if(previous)removeTree(previous);
+  return folderLabels(JSON.parse(await requests.callPromising('/preferences','GET','',build)).body);
 }
 async function boot() {
   if(typeof WebAssembly.Suspending!=='function'||typeof WebAssembly.promising!=='function')
@@ -98,6 +164,8 @@ async function mount(data) {
   pyodide.globals.set('_build',build);pyodide.globals.set('_book',JSON.stringify(data.book));
   pyodide.runPython("application=Application(_build,json.loads(_book)); del _build,_book");
   application=pyodide.globals.get('application');requests=application.request;checkpoint=application.checkpoint;info=application.info;
+  const remembered=await saveStore.read('assets')||{};
+  for(const kind of ['dqk','mods'])await mountAssets(kind,remembered[kind]||null);
   mounted=true;
   return {edition:inspection.version_id,label:inspection.version,files:candidates[0].size,bytes:total,intake_ms:performance.now()-start,...JSON.parse(info())};
 }
@@ -105,6 +173,14 @@ async function dispatch(data, fast=false) {
   if(data.type==='boot')return boot();
   if(data.type==='mount')return mount(data);
   if(!mounted)throw Error('Choose your game folder first');
+  if(data.type==='assets'){
+    if(!['dqk','mods'].includes(data.kind))throw Error('Unknown asset folder');
+    const selection=data.files===null?null:await prepareAssets(data.kind,data.files);
+    const result=await mountAssets(data.kind,selection);
+    await saveStore.write('assets',selections);await persist();
+    result.message=selection?(data.kind==='dqk'?result.dqk_copy.message:'Mods verified.')+' Saved in this browser.':'Folder pick cleared.';
+    return result;
+  }
   if(data.type==='start'){
     const start=performance.now();
     const result=await application.start.callPromising(!!data.resume);
@@ -126,6 +202,7 @@ async function dispatch(data, fast=false) {
     if(imported)return new Promise(()=>{});
     const wasRest=application.interruptible();
     const result=JSON.parse(await requests.callPromising(data.path,data.method||'GET',data.body||'',data.build||build));
+    if(result.body?.options)folderLabels(result.body);
     if(!fast&&result.status<400&&((data.method||'GET')==='POST'||wasRest)){
       await persist();
       result.persisted=true;
@@ -137,7 +214,7 @@ async function dispatch(data, fast=false) {
 }
 function respond(data, fast=false){
   return dispatch(data,fast).then(value=>postMessage({id:data.id,ok:true,value}),error=>{
-    console.error(error.stack||String(error));
+    if(data.type!=='assets')console.error(error.stack||String(error));
     postMessage({id:data.id,ok:false,error:String(error)});
   });
 }

@@ -8,7 +8,7 @@
 
 (() => {
   const transport = (...args) => window.smTransport ? window.smTransport.request(...args) : fetch(...args);
-  const build = "5f449b3f6163a6e1";
+  const build = "ee53d79c075019b3";
   const canvas = document.querySelector("canvas");
   const focusHint = document.querySelector("#focus-hint");
   const context = canvas.getContext("2d", {alpha: false});
@@ -261,6 +261,12 @@
     if (nextMods === undefined) { frameRequested = true; return; }
     if (running) {
       layout = nextLayout;
+      const lookStatus = document.querySelector('#look-status');
+      if (lookStatus && lookStatus.textContent !== (layout.look_status || '')) {
+        lookStatus.textContent = layout.look_status || '';
+        lookStatus.hidden = !layout.look_status;
+        resize();
+      }
       const links = document.querySelector('#journal-links');
       const cited = JSON.stringify(layout.journal || []);
       if (links?.replaceChildren && links.dataset.cited !== cited) {
