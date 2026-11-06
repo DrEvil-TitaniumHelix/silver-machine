@@ -8,7 +8,7 @@
 
 (() => {
   const transport = (...args) => window.smTransport ? window.smTransport.request(...args) : fetch(...args);
-  const build = "bb4eae3bfc6de720";
+  const build = "2bd1fc567afa5c75";
   const canvas = document.querySelector("canvas");
   const focusHint = document.querySelector("#focus-hint");
   const context = canvas.getContext("2d", {alpha: false});

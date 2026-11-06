@@ -91,7 +91,7 @@ async function select(files){
     const result=await call('mount',{files,book});state.intake=result;selected=true;
     byId('welcome').hidden=true;byId('start-options').hidden=false;byId('resume').hidden=!result.resume;
     byId('copy').textContent=result.edition==='gog'?'GOG copy verified.':'Collector’s CD copy verified.';
-    notice(result.resume?'Your saved game is ready. Resume it, or create a new party.':'Your copy is verified. Create a party to begin.');
+    notice(result.resume?'Your saved game is ready. Resume it, or choose Play.':'Your copy is verified. Choose Play to begin.');
   }catch(error){notice(error.message,true);byId('choose').disabled=byId('folder').disabled=false;}
 }
 async function start(resume){

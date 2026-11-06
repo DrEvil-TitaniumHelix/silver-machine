@@ -3,7 +3,7 @@
   const transport = (...args) => window.smTransport ? window.smTransport.request(...args) : fetch(...args);
   const panel = document.querySelector('#journal-panel');
   if (!panel) return;
-  const headers = {'X-SM-Build': 'bb4eae3bfc6de720', 'Content-Type': 'application/json'};
+  const headers = {'X-SM-Build': '2bd1fc567afa5c75', 'Content-Type': 'application/json'};
   const requested = Number(new URLSearchParams(location.search).get('entry'));
   let data, selected = requested || null, subtab = 'entries';
   function el(tag, text, parent) {

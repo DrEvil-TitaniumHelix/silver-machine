@@ -1,28 +1,28 @@
 {
-  "build": "bb4eae3bfc6de720",
+  "build": "2bd1fc567afa5c75",
   "pyodide": "0.28.3",
-  "bytes": 12859323,
-  "gzip_bytes": 5948271,
+  "bytes": 12859325,
+  "gzip_bytes": 5948288,
   "files": {
     "app.js": {
       "bytes": 19889,
-      "sha256": "82da87624437690377d1d6c558c274ace8a092ec196b8e9ef80276399b5950c0"
+      "sha256": "648f7319f180df00c845597e9873fde650ad0edf5ea9ad19a1d5b5c7c2da162a"
     },
     "demo.css": {
       "bytes": 3188,
       "sha256": "e9e18aefdc66c9207ff9277c2f14c237519bd29c629c363745eac1243474f703"
     },
     "demo.js": {
-      "bytes": 11634,
-      "sha256": "162836152e1fd1811d7370cccf24b819e84482b3f60b37d9afdf7e6d42248daf"
+      "bytes": 11624,
+      "sha256": "d14ee0b841ca232fe9c816265fe299556dd961db40ee356d08efead27ec91df8"
     },
     "engine.zip": {
-      "bytes": 456376,
-      "sha256": "5fa35173f5860ca96e6ae7e8738855e81773d679adbc28606cbf745c058e186c"
+      "bytes": 456375,
+      "sha256": "fb2dba7661418a62c00064006efdd95b33db750ab7e6f9c5966a09e065ef26ea"
     },
     "index.html": {
-      "bytes": 3687,
-      "sha256": "2906f1776931f532cc19a6ab18ed4c8073569060565fa921f1f6d0b550e7da5d"
+      "bytes": 3700,
+      "sha256": "6bc2d581665f37d0ecbae99bc5ec5f136b43defd82d97ae29f90755204a79783"
     },
     "journal.css": {
       "bytes": 936,
@@ -30,7 +30,7 @@
     },
     "journal.js": {
       "bytes": 8676,
-      "sha256": "d07e5c528331a719920bc97202f1e0a6710a2bf153181233254462559bcd383a"
+      "sha256": "581fbe29cfb613529d05f5c5991cbde8aed0d9e393bf40b0ead3103ab3fb6a08"
     },
     "LICENSE": {
       "bytes": 1063,
@@ -46,11 +46,11 @@
     },
     "plus.html": {
       "bytes": 6548,
-      "sha256": "a3b58319b73cbe68f5542af83805733e5668779852664b7e8ccffd6194c4d64c"
+      "sha256": "c959d86aec135894d6d114151c414978f75025baa8fb65079c924ef026cee875"
     },
     "plus.js": {
       "bytes": 24644,
-      "sha256": "2df9dea44d1756d33b84fa075ee3e7651a41b9990bc0ee45fc771dfd4403744c"
+      "sha256": "d05b5dc1272d3443011e676fa7df21ffbdd117f8b07c31b57fbd25907d4728f4"
     },
     "RUNTIME-NOTICES.txt": {
       "bytes": 304,
@@ -107,8 +107,8 @@
   },
   "sources": {
     "LICENSE": "035f7868d27f62a26db39630613b684c25accf2174262fe9c29d1f66891454cc",
-    "README.md": "7895b177c5660e7ca20afe5b8ce2bb223ae3dc3ac2299938e382a13830776515",
-    "docs/ALPHA_BUG_REPORT.md": "0d1cf6a32c5b275460867a6ba2cf8cbbed41a8994d4effcd76964ce55f4a74af",
+    "README.md": "1391d046960774271f70be5d72e241811c05d11e449fa02f2f227ad92d11c8b0",
+    "docs/ALPHA_BUG_REPORT.md": "3f1ceee58bfd860201430515337291ac2c568978ab8ebc28fbda017cd2b89e97",
     "sm/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "sm/__main__.py": "9c0d3f03136894e7c70c12d098154c3d6ba6549fe7b61a8dde2a994a5729210f",
     "sm/_engine_test.py": "b38f47371111fcdbf5a4efc94147d921b5c1fbbbf70fe2d27f4ec5eb8bd8c08a",
@@ -120,7 +120,7 @@
     "sm/engine.py": "683c3d149b5e52bbf80ea900d8ceeeee956f1a1927181f78e4d78eb83612c7bb",
     "sm/files.py": "eee00647b590f9d6927cda481030cced941d23e94cbe2814c491cfc9ff1a9364",
     "sm/rec.py": "0e67de392468cbc853516bcb18d23adc4eb8802e805901b09a18a524903729df",
-    "sm/release.py": "52b7a8faa201d15eebc319d714c688e7828f3660075997f4f31b7aea2344d0ec",
+    "sm/release.py": "3f4c30dceb51fa8d1d2a141e3fc44db603b17c0670135181eacda356eb72b521",
     "sm/release_manifest.json": "a1dab1e775d59041638edead48a8696a75c8a9998854d6168f5ba33d1988c64b",
     "sm/replay.py": "d47ba6d162a31fa13d1a7675019391715424cf5a2ce8d0d058b39a6e652398b6",
     "sm/search.py": "629bcab6754503634190f17ca6e15f69ce011b6903c67da1e9d71d29312382c3",
@@ -128,12 +128,12 @@
     "sm/titles/__init__.py": "00898cca464c4cfc0dbd3acd9585e8f673af327149c2b75073ca688226285063",
     "sm/titles/ssb/__init__.py": "bdf1249e86478bb048c0ec512e26e82958f337319a7f86281c7355844e2ab237",
     "sm/titles/ssb/_cli.py": "5709d29280181da944b27a3a0d4003857716bdc75f06290f0da0f26e74080f44",
-    "sm/titles/ssb/_intake_test.py": "23e0381cea873ba97818b4052bff8184d9b35060e98390b252839c4455d9c6a8",
+    "sm/titles/ssb/_intake_test.py": "1a53bc43499d02b6faf72970e3e6f95c6a32e9faa4936de5ddbe6378087bea33",
     "sm/titles/ssb/_start_test.py": "946547697811c477d381a2803c589430ae4fdca8e94655048ec1f4d724ea9569",
     "sm/titles/ssb/art.py": "ade763569530be0586180b74a50529cf0c515b6046cbe75f6acc9c35ddcc257c",
     "sm/titles/ssb/data.py": "e756e385dd190dc01f511d5dbc172a81876f899c21f313b0a28d9813dc424dc3",
     "sm/titles/ssb/host.py": "818c02eb62265224aeff4b8b7966562ec214e720e1e88dbc26cf700ddcf55d63",
-    "sm/titles/ssb/intake.py": "377362c86ec511c0c8b533a1721e2b40e5feec8289e0c88445696aa81c273fc2",
+    "sm/titles/ssb/intake.py": "9e178b4f39e3e1dd82da9733b22d146e70d4b29aae86ffd093a80d955d0dde60",
     "sm/titles/ssb/player.py": "48c723149718218fb82b7710755d0cb96f5892f82aacb30cae7c4e7c8d58254b",
     "sm/titles/ssb/rec.py": "f2787f1091421df09f3fb974b936ce413f9706d69236899fdf976f3495d41cf7",
     "sm/titles/ssb/resolve.py": "f2178fac3655d23a25e0efc74369271c5dcb8d3cde8182ad12c11f9194760a91",
