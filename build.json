@@ -1,12 +1,12 @@
 {
-  "build": "ee53d79c075019b3",
+  "build": "bb4eae3bfc6de720",
   "pyodide": "0.28.3",
-  "bytes": 12857309,
-  "gzip_bytes": 5946262,
+  "bytes": 12859323,
+  "gzip_bytes": 5948271,
   "files": {
     "app.js": {
       "bytes": 19889,
-      "sha256": "b835ee621002b2bca277db18081a1603d36fb03a511b5fa34d8826fa98c9489e"
+      "sha256": "82da87624437690377d1d6c558c274ace8a092ec196b8e9ef80276399b5950c0"
     },
     "demo.css": {
       "bytes": 3188,
@@ -17,8 +17,8 @@
       "sha256": "162836152e1fd1811d7370cccf24b819e84482b3f60b37d9afdf7e6d42248daf"
     },
     "engine.zip": {
-      "bytes": 454381,
-      "sha256": "054d5e7cf60dfaeed01cecb6ab9e52f64f04a5da7525af714fd4aa0389990f13"
+      "bytes": 456376,
+      "sha256": "5fa35173f5860ca96e6ae7e8738855e81773d679adbc28606cbf745c058e186c"
     },
     "index.html": {
       "bytes": 3687,
@@ -30,7 +30,7 @@
     },
     "journal.js": {
       "bytes": 8676,
-      "sha256": "b575208d9ef3e78d496c91120bc4ab1da6227bea9939579d378081f6840f6978"
+      "sha256": "d07e5c528331a719920bc97202f1e0a6710a2bf153181233254462559bcd383a"
     },
     "LICENSE": {
       "bytes": 1063,
@@ -46,11 +46,11 @@
     },
     "plus.html": {
       "bytes": 6548,
-      "sha256": "a4257d02113544543887156fce72c613bd4c8b1c40b262a0db14caef8b164c6e"
+      "sha256": "a3b58319b73cbe68f5542af83805733e5668779852664b7e8ccffd6194c4d64c"
     },
     "plus.js": {
       "bytes": 24644,
-      "sha256": "d989f5260402fb3c7532491b77e3e7c3ecb228508faa464cbe25df8646a433c0"
+      "sha256": "2df9dea44d1756d33b84fa075ee3e7651a41b9990bc0ee45fc771dfd4403744c"
     },
     "RUNTIME-NOTICES.txt": {
       "bytes": 304,
@@ -61,8 +61,8 @@
       "sha256": "dbd76390470ad6c9ca6118f707c3f70abee62e45452878a2cd5d5c34c392d3e0"
     },
     "worker.js": {
-      "bytes": 12704,
-      "sha256": "e4dc533cff79bc891d8519582de7ebdc97b37f321c20de34af53364f6b68c54c"
+      "bytes": 12723,
+      "sha256": "4ccba49a72a258885f4e11450fe462c7048994b06dbb9689a217a0b3baef5031"
     },
     "licenses/EMSCRIPTEN-LICENSE.txt": {
       "bytes": 5093,
@@ -129,13 +129,13 @@
     "sm/titles/ssb/__init__.py": "bdf1249e86478bb048c0ec512e26e82958f337319a7f86281c7355844e2ab237",
     "sm/titles/ssb/_cli.py": "5709d29280181da944b27a3a0d4003857716bdc75f06290f0da0f26e74080f44",
     "sm/titles/ssb/_intake_test.py": "23e0381cea873ba97818b4052bff8184d9b35060e98390b252839c4455d9c6a8",
-    "sm/titles/ssb/_start_test.py": "dd6b92431ebb7999c3a09da7b43117e7f0c2a535f04fd1fb49c8a135dc8b298b",
+    "sm/titles/ssb/_start_test.py": "946547697811c477d381a2803c589430ae4fdca8e94655048ec1f4d724ea9569",
     "sm/titles/ssb/art.py": "ade763569530be0586180b74a50529cf0c515b6046cbe75f6acc9c35ddcc257c",
     "sm/titles/ssb/data.py": "e756e385dd190dc01f511d5dbc172a81876f899c21f313b0a28d9813dc424dc3",
     "sm/titles/ssb/host.py": "818c02eb62265224aeff4b8b7966562ec214e720e1e88dbc26cf700ddcf55d63",
     "sm/titles/ssb/intake.py": "377362c86ec511c0c8b533a1721e2b40e5feec8289e0c88445696aa81c273fc2",
     "sm/titles/ssb/player.py": "48c723149718218fb82b7710755d0cb96f5892f82aacb30cae7c4e7c8d58254b",
-    "sm/titles/ssb/rec.py": "13baf2a8cf1ec62c9eec78bac3d52b80c2c7151b729d72e95f3c69baa35eb101",
+    "sm/titles/ssb/rec.py": "f2787f1091421df09f3fb974b936ce413f9706d69236899fdf976f3495d41cf7",
     "sm/titles/ssb/resolve.py": "f2178fac3655d23a25e0efc74369271c5dcb8d3cde8182ad12c11f9194760a91",
     "sm/titles/ssb/route.py": "3cb859b0c0836764616e7f9423dc9c7181a5e21de8daec1a57f1800c41cadc70",
     "sm/titles/ssb/save.py": "6664b3aba4e33931d44d82a7be3f0c4d30068b5add47d74386a87ef07f87c5fa",
@@ -170,7 +170,7 @@
     "sm/titles/ssb/units/_services_test.py": "9ae6226145d309cbaac42d33f34819a2b66162f0abe877db270442e9e72b777d",
     "sm/titles/ssb/units/camp.py": "7f261018254e117c4351c94bc7fc9e7708668e74d35d537cc2dffd398b360cac",
     "sm/titles/ssb/units/combat.py": "e41005cc06bc4912d39b13f74b433e7533c0849e611a60a4e03eb770d71028cd",
-    "sm/titles/ssb/units/creation.py": "3109026ddb6b4037c2ba5ce9d1de85d70e41a03a1f91e86425483a421af209e4",
+    "sm/titles/ssb/units/creation.py": "8ce14911a677ba20106bc52192d9d16780f91edf4346773807270e76b5211691",
     "sm/titles/ssb/units/magic.py": "18afc2bf8aa5579296582b11ea55a6df26abef98128347ec100ce653274f9e05",
     "sm/titles/ssb/units/shops.py": "5ab6895579bf6852f6427612def8a8e86c8ef208f741d450fc4b3fe919799aed",
     "sm/titles/ssb/vm.py": "0c9a995326ac983ba79c1c99e7da110b41868f0c379bcd976aeffc95fa4688cb",
@@ -186,7 +186,7 @@
     "sm/ui/png.py": "1ae8fd10b5424f519336ea089d638ac42bbd3a18895d266feebf4a65a9fa4408",
     "sm/ui/vga_skin.py": "8b56a652e95b805d794f6c7c2ff2f3d9300971482cd4cbebc6e0603ab785a464",
     "sm/ui/vga_tile.py": "9681cc685b55112fc58146e7fa14399cd8496f6d8be355f3224fe72dd195b4ff",
-    "sm/ui/web.py": "3e4a6e1df57580c2c23264c545982eb33f6bb37393bfc41a9c62720cef224b42",
+    "sm/ui/web.py": "12cb03778808a332c4f9b6c5d95dd75b81cd08ea82db9b17c5f8215af4944226",
     "sm/ui/web/app.js": "5f8f09eed8f9e0cbf822bef0033b846daf6018a80b5bbe7a0c03f50fcc303c34",
     "sm/ui/web/index.html": "042ec06eb3f003aeb196150f4bbe7f352415ae768ac3ddc5853568b84b9f3081",
     "sm/ui/web/journal.css": "edb0e2d183e9e43ade60a28cbf66c1141b609261d7d7b0a0148d38cec2cd5c6e",
@@ -196,7 +196,7 @@
     "sm/ui/web/plus.js": "50c45db97f6c579b26a3b74f4cf72b3aa872c8763d71b9b12010d5b251ef1c49",
     "sm/ui/web/setup.html": "55be1878b073fff116f524a48d652829fc18fdab4a69ea04f608e67a90bdddfb",
     "sm/ui/web/setup.js": "fb79e2fb4de3098085cd2555577845c445ad4e574484b6322f3022ee0be9d751",
-    "sm/web/api.py": "cce74550dd0ada6106a044c8ddaf149e359004622dabd47c251605c2aa654d28",
+    "sm/web/api.py": "4a965712a7b32c89a881033fa1615dc47802a5c25688affc79baf6523a47f7bf",
     "sm/web/saves.py": "d8501b08085536c41c8b340fc101752de0f26b84cf943f8c6ff0ff19077c8b00",
     "sm/web/session.py": "1f0244486633b0eb88609a30940cdebc44260d1cc9ae66d0c6f148fce23fb3e4",
     "sm/web/__init__.py": "79d426c6b46797d3b68392664ccc9a4887899062870ebb7dbef5903b649adc4a"

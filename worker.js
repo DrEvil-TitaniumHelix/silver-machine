@@ -166,6 +166,7 @@ async function mount(data) {
   application=pyodide.globals.get('application');requests=application.request;checkpoint=application.checkpoint;info=application.info;
   const remembered=await saveStore.read('assets')||{};
   for(const kind of ['dqk','mods'])await mountAssets(kind,remembered[kind]||null);
+  await persist();
   mounted=true;
   return {edition:inspection.version_id,label:inspection.version,files:candidates[0].size,bytes:total,intake_ms:performance.now()-start,...JSON.parse(info())};
 }
