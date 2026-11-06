@@ -6,7 +6,7 @@
   2.
 - What you expected:
 - What you saw:
-- Version and copy shown on screen (for example, Alpha 0.1.1 / Collector's CD):
+- Version and copy shown on screen (for example, Alpha 0.1.2 / Collector's CD):
 - Build shown on screen:
 - Operating system and browser:
 

@@ -38,8 +38,8 @@
       const dqkBrowse = document.querySelector('#dqk-browse'), dqkApply = document.querySelector('#dqk-apply'), dqkClear = document.querySelector('#dqk-clear');
       function refresh(next) {
         state = next; saved = state.options; dqkAvailable = Boolean(state.dqk_frame);
-        folder.value = saved.mods_folder || '';
-        dqkFolder.value = state.dqk_copy?.folder || '';
+        folder.value = state.browser_folders?.mods ?? (saved.mods_folder || '');
+        dqkFolder.value = state.browser_folders?.dqk ?? (state.dqk_copy?.folder || '');
         dqkMessage.textContent = state.dqk_copy?.message || '';
         document.querySelector('#look-note').textContent = state.look_note || '';
         controls.vga_frame.querySelector('[value=dqk]').disabled = !dqkAvailable;
@@ -84,6 +84,10 @@
         catch (error) { message.textContent = error.message; }
         finally { enable(); }
       };
+      if (window.smTransport?.folders) {
+        window.smTransport.folders.connect({kind:'dqk',folder:dqkFolder,browse:dqkBrowse,apply:dqkApply,clear:dqkClear,message:dqkMessage,refresh,enable});
+        window.smTransport.folders.connect({kind:'mods',folder,browse,apply,clear,message,refresh,enable});
+      }
       display();
       for (const [key, control] of Object.entries(controls)) {
         control.addEventListener("change", async () => {

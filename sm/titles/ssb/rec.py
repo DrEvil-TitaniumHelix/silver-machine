@@ -360,28 +360,25 @@ def oracle(slot, party_bonus=None):
     return out
 
 
-def max_party(write=True, root=None):
-    """GU-69: save A's six identities, capped stats and native equipment; only local/saves/M is written.
+def maximize_party(s, equipment=None):
+    """Cap a live state's party using only the player's installed tables and items.
 
     ENGINE_READ2_g1 ov19:4B45 race limits; XP/level ceiling DS:5064 + BBh*class + 4*level
     (first nonpositive next-level entry); ability bounds DS:4D9D/4DA1; maximum dice through
     LevelUpHp ov19:4840, DS:09B0/09B7/4CA9/5052. Equipment comes from complete original
     ITEM1..3 records (ov03:1E3D), with MakeTreasureItem's 67-byte layout, never type-only stubs.
-    The scope cut keeps existing spells and omits rings. No party RNG is consumed by setup.
+    Optional equipment entries are (ITEM area, record id, item index), never record bytes.
+    No party RNG is consumed by setup.
     """
     from types import SimpleNamespace
-    from sm.titles.ssb import save
-    from sm.titles.ssb.state import State, Char
     from sm.titles.ssb.units import creation, shops, combat
-    from sm.titles.ssb.ui import screen
-    data = save.load(slot='A'); s = State(); save.restore(s, data)
     game = SimpleNamespace(s=s); ds = ssb_data.stexe()
-    stock = [bytearray(raw[j:j + 63] + bytes(4)) for area in (1, 2, 3)
-             for raw in dax.load('ITEM%d' % area, d=ssb_data.SECRET).values() for j in range(0, len(raw), 63)]
-    stock = [it for it in stock if len(it) == 67 and not it[0x36] and sx(it[0x32]) >= 0]
+    catalog = {(area, rid, j // 63): bytearray(raw[j:j + 63] + bytes(4)) for area in (1, 2, 3)
+               for rid, raw in dax.load('ITEM%d' % area, d=ssb_data.SECRET).items() for j in range(0, len(raw), 63)}
+    stock = [it for it in catalog.values() if len(it) == 67 and not it[0x36] and sx(it[0x32]) >= 0]
     for c in s.party:                                                     # Goldsmith 18:38: Bruce's build has TWO magic-users: Epona (human, INT 18) -> magic-user
         if bytes(c.b[1:1 + c.b[0]]) == b'EPONA': c.b[0x6C] = 5; c.b[0x111:0x118] = bytes([0, 0, 0, 0, 0, 1, 0]); c.b[0x118:0x11F] = bytes(7); c.b[0x121] = 2   # non-warrior attacks (ov27:0366 raises warriors only)
-    for c in s.party:
+    for member, c in enumerate(s.party):
         b = c.b; classes = [i for i, lv in enumerate(b[0x111:0x118]) if lv]
         for a in range(6): b[0x10 + 2*a] = b[0x11 + 2*a] = min(18, creation.ability_limits(c, a)[1])
         b[0x1C] = b[0x1D] = min(100, ds[0x4DA1 + b[0x6B]*16 + b[0x11F]]) if any(i in (2, 3, 4) for i in classes) and b[0x11] == 18 else 0
@@ -410,12 +407,13 @@ def max_party(write=True, root=None):
         if weapons: gear.append(max(weapons, key=lambda it: (combat.Combat.weapon_score(None, c, it), -rdw(it, 0x37))))
         if armour: gear.append(max(armour, key=lambda it: ((_T(it, 6) & 127) + sx(it[0x32]), -rdw(it, 0x37))))
         if shields: gear.append(max(shields, key=lambda it: (sx(it[0x32]), -rdw(it, 0x37))))
+        if equipment is not None: gear = [catalog[key] for key in equipment[member]]
         for source in gear:
             it = bytearray(source); it[0x2A:0x2E] = bytes(4); it[0x3F:0x43] = bytes(4); it[0x34] = 0
             c.items.append(it)
             if not shops.ready(game, c, it): raise ValueError('max party equipment cannot be readied')
         loaded_character(c, s.r1[0x372]); recalc_character(c, s.r1[0x372])
-        for slot_class, n in ((3, 1), (5, 1), (7, 1), (8, 1), (9, 2), (10, 1), (2, 1)):   # Goldsmith 18:38: helm, cloak, gauntlets, belt, 2 rings, misc,
+        for slot_class, n in (() if equipment is not None else ((3, 1), (5, 1), (7, 1), (8, 1), (9, 2), (10, 1), (2, 1))):   # helm, cloak, gauntlets, belt, rings, misc,
             for _ in range(n):                                            # armour for those without (bracers): kept only if AC improves
                 tried = set()
                 for it0 in sorted((it for it in eligible if _T(it, 0) == slot_class), key=lambda it: -sx(it[0x32])):
@@ -428,6 +426,16 @@ def max_party(write=True, root=None):
                         shops.ready(game, c, it) if it[0x34] else None
                     c.items.remove(it); loaded_character(c, s.r1[0x372]); recalc_character(c, s.r1[0x372])
         expert_spells(c)
+    return s
+
+
+def max_party(write=True, root=None):
+    """GU-69 compatibility: maximize the installed starter save and optionally write M."""
+    from sm.titles.ssb import save
+    from sm.titles.ssb.state import State
+    from sm.titles.ssb.ui import screen
+    data = save.load(slot='A'); s = State(); save.restore(s, data)
+    maximize_party(s)
     data['slot'] = 'M'; data['names'] = ['CHRDATM%d' % (i + 1) for i in range(len(s.party))]
     data['party'] = []
     for c in s.party:
@@ -435,6 +443,51 @@ def max_party(write=True, root=None):
         data['party'].append(r)
     if write: screen.write_slot_files(save.dump(data), 'M', root or screen.SAVE_ROOT)
     return data
+
+
+# GU-130: player-authored identity choices and item references only. No native images.
+# name, race, class (Epona is a magic-user), alignment, gender, icon head/body/size, gear.
+MAX_PARTY_RECIPE = (
+    ('Guy de Valois ', 6, 3, 0, 0, (5, 24, 2), ((3, 98, 1), (2, 55, 1), (3, 81, 1), (1, 20, 0))),
+    ('PAINE',         6, 4, 0, 0, (5, 1, 2),  ((3, 98, 1), (2, 55, 1), (3, 81, 1), (1, 20, 0))),
+    ('EPONA',         6, 5, 1, 1, (9, 24, 2), ((2, 68, 1), (1, 20, 0), (2, 52, 0), (2, 67, 0))),
+    ('MALACHITE',     3, 14, 3, 0, (0, 24, 1), ((3, 98, 1), (2, 55, 1), (3, 81, 1), (1, 20, 0))),
+    ('DOMINIC',       6, 0, 0, 0, (5, 23, 2), ((1, 99, 34), (2, 55, 1), (3, 81, 1), (1, 20, 0))),
+    ('MORGAINE',      6, 5, 4, 1, (9, 29, 2), ((2, 68, 1), (1, 20, 0), (2, 52, 0), (2, 67, 0))),
+)
+
+
+def seed_max_party(root=None):
+    """First intake: create native A from New Game state; preserve any occupied A directory."""
+    from sm.titles.ssb.host import Game
+    from sm.titles.ssb.units import creation
+    from sm.titles.ssb.ui import screen
+    root = root if root is not None else screen.SAVE_ROOT
+    target = screen.slot_directory('A', root)
+    if target.exists() and (not target.is_dir() or any(target.iterdir())): return False
+    choices = {}
+    def choose(kind, options, game, **info):
+        value = choices[kind]
+        return options.index(value) if options is not None else value
+    game = Game(choose, slot=None, engines=True, directory=root)
+    for name, race, cls, alignment, gender, icon, gear in MAX_PARTY_RECIPE:
+        choices.update(CREATE_RACE=race, CREATE_CLASS=cls, CREATE_ALIGNMENT=alignment, CREATE_GENDER=gender,
+                       CREATE_NAME=name, CREATE_ROLL='keep', CREATE_ICON='keep', CREATE_SAVE='cancel')
+        c = creation.create(game)
+        identity = name.encode('latin1'); c.b[:16] = bytes([len(identity)]) + identity + bytes(15 - len(identity))
+        c.b[0x153], c.b[0x154], c.b[0x156] = icon
+        c.b[0x155] = len(game.s.party)
+        game.s.party.append(c)
+    game.s.r1[0x33E] = len(game.s.party)
+    maximize_party(game.s, [row[-1] for row in MAX_PARTY_RECIPE])
+    # Game.boot selects dataset 2 / block 17 when [4BF2] is zero. LoadGame loads
+    # that block before boot, so store the starting dataset, not the menu's 1.
+    game.s.dataset = 2
+    # snapshot uses save.dump and the same initial regions/position as New Game.
+    files = screen.snapshot(game, 'A')
+    if target.exists() and any(target.iterdir()): return False
+    screen.write_slot_files(files, 'A', root)
+    return True
 
 
 # Bruce 18:26: the expert loadout per spell level, ids from ENGINE_READ2_g2 (checked against the ST.EXE spell table DS:449D: byte 0 class 0 cleric

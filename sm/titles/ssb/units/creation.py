@@ -474,7 +474,11 @@ def run(game):
                 from sm.titles.ssb.vm import Halt
                 raise Halt('ov19:5508 input-device calibration is unimplemented')  # ov19:0646..0655; explicit boundary, no simulated calibration.
             elif action == 'load':
-                slots = sorted({p.stem[-1] for p in Path(ssb_data.SECRET).glob('SAVGAM?.DAT')} | {k[5:] for k in s.g if k.startswith('save.') and len(k) == 6})
+                directory = Path(game.directory)
+                slots = sorted({p.stem[-1] for p in Path(ssb_data.SECRET).glob('SAVGAM?.DAT')} |
+                               {p.stem[-1] for p in directory.glob('SAVGAM?.DAT')} |
+                               {p.stem[-1] for p in directory.glob('?/SAVGAM?.DAT') if p.parent.name == p.stem[-1]} |
+                               {k[5:] for k in s.g if k.startswith('save.') and len(k) == 6})
                 slot = choose(game, 'CREATE_SLOT', slots + [None], purpose='load game')  # ov20:282F..2910: existing A..J in a horizontal footer.
                 if slot is not None: load_game(game, slot)
             elif action == 'begin': s.r1[0x2A8] = 0; return

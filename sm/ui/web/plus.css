@@ -32,3 +32,5 @@ canvas { image-rendering: pixelated; }
 .cards h3 { margin: 0 0 .5rem; }
 #options { margin-top: 1.25rem; } summary { cursor: pointer; padding: .5rem 0; font-weight: bold; }
 @media (max-width: 640px) { body { padding: 0 .7rem; } [role=tabpanel] { padding: .8rem; } .gallery-layout { grid-template-columns: 1fr; } .gallery-list { max-height: 10rem; } }
+.browser-folder-drop { border: 2px dashed #7daabd; padding: 1rem; margin-top: .5rem; border-radius: .5rem; }
+.browser-folder-drop.over { background: #234759; border-color: #b6edff; }

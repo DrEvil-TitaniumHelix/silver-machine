@@ -88,6 +88,9 @@ class Server(ThreadingHTTPServer):
                 self.intake_error = 'Choose your game folder to begin.'
                 return
             self.intake.require_folder()
+            if self.profile.name == 'ssb':
+                from sm.titles.ssb.rec import seed_max_party
+                seed_max_party(self.save_root)
             self.attach(self.session_factory())
             self.intake_error = ''
         except (OSError, ValueError, KeyError) as error:

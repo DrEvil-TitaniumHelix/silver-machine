@@ -158,7 +158,7 @@ def http(root, original, port=0):
                 page = request(server, '/')
                 tagline = 'plays the SSI Gold Box games from your own copy.'
                 line = 'Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.'
-                assert tagline in page and line in page and 'Alpha 0.1.1' in page and BUILD_ID in page
+                assert tagline in page and line in page and 'Alpha 0.1.2' in page and BUILD_ID in page
                 assert 'folder-form' in page
                 assert not factory.called and not intake.config_path().exists()
                 request(server, '/decision', status=409)

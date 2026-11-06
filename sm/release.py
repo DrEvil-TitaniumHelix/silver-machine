@@ -60,7 +60,7 @@ def collect(root=ROOT):
 def build(root=ROOT):
     root = Path(root).resolve()
     files = collect(root)  # Validate the exact bytes to be archived, before creating output.
-    output = root / 'local/silvermachine-alpha-0.1.1.zip'
+    output = root / 'local/silvermachine-alpha-0.1.2.zip'
     if output.parent.is_symlink() or not output.resolve().is_relative_to(root): raise ValueError('Release output escaped local/')
     output.parent.mkdir(exist_ok=True)
     temporary = output.with_suffix('.zip.tmp')
