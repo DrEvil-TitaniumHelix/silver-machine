@@ -6,6 +6,7 @@ resolvers; scripted DAMAGE follows ov03:2D82 and ov09:210D on both paths."""
 from sm.titles.ssb import data as ssb_data
 from sm import ecl, dax; from sm.titles.ssb import rec
 from sm.titles.ssb.state import Char
+from sm.pascal import VMBinding
 BASE = ecl.BASE
 # 439-B record offsets (decode/secret/RECORD.md 1; ECL_DELTA 4)
 INT, CON, CHA, MEMSPELL, RACE, CLS, HPMAX, SAVE, LVMAIN, UNDEAD, THIEF = 0x13, 0x19, 0x1B, 0x1E, 0x6B, 0x6C, 0x70, 0xE8, 0xEE, 0xF2, 0xF3
@@ -20,10 +21,11 @@ def wrw(b, o, v): b[o] = v & 0xFF; b[o + 1] = v >> 8 & 0xFF
 
 DECODED, CODEBYTES = {}, {}        # (dataset, block) -> {pc: decoded} shared across snapshots; -> instruction byte addresses
 
-def code_bytes(s):
+def code_bytes(s, cache=None):
+    cache = CODEBYTES if cache is None else cache
     k = (s.dataset, s.block)
-    if k not in CODEBYTES: CODEBYTES[k] = {a for pc, (_, _, n) in ecl.trace(bytes(s.code))[1].items() for a in range(pc, n)}
-    return CODEBYTES[k]
+    if k not in cache: cache[k] = {a for pc, (_, _, n) in ecl.trace(bytes(s.code))[1].items() for a in range(pc, n)}
+    return cache[k]
 
 SHOP_OPTIONS = ['done'] + ['buy item type %d' % t for t in range(1, 256)]   # index = item type
 
@@ -49,14 +51,19 @@ class NoGeo:
     def approach(self, s): return 0
 
 class VM:
-    def __init__(self, s, ask, geo=None):
+    def __init__(self, s, ask, geo=None, *, binding=None):
         """ov09:01F5 InitVM; 0540:0C0E text-window cursor is presentation-only."""
+        self.binding = binding or VMBinding(lambda name: dax.load(name, d=ssb_data.SECRET),
+                                           ssb_data.stexe, ssb_data.wrapped_text, Char)
+        self.decoded = DECODED if binding is None else binding.decoded
+        self.codebytes = CODEBYTES if binding is None else binding.codebytes
         self.s, self.ask, self.geo = s, ask, geo or NoGeo()
         self.out, self.flags, self.gosub, self.pc, self.cache = [], [0] * 6, [], BASE, {}
         self.vec, self.resuming, self.steps = [0] * 5, False, 0
         self.display = {'kind': None}                                # UI only (not State, not hashed): what the view window shows
         self.text_start, self.text_epoch = 0, 0                       # keep the transcript, separately track the visible text window
-        self.icons = {c.b[0x155]: ('CPIC', c.b[0x12B], s.dataset) for c in s.party if c.b[MORALE] >= 0x80}  # ov20:2CE7..2D20: loaded NPCs use CPIC(+12B), not a recoloured head/body.
+        self.icons = (self.binding.icons(s) if self.binding.icons else
+                      {c.b[0x155]: ('CPIC', c.b[0x12B], s.dataset) for c in s.party if c.b[MORALE] >= 0x80})  # ov20:2CE7..2D20.
         self.ops, self.cur = [], 0
         self.slots = [''] * 5; self.strs = self.slots                 # VM string slots persist across instructions (ENGINE_READ_w5: 4 x 256 B at DS:8FAC)
 
@@ -87,7 +94,7 @@ class VM:
         elif r == 2: s.r2[a - 0x7A00] = v
         elif r == 3:
             s.code[a - BASE] = lo(v); self.cache.clear()
-            if not s.g.get('codemod') and a in code_bytes(s): s.g['codemod'] = 1     # self-modified instruction: private decode
+            if not s.g.get('codemod') and a in self.code_addresses(): s.g['codemod'] = 1     # self-modified instruction: private decode
         elif a == 0xC04B: s.x = lo(v); self.display['view_dirty'] = True  # ov09:0FDE..0FE6: A4CC even if the value is unchanged.
         elif a == 0xC04C: s.y = lo(v); self.display['view_dirty'] = True  # ov09:0FF1..0FF7.
         elif a == 0xC04D: s.dir = (v % 4) * 2; self.display['view_dirty'] = True  # ov09:1048.
@@ -118,10 +125,11 @@ class VM:
             elif r == 2: self.s.r2[a + i - 0x7A00] = v
             else:
                 self.s.code[a + i - BASE] = v; self.cache.clear()
-                if a + i in code_bytes(self.s): self.s.g['codemod'] = 1
+                if a + i in self.code_addresses(): self.s.g['codemod'] = 1
 
     # ---- region 1 = selected-character overlay (ov09:07BD GetCharField / 0CAD SetCharField; PLAN.md 6) ----
     def charfield(self, a):
+        if self.binding.read_character is not None: return self.binding.read_character(self, a)
         c = self.s.selc(); o = a - 0x7C00
         if o == 0x312: return self.s.dataset
         if o == 0x33E: return self.m1(0x7F3E)
@@ -148,6 +156,7 @@ class VM:
 
     def setcharfield(self, a, v):
         """ov09 SetMem / ov31:101B: wall writes share the native multi-block loader."""
+        if self.binding.write_character is not None: return self.binding.write_character(self, a, v)
         o, s = a - 0x7C00, self.s
         if o == 0: (v == 0) and s.g.__setitem__('A4B7', 1); return
         if o == 0x312: s.dataset = (lo(v) + 1) // 2; return          # 0640:0AB0 SetDataSet: (v + 1) div 2
@@ -167,8 +176,10 @@ class VM:
         elif o == 0x119: b[HP] = lo(v)
 
     # ---- operands (ReadOperands ov09:0000, OperandValue ov09:0138) ----
+    def code_addresses(self): return code_bytes(self.s, self.codebytes)
+
     def fetch(self):
-        c = self.cache if self.s.g.get('codemod') else DECODED.setdefault((self.s.dataset, self.s.block), {})
+        c = self.cache if self.s.g.get('codemod') else self.decoded.setdefault((self.s.dataset, self.s.block), {})
         d = c.get(self.pc)
         if d is None: d = c[self.pc] = ecl.decode(self.s.code, self.pc)
         op, ops, npc = d
@@ -205,7 +216,7 @@ class VM:
 
     def load_block(self, n):
         """LoadEclBlock ov09:032C: ECL<dataset> record n -> code (after the 2-B header)."""
-        rec = dax.load('ECL%d' % self.s.dataset, d=ssb_data.SECRET).get(lo(n))
+        rec = self.binding.records('ECL%d' % self.s.dataset).get(lo(n))
         if rec is None: raise Halt('ECL%d record %d missing' % (self.s.dataset, n))
         self.s.code[:] = bytes(0x1E00); self.s.code[:len(rec) - 2] = rec[2:]; self.cache.clear(); self.s.g.pop('codemod', None)
         self.display = {'kind': None, **{k:v for k,v in self.display.items() if k in ('blank','location','clock')}}  # ov03:3C5F frees the picture set; it does not repaint the frame/location.
@@ -298,10 +309,16 @@ class VM:
         """PORT2 hook: with host.engines the ported unit sm.titles.ssb.units.<mod>.<fn>(game) runs and returns True; else False (GU-59 resolver path)."""
         g = getattr(self, 'host', None)
         if not getattr(g, 'engines', False): return False
+        self.service(mod, fn); return True
+
+    def service(self, mod, fn, *arguments):
+        """Call this game's native service without changing imported modules."""
+        g = self.host
+        if self.binding.service is not None: return self.binding.service(g, mod, fn, *arguments)
         import importlib
         try: m = importlib.import_module('sm.titles.ssb.units.' + mod)
         except ImportError: raise Halt('engines=True but sm.titles.ssb.units.%s is not ported yet' % mod)
-        getattr(m, fn)(g); return True
+        return getattr(m, fn)(g, *arguments)
 
     def is3d(self): return self.m0(0x4BE6) != 0
 
@@ -344,18 +361,18 @@ class VM:
         s = self.s; self.pc = self.next
         if len(s.monsters) >= 0x3F: return
         rid, cnt = lo(self.v(1)), lo(self.v(2)) or 1
-        b = bytearray(dax.load('MON1CHA', d=ssb_data.SECRET)[rid]); dif = self.m0(0x4CF4)
+        b = bytearray(self.binding.records('MON1CHA')[rid]); dif = self.m0(0x4CF4)
         if b[SIDE] == 1 and dif < 5:
             b[HP], b[HPMAX] = lo(b[HP] * (dif + 2) // 4), lo(b[HPMAX] * (dif + 2) // 4)
             if not b[HP] or not b[HPMAX]: b[HP] = b[HPMAX] = 1
-        it = dax.load('MON1ITM', d=ssb_data.SECRET).get(rid, b''); ef = dax.load('MON1SPC', d=ssb_data.SECRET).get(rid, b'')
+        it = self.binding.records('MON1ITM').get(rid, b''); ef = self.binding.records('MON1SPC').get(rid, b'')
         items = [it[k:k + 63] + bytes(4) for k in range(0, len(it), 63)]; effs = [ef[k:k + 9] for k in range(0, len(ef), 9)]
         slot = s.g.get('7603', 8); b[0x155] = slot                     # ov03:05E0: icon slot DS:7603 into the record (+155h)
         self.icons[slot] = ('CPIC', lo(self.v(3)), s.dataset)        # UI only: LoadCombatIcon('CPIC', op3, slot) ov03:0576..0598
         for copy in range(cnt):
             if len(s.monsters) >= 0x3F: break
             # ov03:05BE keeps the loaded record; 06A7..0762 / 0780..083B prepend each clone's items/effects.
-            s.monsters.append(Char(b, items if copy == 0 else items[::-1], effs if copy == 0 else effs[::-1], rid))
+            s.monsters.append(self.binding.character(b, items if copy == 0 else items[::-1], effs if copy == 0 else effs[::-1], rid))
         s.g['monsters'] = 1; s.g['7603'] = lo(slot + 1)                # ov03:084F
     def op0C(self):                                                   # SETUP MONSTER (0372)
         self.pc = self.next; self.set1(0x7EC0, self.v(2))
@@ -440,7 +457,7 @@ class VM:
     def load_wall(self, rid, slot):
         """ov31:112F..116A/11B5..11D9/12AE: clear every covered descriptor, then record the start."""
         if rid != 0xFFFF:
-            blocks = len(dax.load('WALLDEF%d' % self.s.dataset, d=ssb_data.SECRET)[rid]) // 0x30C
+            blocks = len(self.binding.records('WALLDEF%d' % self.s.dataset)[rid]) // 0x30C
             for i in range(slot - 1, min(3, slot - 1 + blocks)): self.s.walls[i] = 0xFFFF
         self.s.walls[slot - 1] = rid
 
@@ -504,7 +521,7 @@ class VM:
             self.clear_text()
             self.ask('MENU', ['Press any key to continue'], purpose='combat defeat')  # ov07:18EB..1946; cleanup1950 follows the key.
         elif engines:
-            self.clear_text(); ds = ssb_data.stexe(); prompt = ds[0xB55:0xB55+ds[0xB54]].decode('cp437')
+            self.clear_text(); ds = self.binding.resident(); prompt = ds[0xB55:0xB55+ds[0xB54]].decode('cp437')
             self.ask('MENU', [prompt], purpose='combat result', experience=0 if self.m1(0x7EC7)==0x81 else s.g.get('A4BC', 0),
                      no_xp=bool(self.m0(0x4CF5)), outcome=('fled' if self.m1(0x7EC7)==0x81 else 'won') if s.g.get('59C0') else '',
                      treasure=bool(s.treasure_items or any(s.treasure_money)))  # ov07:188D ->09D7..0BE7.
@@ -523,7 +540,7 @@ class VM:
     def op27(self):                                                   # TREASURE (1E3D; GATE-5 confirms the random table)
         self.pc = self.next; s = self.s; s.treasure_money = [w16(self.v(i)) for i in range(1, 8)]; t = lo(self.v(8))
         if t < 0x80:
-            r = dax.load('ITEM%d' % s.dataset, d=ssb_data.SECRET).get(t)
+            r = self.binding.records('ITEM%d' % s.dataset).get(t)
             if r is None: raise Halt('TREASURE: ITEM%d record %d missing' % (s.dataset, t))
             s.treasure_items = [bytearray(r[k:k + 63] + bytes(4)) for k in range(0, len(r), 63)][::-1] + s.treasure_items
         elif t != 0xFF:
@@ -619,7 +636,7 @@ class VM:
         s.x, s.y = (s.x + dx) & 15, (s.y + dy) & 15; s.attr = self.geo.attr(s, s.x, s.y); s.ahead = self.geo.wall(s, s.x, s.y, s.dir)
     def damage_wait(self, page=False):
         """ov09:21F9 / ov03:30FD ->0540:0A1D: native any-key wait, including a full text page."""
-        ds=ssb_data.stexe(); prompt='Press any key to continue' if page else ds[0xB55:0xB55+ds[0xB54]].decode('cp437')
+        ds=self.binding.resident(); prompt='Press any key to continue' if page else ds[0xB55:0xB55+ds[0xB54]].decode('cp437')
         self.ask('MENU' if getattr(self.host,'engines',False) else 'ACK', [prompt],
                  at=self.at, purpose='script damage', page=page, defeated=bool(self.s.party_dead))
 
@@ -629,10 +646,10 @@ class VM:
         if b[STATUS] in (6,7): return
         name=bytes(b[1:1+b[0]]).decode('latin1')
         text=name+(' dies. ' if b[HP]+10<amount else ' is hit FOR %d points of Damage.'%amount)
-        lines=ssb_data.wrapped_text(''.join(self.out[self.text_start:])) or ['']  # 2205 forces column38, so the first token starts the following row.
+        lines=self.binding.wrapped_text(''.join(self.out[self.text_start:])) or ['']  # 2205 forces column38, so the first token starts the following row.
         if self.display.get('damage_prefix',(None,))[0]!=self.text_epoch:
             self.display['damage_prefix']=(self.text_epoch,len(lines),getattr(self,'text_color',15))  # ov09:2227 appends white text; earlier printed pixels retain their colour.
-        for line in ssb_data.wrapped_text(text):
+        for line in self.binding.wrapped_text(text):
             if len(lines)>=6:
                 self.damage_wait(page=True); self.clear_text(); lines=[]
             self.out.append(('\n' if lines else '')+line); lines.append(line); self.text_color=15
@@ -730,11 +747,11 @@ class VM:
     def op36(self):                                                   # ADD NPC (3247) -> AddNPC ov20:25C3 / LinkIntoParty ov20:2676
         self.pc = self.next; s = self.s
         if self.m1(0x7F3E) > 7: return
-        rid = lo(self.v(1)); b = bytearray(dax.load('MON1CHA', d=ssb_data.SECRET)[rid]); b[0x12B] = rid
-        it = dax.load('MON1ITM', d=ssb_data.SECRET).get(rid, b''); ef = dax.load('MON1SPC', d=ssb_data.SECRET).get(rid, b'')
+        rid = lo(self.v(1)); b = bytearray(self.binding.records('MON1CHA')[rid]); b[0x12B] = rid
+        it = self.binding.records('MON1ITM').get(rid, b''); ef = self.binding.records('MON1SPC').get(rid, b'')
         b[MORALE] = lo(self.v(2) >> 1 | 0x80)                         # handler: +FFh := (op2 shr 1) or 80h
-        c = Char(b, [it[k:k + 63] + bytes(4) for k in range(0, len(it), 63)], [ef[k:k + 9] for k in range(0, len(ef), 9)])
-        if dax.load('MON1CHA', d=ssb_data.SECRET)[rid][MORALE] > 0x7F: rec.recalc_levels(c)    # LinkIntoParty ov20:2676: RecalcLevels for an NPC record
+        c = self.binding.character(b, [it[k:k + 63] + bytes(4) for k in range(0, len(it), 63)], [ef[k:k + 9] for k in range(0, len(ef), 9)])
+        if self.binding.records('MON1CHA')[rid][MORALE] > 0x7F: rec.recalc_levels(c)    # LinkIntoParty ov20:2676: RecalcLevels for an NPC record
         c.b[0x155] = next(i for i in range(8) if all(p.b[0x155] != i for p in s.party))  # ov20:267F..2778: first unused icon slot.
         self.icons[c.b[0x155]] = ('CPIC', {0x32: 0x4D, 0x33: 0x4C, 0x34: 0x42}.get(rid, rid) if s.g.get('67E9') else rid, s.dataset)  # ov20:25FE..2650: AddNPC loads its combat icon after linking.
         s.party.append(c); s.sel = len(s.party) - 1; self.set1(0x7F3E, self.m1(0x7F3E) + 1)

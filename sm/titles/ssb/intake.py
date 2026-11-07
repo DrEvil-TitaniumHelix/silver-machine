@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 from sm.files import DataError, file_index, file_path
 
-VERSION = 'Alpha 0.1.2'
+VERSION = 'Alpha 0.1.3'
 ENV = 'SM_SECRET'
 TABLE = Path(__file__).with_name('supported_versions.json')
 HELP = 'Run python -m sm.ui --web to choose your own copy, or set SM_SECRET to its folder.'

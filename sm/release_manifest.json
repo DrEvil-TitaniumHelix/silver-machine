@@ -1,5 +1,7 @@
 {
   "format": 1,
+  "version": "0.1.3",
+  "windows_asset": "SilverMachine-0.1.3-windows-x64.zip",
   "files": [
     "LICENSE",
     "README.md",
@@ -14,6 +16,7 @@
     "sm/ecl.py",
     "sm/engine.py",
     "sm/files.py",
+    "sm/pascal.py",
     "sm/rec.py",
     "sm/release.py",
     "sm/release_manifest.json",
@@ -98,11 +101,17 @@
     "herdr/",
     "local/",
     "sm/titles/dqk/",
+    "sm/titles/cok/",
     "sm/suspending.py",
     "sm/_suspending_test.py",
     "sm/web/"
   ],
   "allowed_phrases": [
+    {
+      "text": "Compatible with Secret of the Silver Blades (PC/DOS): GOG and Collector's CD.",
+      "paths": ["README.md", "sm/release_manifest.json"],
+      "reason": "GU-146: factual compatibility line for the first title in SilverMachine"
+    },
     {
       "text": "The Dark Queen of Krynn",
       "paths": [

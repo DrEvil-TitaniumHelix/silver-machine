@@ -4,6 +4,7 @@ from sm.titles.ssb import vm as V, walk, save; from sm.titles.ssb import rec
 from sm.titles.ssb.state import State, Char
 from types import SimpleNamespace
 from sm.engine import Session, legal_choice
+from sm.pascal import HostBinding
 
 # Closed decision vocabulary emitted by the VM and ported units. GU-69 rejects unknown kinds.
 DECISION_KINDS = frozenset(('ACK CAMP CAMP_MENU COMBAT COMBAT_ACTION CREATE CREATE_ABILITY CREATE_ADD '
@@ -40,27 +41,30 @@ class Geo:
 class Done(Exception): pass
 
 class Game:
-    def __init__(self, player, slot='A', engines=False, directory=None):
+    def __init__(self, player, slot='A', engines=False, directory=None, *, binding=None):
         """ov03:3DB9 game host; ov26:173F display calls are opt-in, outside State."""
         from pathlib import Path
-        self.s = s = State(); self.trace = []; self.player = player; self.hashing = True
+        self.binding = binding or HostBinding(State, V.VM, Geo, save.load, save.restore, save.SECRET)
+        self.s = s = self.binding.state(); self.trace = []; self.player = player; self.hashing = True
         self.presentation = None                 # Headless Game/Session/route never collect frames or wait.
         self.presentation_text = ''
         self.presentation_poses = {}
         self.engines = engines                                           # PORT2: True = the ported units (Bruce plays), False = GU-59 resolvers
-        self.slot = slot; path = Path(directory or save.SECRET).resolve()
+        self.slot = slot; path = Path(directory or self.binding.root).resolve()
         if slot is not None and not (path / ('SAVGAM%s.DAT' % slot)).is_file() and (path / slot / ('SAVGAM%s.DAT' % slot)).is_file(): path /= slot
         self.directory = str(path)
-        if slot is None:
+        if slot is None and self.binding.initialize is not None:
+            self.binding.initialize(s)
+        elif slot is None:
             # StartupInit ov13:03DA..0440/049C..0641; MainProgram 0000:027E sets dataset 1 before the menu.
             s.r0[0x1F4], s.r0[0xE6] = 2, 1
             s.x, s.y, s.dir, s.dataset, s.block, s.prev_mode = 7, 13, 0, 1, 0, 0
             s.walls = [0, 0xFFFF, 0xFFFF]
             s.g.update(bash=1, pick=1, knock=1)
         else:
-            d = save.load(path, slot=slot)                               # accepts the save root or the slot directory
-            save.restore(s, d)
-        self.geo = Geo(); self.vm = V.VM(s, self.ask, self.geo); self.vm.host = self; self.vm.resuming = slot is not None
+            d = self.binding.load(path, slot=slot)                       # accepts the save root or the slot directory
+            self.binding.restore(s, d)
+        self.geo = self.binding.geo(); self.vm = self.binding.vm(s, self.ask, self.geo); self.vm.host = self; self.vm.resuming = slot is not None
         if slot is not None: self.geo.resume(s, self.vm)
 
     def state_hash(self):
@@ -150,7 +154,8 @@ class Game:
 
     def ask(self, kind, options, **info):
         s = self.s
-        if self.vm.m0(0x4CD9) == 1: raise Done()
+        finished = getattr(getattr(self, 'binding', None), 'finished', None)
+        if (finished(self) if finished is not None else self.vm.m0(0x4CD9) == 1): raise Done()
         h = s.hash(self.vm) if self.hashing else ''; c = self.player(kind, options, self, **info)   # state + VM position (V6)
         if not legal_choice(options, c):
             raise V.Halt('player returned %r for %s %r' % (c, kind, options))
@@ -160,8 +165,7 @@ class Game:
     def camp(self):
         vm = self.vm; vm.run(vm.vec[2])
         if self.engines:
-            from sm.titles.ssb.units import camp
-            if camp.run(self): vm.run(vm.vec[3])                          # ov03:352B: vecD only when the party rested
+            if vm.service('camp', 'run'): vm.run(vm.vec[3])               # ov03:352B: vecD only when the party rested
         else: self.ask('CAMP', ['rest'], at=0); vm.run(vm.vec[3])
 
     def after_new_block(self):
@@ -295,8 +299,7 @@ class Game:
     def play(self, limit=100_000):
         try:
             if self.slot is None:
-                from sm.titles.ssb.units import creation
-                creation.run(self)                                      # MainProgram 0000:02A9 -> ov19:01A1, before 0000:0375 GameLoop.
+                self.vm.service('creation', 'run')                       # MainProgram 0000:02A9 -> ov19:01A1, before 0000:0375 GameLoop.
                 if self.s.stop: return 'EXIT'
             self.boot()
             while len(self.trace) < limit: self.turn()
