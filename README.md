@@ -4,7 +4,7 @@ plays the SSI Gold Box games from your own copy.
 
 Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.
 
-Built with AI: most of this code was written by AI coding agents directed by DrEvil; see the private development notes for method.
+AI assistance was used in building this engine. The game's content and visuals come from the player's own copy of the original.
 
 **Alpha 0.1.3 — Windows x64.** Compatible with Secret of the Silver Blades (PC/DOS): GOG and Collector's CD.
 
