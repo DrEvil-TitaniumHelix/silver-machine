@@ -4,6 +4,8 @@ plays the SSI Gold Box games from your own copy.
 
 Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.
 
+Built with AI: most of this code was written by AI coding agents directed by DrEvil; see the private development notes for method.
+
 **Alpha 0.1.3 — Windows x64.** Compatible with Secret of the Silver Blades (PC/DOS): GOG and Collector's CD.
 
 Download `SilverMachine-0.1.3-windows-x64.zip`, extract the complete folder, and double-click **SilverMachine.exe**. Python is included; no installation or commands are needed. The SilverMachine title list opens in your browser. Choose **Play**.
