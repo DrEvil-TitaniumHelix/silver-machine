@@ -1,0 +1,269 @@
+{
+  "format": 1,
+  "version": "0.1.9",
+  "windows_asset": "SilverMachine-0.1.9-windows-x64.zip",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "docs/ALPHA_BUG_REPORT.md",
+    "sm/__init__.py",
+    "sm/__main__.py",
+    "sm/_engine_test.py",
+    "sm/_release_test.py",
+    "sm/_replay_test.py",
+    "sm/_search_test.py",
+    "sm/_sound_test.py",
+    "sm/dax.py",
+    "sm/ecl.py",
+    "sm/engine.py",
+    "sm/files.py",
+    "sm/pascal.py",
+    "sm/rec.py",
+    "sm/release.py",
+    "sm/release_manifest.json",
+    "sm/replay.py",
+    "sm/search.py",
+    "sm/sound.py",
+    "sm/text.py",
+    "sm/titles/__init__.py",
+    "sm/titles/ssb/__init__.py",
+    "sm/titles/ssb/_cli.py",
+    "sm/titles/ssb/_intake_test.py",
+    "sm/titles/ssb/_start_test.py",
+    "sm/titles/ssb/art.py",
+    "sm/titles/ssb/data.py",
+    "sm/titles/ssb/host.py",
+    "sm/titles/ssb/intake.py",
+    "sm/titles/ssb/player.py",
+    "sm/titles/ssb/rec.py",
+    "sm/titles/ssb/resolve.py",
+    "sm/titles/ssb/route.py",
+    "sm/titles/ssb/save.py",
+    "sm/titles/ssb/state.py",
+    "sm/titles/ssb/supported_versions.json",
+    "sm/titles/ssb/journal_lock.json",
+    "sm/titles/ssb/ui/__init__.py",
+    "sm/titles/ssb/ui/_art_test.py",
+    "sm/titles/ssb/ui/_combat_pass_test.py",
+    "sm/titles/ssb/ui/_fight_test.py",
+    "sm/titles/ssb/ui/_icons_test.py",
+    "sm/titles/ssb/ui/_plus_test.py",
+    "sm/titles/ssb/ui/_menus_test.py",
+    "sm/titles/ssb/ui/_panels_test.py",
+    "sm/titles/ssb/ui/_player_screens_test.py",
+    "sm/titles/ssb/ui/_presentation_test.py",
+    "sm/titles/ssb/ui/_prompts_test.py",
+    "sm/titles/ssb/ui/_saves_test.py",
+    "sm/titles/ssb/ui/_server_test.py",
+    "sm/titles/ssb/ui/_sound_test.py",
+    "sm/titles/ssb/ui/_test.py",
+    "sm/titles/ssb/ui/_view_test.py",
+    "sm/titles/ssb/ui/_web_test.py",
+    "sm/titles/ssb/ui/screen.py",
+    "sm/titles/ssb/ui/plus.py",
+    "sm/titles/ssb/ui/view3d.py",
+    "sm/titles/ssb/units/__init__.py",
+    "sm/titles/ssb/units/_c3_test.py",
+    "sm/titles/ssb/units/_combat_test.py",
+    "sm/titles/ssb/units/_magic_test.py",
+    "sm/titles/ssb/units/_services_test.py",
+    "sm/titles/ssb/units/camp.py",
+    "sm/titles/ssb/units/combat.py",
+    "sm/titles/ssb/units/creation.py",
+    "sm/titles/ssb/units/magic.py",
+    "sm/titles/ssb/units/shops.py",
+    "sm/titles/ssb/vm.py",
+    "sm/titles/ssb/walk.py",
+    "sm/ui/__init__.py",
+    "sm/ui/__main__.py",
+    "sm/ui/art.py",
+    "sm/ui/web.py",
+    "sm/ui/plus.py",
+    "sm/ui/folders.py",
+    "sm/ui/journal.py",
+    "sm/titles/ssb/ui/_journal_test.py",
+    "sm/ui/web/app.js",
+    "sm/ui/web/index.html",
+    "sm/ui/web/journal.js",
+    "sm/ui/web/journal.css",
+    "sm/ui/web/plus.html",
+    "sm/ui/web/plus.js",
+    "sm/ui/web/plus.css",
+    "sm/ui/web/setup.html",
+    "sm/ui/web/setup.js",
+    "sm/ui/png.py",
+    "sm/ui/MODS.md",
+    "sm/titles/ssb/ui/vga.py",
+    "sm/titles/ssb/ui/_vga_test.py",
+    "sm/ui/hlib.py",
+    "sm/ui/vga_tile.py",
+    "sm/ui/vga_skin.py",
+    "CONTRIBUTING.md",
+    "docs/DECISIONS.md",
+    "docs/ADD_A_TITLE.md",
+    "docs/MOD_A_SCREEN.md",
+    "sm/titles/cok/PROFILE.md",
+    "sm/titles/cok/__init__.py",
+    "sm/titles/cok/_alter_test.py",
+    "sm/titles/cok/_camp_test.py",
+    "sm/titles/cok/_cli.py",
+    "sm/titles/cok/_combat_test.py",
+    "sm/titles/cok/_creation_test.py",
+    "sm/titles/cok/_effects_test.py",
+    "sm/titles/cok/_fightcheck_test.py",
+    "sm/titles/cok/_intake_test.py",
+    "sm/titles/cok/_inventory_test.py",
+    "sm/titles/cok/_magic_test.py",
+    "sm/titles/cok/_menu_check.py",
+    "sm/titles/cok/_oracle_test.py",
+    "sm/titles/cok/_regression.py",
+    "sm/titles/cok/_rules_test.py",
+    "sm/titles/cok/_shop_test.py",
+    "sm/titles/cok/_temple_test.py",
+    "sm/titles/cok/_town_test.py",
+    "sm/titles/cok/_training_test.py",
+    "sm/titles/cok/alter.py",
+    "sm/titles/cok/camp.py",
+    "sm/titles/cok/check.py",
+    "sm/titles/cok/combat.py",
+    "sm/titles/cok/creation.py",
+    "sm/titles/cok/data.py",
+    "sm/titles/cok/effects.py",
+    "sm/titles/cok/faults.py",
+    "sm/titles/cok/intake.py",
+    "sm/titles/cok/inventory.py",
+    "sm/titles/cok/journal_lock.json",
+    "sm/titles/cok/magic.py",
+    "sm/titles/cok/menu.py",
+    "sm/titles/cok/menu_layout.json",
+    "sm/titles/cok/records.py",
+    "sm/titles/cok/rules.py",
+    "sm/titles/cok/save.py",
+    "sm/titles/cok/shop.py",
+    "sm/titles/cok/supported_versions.json",
+    "sm/titles/cok/tables.json",
+    "sm/titles/cok/temple.py",
+    "sm/titles/cok/town.py",
+    "sm/titles/cok/training.py",
+    "sm/titles/cok/ui/__init__.py",
+    "sm/titles/cok/ui/_screen_test.py",
+    "sm/titles/cok/ui/plus.py",
+    "sm/titles/cok/ui/screen.py"
+  ],
+  "excluded": [
+    "CLAUDE.md",
+    "RULINGS.md",
+    "herdr/",
+    "local/",
+    "sm/titles/dqk/",
+    "sm/suspending.py",
+    "sm/_suspending_test.py",
+    "sm/web/",
+    "sm/titles/coab/",
+    "sm/titles/por/",
+    "sm/titles/dkk/"
+  ],
+  "allowed_phrases": [
+    {
+      "text": "Plays Secret of the Silver Blades (PC/DOS) from the GOG release or the original Collector's CD.",
+      "paths": [
+        "README.md",
+        "sm/release_manifest.json"
+      ],
+      "reason": "Factual compatibility line for the first title in SilverMachine (README 11/09 wording)"
+    },
+    {
+      "text": "The Dark Queen of Krynn",
+      "paths": [
+        "sm/ui/web/plus.html",
+        "sm/titles/ssb/ui/_vga_test.py",
+        "sm/release_manifest.json"
+      ],
+      "reason": "ALPHA_FIX4: requested GOG installation path hint and read-only optional test input"
+    },
+    {
+      "text": "plays the SSI Gold Box games from your own copy.",
+      "paths": [
+        "README.md",
+        "sm/titles/ssb/_intake_test.py",
+        "sm/ui/web/index.html",
+        "sm/ui/web/plus.html",
+        "sm/ui/web/setup.html",
+        "sm/release_manifest.json"
+      ],
+      "reason": "Tagline"
+    },
+    {
+      "text": "Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.",
+      "paths": [
+        "README.md",
+        "sm/titles/ssb/_intake_test.py",
+        "sm/ui/web/index.html",
+        "sm/ui/web/plus.html",
+        "sm/ui/web/setup.html",
+        "sm/release_manifest.json"
+      ],
+      "reason": "Non-affiliation sentence"
+    },
+    {
+      "text": "We recommend the GOG release as the supported way to own the game: Secret of the Silver Blades is in Forgotten Realms: The Archives - Collection Two.",
+      "paths": [
+        "sm/ui/web/setup.html",
+        "sm/release_manifest.json"
+      ],
+      "reason": "GOG recommendation, corrected 11/09: Silver Blades is in Collection Two only"
+    },
+    {
+      "text": "Supported copies: the GOG release (recommended; Secret of the Silver Blades is in *Forgotten Realms: The Archives - Collection Two*) or the original Collector's CD.",
+      "paths": [
+        "README.md",
+        "sm/release_manifest.json"
+      ],
+      "reason": "GOG recommendation in the README, corrected 11/09"
+    },
+    {
+      "text": "Compatible with Champions of Krynn (PC/DOS): GOG.",
+      "paths": [
+        "README.md",
+        "sm/release_manifest.json"
+      ],
+      "reason": "0.1.8: factual compatibility line for the second title, the wording the title list already shows (titles.json)"
+    },
+    {
+      "text": "GOG (Dungeons & Dragons: Krynn Series)",
+      "paths": [
+        "sm/titles/cok/supported_versions.json",
+        "sm/release_manifest.json"
+      ],
+      "reason": "0.1.8 source: the name GOG sells the supported copy under, shown to the player as the copy's label (factual, as for the first title)"
+    },
+    {
+      "text": "Champions of Krynn",
+      "paths": [
+        "sm/titles/cok/supported_versions.json",
+        "sm/titles/cok/_oracle_test.py",
+        "sm/titles/cok/_town_test.py",
+        "sm/release_manifest.json"
+      ],
+      "reason": "0.1.8 source: the second title named in its own intake message, a test's provenance line and the route's last checkpoint (factual compatibility)"
+    },
+    {
+      "text": "Dragonlance",
+      "paths": [
+        "sm/titles/cok/effects.py",
+        "sm/titles/cok/combat.py",
+        "sm/titles/cok/_effects_test.py",
+        "sm/release_manifest.json"
+      ],
+      "reason": "0.1.8 source: the game's own name for one item effect, as its effect table and the comments that cite it name it"
+    },
+    {
+      "text": "dragonlance",
+      "paths": [
+        "sm/titles/cok/_town_test.py",
+        "sm/release_manifest.json"
+      ],
+      "reason": "0.1.8 source: the same item in the route test's method and checkpoint names"
+    }
+  ]
+}

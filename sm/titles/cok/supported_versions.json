@@ -1,0 +1,231 @@
+{
+  "versions": [
+    {
+      "id": "gog",
+      "label": "GOG (Dungeons & Dragons: Krynn Series)",
+      "files": {
+        "8X8D1.DAX": {
+          "size": 14346,
+          "sha256": "14fd0bed83d383deca6195e3145145ad0ab4c58a5939a6e6fc0d3efc8c4bc915"
+        },
+        "8X8D2.DAX": {
+          "size": 20229,
+          "sha256": "0ddd323d8732b5fce0a0f1fdc07f10b0a77bd3709b27d1d0c98f47f487685649"
+        },
+        "8X8D3.DAX": {
+          "size": 20592,
+          "sha256": "069e54395cc51f705ec5576e9f3d29199f3baf56d5848fb2176d7395897aa2c9"
+        },
+        "BIGPIC1.DAX": {
+          "size": 65694,
+          "sha256": "34cf5207584cb859817e1fc9b579cd51beea2e00e3393adbdc251e07f93483ec"
+        },
+        "BIGPIC2.DAX": {
+          "size": 30905,
+          "sha256": "553dc458be8209bea0ca5f1dea6406b5cd8a96750d3badc05658f5a8ef241f0a"
+        },
+        "BIGPIC3.DAX": {
+          "size": 37495,
+          "sha256": "2be3773e7f4ed0611c8e7d36ee1593160756ab2742c458d6adc7d14fd0900f25"
+        },
+        "BODY2.DAX": {
+          "size": 1793,
+          "sha256": "7edd8e0841581b1643828a21787594f6c96dddc1718710de9a8159575bef467f"
+        },
+        "BODY3.DAX": {
+          "size": 1793,
+          "sha256": "7edd8e0841581b1643828a21787594f6c96dddc1718710de9a8159575bef467f"
+        },
+        "CBODY.DAX": {
+          "size": 23889,
+          "sha256": "0c93206b020e30eecc1f761a9408b5befc20113fde18a8b401ae2ddad2c103bd"
+        },
+        "CHEAD.DAX": {
+          "size": 3428,
+          "sha256": "8e61d8cf23b7094353425224f02be4423b880c5e8a7e168d478ec851bfaea568"
+        },
+        "COMSPR.DAX": {
+          "size": 3612,
+          "sha256": "6bff177f6776339a627be3c0199518a41330f01f462e8994f649804e488a86d5"
+        },
+        "CPIC1.DAX": {
+          "size": 16911,
+          "sha256": "5f3e5fdc1734f8aed583233da9c97630b130ad5628eee0f18d875291dfa5e26b"
+        },
+        "CPIC2.DAX": {
+          "size": 19604,
+          "sha256": "7925da2db12a4e42ffc2df737fce830fddede11ae9d350e61a9a53f2950b94e4"
+        },
+        "CPIC3.DAX": {
+          "size": 17235,
+          "sha256": "8a6e976bcc69ab4099ae5c990f6b2926c9a915f9d58b2545b170d0e6cc4da395"
+        },
+        "CURSOR.DAX": {
+          "size": 62,
+          "sha256": "0d47e2fabc26b4e4dbea63fa034ec1c075e7031401536cea5171c40bd1307c00"
+        },
+        "DUNGCOM.DAX": {
+          "size": 5542,
+          "sha256": "827176e941f24176f1907bde40a81928cb4c2da66231ca6b07c72b0b03a0bf2a"
+        },
+        "ECL1.DAX": {
+          "size": 31721,
+          "sha256": "6387021ed8c84f2834d32d7c5e66dd03b88322d0c5072cba6cfb64a48e9ccf79"
+        },
+        "ECL2.DAX": {
+          "size": 49982,
+          "sha256": "4f4ba999b0d46817091e82fe5ccf27cb6eee95cd833389353d7285c2a8dccbea"
+        },
+        "ECL3.DAX": {
+          "size": 49969,
+          "sha256": "9629aa3ef46bb354270aab1fa3e158d5b1507363bdf452fec5ca5d190f602f1f"
+        },
+        "GAME.OVR": {
+          "size": 269031,
+          "sha256": "c3f448c391ea860f97dec99ce88b0b8b0a4a7e807cf3b1f5a8f1515e2a7a0529"
+        },
+        "GEO1.DAX": {
+          "size": 1835,
+          "sha256": "e3670f73462c68dc15a438229aba82daf62f55e8e029a87e9da47ec4769165ae"
+        },
+        "GEO2.DAX": {
+          "size": 6365,
+          "sha256": "8030dd8b50828cbdb0e53fa32e75a4f9d56778a21618cd44c650c5a2bd61af05"
+        },
+        "GEO3.DAX": {
+          "size": 5483,
+          "sha256": "59d0e8e2a1486a0fe04329847fcd8451e933b347fc1675296ffe84cbc1df4131"
+        },
+        "HEAD2.DAX": {
+          "size": 3406,
+          "sha256": "9b26657869b3d033866de66ace9e8ebde3dedfcdae5ed05fa00fc9d00bbec27b"
+        },
+        "HEAD3.DAX": {
+          "size": 3406,
+          "sha256": "9b26657869b3d033866de66ace9e8ebde3dedfcdae5ed05fa00fc9d00bbec27b"
+        },
+        "ITEM1.DAX": {
+          "size": 1469,
+          "sha256": "7e0068c2fc065a542b7009b7614e8179c97320027712fed2ce8d76ab629b5232"
+        },
+        "ITEM2.DAX": {
+          "size": 1745,
+          "sha256": "a9236cd8b54754ade99c395562b0e664770abca07dd00e6e54d9f5f9be0a9c24"
+        },
+        "ITEM3.DAX": {
+          "size": 1079,
+          "sha256": "52d6061d9518ff58aeb11d8eba3e6d80bb6291e7bc0220dfe25a3de23fa1ed5c"
+        },
+        "ITEMS": {
+          "size": 2050,
+          "sha256": "7e584796e84b5e6eb521804f67da5eb28c18ad5e8bd064928364ee65ccd3fd1a"
+        },
+        "MIDI.DAX": {
+          "size": 7369,
+          "sha256": "5a06d9fc975ab9423d43f63d5cbdb0b02b1658cb5391baf54238ab1e9b1579bd"
+        },
+        "MON1CHA.DAX": {
+          "size": 2661,
+          "sha256": "5a46d0718ed7cec1a152235139bc52a69df2490ed1765edb3ea88c8dc6c1ca2b"
+        },
+        "MON1ITM.DAX": {
+          "size": 1473,
+          "sha256": "1a7f3d88690c4238b5b479d1d321cee547291bc363991193a8d7a14c5208c8f4"
+        },
+        "MON1SPC.DAX": {
+          "size": 329,
+          "sha256": "4e76ba4d9ce8091ff77826fd13048677e8e5e089dfb7606f2afa0e16d404b2ce"
+        },
+        "MON2CHA.DAX": {
+          "size": 3418,
+          "sha256": "b6034b1accae8964d724c033f99a8b7c95c370a31c9f5ac7329e47604d5008df"
+        },
+        "MON2ITM.DAX": {
+          "size": 1701,
+          "sha256": "c95d2bec68008b39733095c900f7add4f3964cdbed86fd3a95d24ea5fa4a566e"
+        },
+        "MON2SPC.DAX": {
+          "size": 518,
+          "sha256": "2fe85111b833678ac8e94477b6af5deef48e768ba0231e563dc6ed2559f5d358"
+        },
+        "MON3CHA.DAX": {
+          "size": 3179,
+          "sha256": "b4a9b6d1024048b430f924f5a6e096dde675d5c8ca0a0eb20d2b3bda14b83278"
+        },
+        "MON3ITM.DAX": {
+          "size": 914,
+          "sha256": "80fbd6c2fd5389d402eae2d5782b8f9efed10e8c077120aa8502fbd7fb34d338"
+        },
+        "MON3SPC.DAX": {
+          "size": 567,
+          "sha256": "e85f56132c9b834ccde9c09d4ee31f756b513b484f3c19fcaa39cb9151283410"
+        },
+        "PIC1.DAX": {
+          "size": 66736,
+          "sha256": "2f62dab8b7f776226d6c6c35847382de3baa758a836220639d2c46c2dd74ae97"
+        },
+        "PIC2.DAX": {
+          "size": 101466,
+          "sha256": "b4c07f963edcb88973ba7f3caa80cbcae4c88b3c71aa4c7ad3132ccbed1dbc51"
+        },
+        "PIC3.DAX": {
+          "size": 97632,
+          "sha256": "21d5a2bfc40041611657c2a4a9f6de0f3edd67bb5c9692b61cf2007060d6cfa4"
+        },
+        "RANDCOM.DAX": {
+          "size": 1023,
+          "sha256": "78e5daab63d6880e8093e4bd25b50768aac81e7f004f783947f0205a0e69e925"
+        },
+        "SKY.DAX": {
+          "size": 2448,
+          "sha256": "1ffe6b50f6d76116a9d72fbb05a94ea70160c8fad2a49b9c4b08776b16fbadf9"
+        },
+        "SOUND.DAX": {
+          "size": 14206,
+          "sha256": "7df3bde460feacf8372e01a282b99691d61dfa0a832f2cfd06ce5f39cd4246a5"
+        },
+        "SPRIT1.DAX": {
+          "size": 8712,
+          "sha256": "9a625c1c78776cd2f733175ea6ceeedf733928b39fa747377eb0ce625fdff115"
+        },
+        "SPRIT2.DAX": {
+          "size": 31307,
+          "sha256": "888a2786d382836e611e3cbcc17b9c33eebdd2af27085324be9e12586846d77a"
+        },
+        "SPRIT3.DAX": {
+          "size": 22578,
+          "sha256": "2cd809baa9eb6bc8485562775c753a256b0dd0b4416bfa9ab93bb3a8c5892d24"
+        },
+        "START.EXE": {
+          "size": 61607,
+          "sha256": "e51d88ecef07cffe4a14036de3dbdc6ce7e7ff0db7482f3771d6f99eb7bbb956"
+        },
+        "TILES.DAX": {
+          "size": 13488,
+          "sha256": "9e383adc1638e6202726df41a8c42640e446a17c8a9c1e9df45b8ba0d478b205"
+        },
+        "TITLE.DAX": {
+          "size": 57528,
+          "sha256": "5276ba718f3c31018c25852f0b6858a292aed5a94f8bd938803961bb1ade0a00"
+        },
+        "WALLDEF1.DAX": {
+          "size": 3877,
+          "sha256": "70cf9f18fe0dc87bf5cec047c52a33ad48dc543d48812d627c3b05579c29be85"
+        },
+        "WALLDEF2.DAX": {
+          "size": 6637,
+          "sha256": "1739b685f289ebcfaaca2cc01b93dbadfd9cc47ff95c291142a6d2279823fabc"
+        },
+        "WALLDEF3.DAX": {
+          "size": 6565,
+          "sha256": "7f4e84f9428714a8d51447770143d21a8ac11fdce43bcf92eed796a8763ef47f"
+        },
+        "WILDCOM.DAX": {
+          "size": 5462,
+          "sha256": "00b204d63568ac0cd77c7ad64195fa1c0f682820490de5ac905f4657f30095c5"
+        }
+      }
+    }
+  ],
+  "missing": "Choose the folder of your own Champions of Krynn copy (GOG: the folder with START.EXE and the DAX files)."
+}

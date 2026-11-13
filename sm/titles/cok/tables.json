@@ -1,0 +1,209 @@
+{
+  "resident_bytes": 65568,
+  "resident_sha256": "1bd9c6700b6ce55445649cf25a1991010896d1cfb044f2fb57c9cc90faf6a7e5",
+  "tables": {
+    "unitScale": {
+      "shape": [
+        7
+      ],
+      "format": "H",
+      "size": 14,
+      "sha256": "04f4b96f390481e33da6fe17236f0a25480c61a1ad1894111da8dcf6e7919bf5",
+      "offset": 62676
+    },
+    "thac0Table": {
+      "shape": [
+        8,
+        13
+      ],
+      "format": "B",
+      "size": 104,
+      "sha256": "8f3a5f2a793cadd2bc15cc1dc3c3527bf9bb0b92abb082ee63de9124d6705f14",
+      "offset": 62690
+    },
+    "classMaskTable": {
+      "shape": [
+        8
+      ],
+      "format": "B",
+      "size": 8,
+      "sha256": "289828d1a52ebe3bc9ba92956420ba31b0c8bcffb61f8c52d809f5efdc041b21",
+      "offset": 62794
+    },
+    "classBits": {
+      "shape": [
+        17
+      ],
+      "format": "B",
+      "size": 17,
+      "sha256": "a064b6b09202ce2b4ce150605dae0ec048680dfede65841aed01452b7b3bb55a",
+      "offset": 62802
+    },
+    "hitDiceLimit": {
+      "shape": [
+        8
+      ],
+      "format": "B",
+      "size": 8,
+      "sha256": "b32571d2c9f093c5787e6b1df6366783c58c5900afabd1a390df2c19bad09301",
+      "offset": 62819
+    },
+    "thiefSkillTable": {
+      "shape": [
+        12,
+        8
+      ],
+      "format": "B",
+      "size": 96,
+      "sha256": "b96dd4f095471ad6985cd5d621d53ebfe113ebfca1016d621acc6d503f92f865",
+      "offset": 62833
+    },
+    "raceSkillAdjust": {
+      "shape": [
+        7,
+        8
+      ],
+      "format": "b",
+      "size": 56,
+      "sha256": "04f3db726f1b81fcd7693473223f6fe3821d1ff7273947a43a379ef3bbf3d632",
+      "offset": 62929
+    },
+    "dexteritySkillAdjust": {
+      "shape": [
+        11,
+        5
+      ],
+      "format": "b",
+      "size": 55,
+      "sha256": "9048b9ece0b023929df391c849cae40d420b870c2b5bfb271a556edbff8257a6",
+      "offset": 62985
+    },
+    "raceClass": {
+      "shape": [
+        7,
+        15
+      ],
+      "format": "b",
+      "size": 105,
+      "sha256": "352732fe5f25229c262ce93ffa4dd3e40686c10ad1b0043e43f81c7a9730fb5f",
+      "offset": 63152
+    },
+    "classMin": {
+      "shape": [
+        17,
+        6
+      ],
+      "format": "B",
+      "size": 102,
+      "sha256": "76aca59c7fef3c00c8d4efc2583233353cefdde6ecdea8f094786cc298a3038b",
+      "offset": 63551
+    },
+    "classAlignMask": {
+      "shape": [
+        17
+      ],
+      "format": "B",
+      "size": 17,
+      "sha256": "ad0aca235030e80e9712c49d71505447c7b241e31b25bb673fcbec43376a35bc",
+      "offset": 63653
+    },
+    "conHpTable": {
+      "shape": [
+        23
+      ],
+      "format": "b",
+      "size": 23,
+      "sha256": "54064c87fe3ead3951dffb3a727f6ab7dfbd62565685731bf37fa1d2c4ac40fd",
+      "offset": 63670
+    },
+    "savingThrowTable": {
+      "shape": [
+        8,
+        12,
+        5
+      ],
+      "format": "B",
+      "size": 480,
+      "sha256": "6d3591649582c28f95abc27b8e68de9ab8ab47b6792f75b8b3a29cee9f5354ac",
+      "offset": 64699
+    },
+    "coinValue": {
+      "shape": [
+        5
+      ],
+      "format": "i",
+      "size": 20,
+      "sha256": "1523522d33d3692087b7d9cdb39ec02155ad872238c2a63e766bd04983d171f4",
+      "offset": 52134
+    },
+    "spellTbl": {
+      "shape": [
+        107,
+        16
+      ],
+      "format": "B",
+      "size": 1712,
+      "sha256": "71ab7c5757dcb5f956a09183d16b9d489a9b055a33b6b5750546ab10f0d673b6",
+      "offset": 60963
+    },
+    "turnUndeadTable": {
+      "shape": [
+        12,
+        13
+      ],
+      "format": "b",
+      "size": 156,
+      "sha256": "e1347618e3a176208626d4a21c0c4bf3b22134c5ecab06846a76b629db9d27ed",
+      "offset": 49330
+    },
+    "classProgression": {
+      "shape": [
+        10,
+        99
+      ],
+      "format": "B",
+      "size": 990,
+      "sha256": "c196bbcae66312dcbd4f3cc9b8c9eec7025517052e85b21ea374e590d36b0cf4",
+      "offset": 63693
+    },
+    "knownSpellTable": {
+      "shape": [
+        3,
+        4,
+        10
+      ],
+      "format": "B",
+      "size": 120,
+      "sha256": "4780c36e78e82624addbaeb2eeb80b2a468aa3fece420007b5e7286846057dcc",
+      "offset": 65179
+    },
+    "spellNames": {
+      "shape": [
+        107,
+        41
+      ],
+      "format": "B",
+      "size": 4387,
+      "sha256": "2a1f5974edf77e34ef70cf13cec85e5d3eeab2b10586b4a80f17eb2676838975",
+      "offset": 56576
+    },
+    "diseaseEffects": {
+      "shape": [
+        6
+      ],
+      "format": "B",
+      "size": 6,
+      "sha256": "2aa17b35aa0a644b3b23bc75db61f543f9809423e72f77c20a1fd0e2aaefb837",
+      "offset": 48678
+    },
+    "templeMenuItems": {
+      "shape": [
+        451
+      ],
+      "format": "B",
+      "size": 451,
+      "sha256": "431e455ff63aea4d752c69013c07a35d895e4338613b4187c298ca0fb30cf8c6",
+      "offset": 48684
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "resident_sha256": "1bd9c6700b6ce55445649cf25a1991010896d1cfb044f2fb57c9cc90faf6a7e5",
+  "main_menu": {
+    "offset": 50392,
+    "size": 546,
+    "sha256": "358fed62da412b39fdc385d347970b11a53fac3f859160e41ad7b2e642447c25"
+  },
+  "topEdgeTiles": {
+    "offset": 51866,
+    "size": 40,
+    "sha256": "3b03b2d54fdf7934c7eb78ddeb3c69c7189e06e891549e4eb3167e4abc399012"
+  },
+  "leftEdgeTiles": {
+    "offset": 51906,
+    "size": 24,
+    "sha256": "c21f871224a1173100011586ec37c5b9942a8b33be815243f4c1607064f95fe4"
+  },
+  "query": {
+    "source": "GAME.OVR",
+    "offset": 131891,
+    "size": 19,
+    "sha256": "af641114134058e6f8758afd959e3eba544b447688c5d82875d74370065f2697"
+  },
+  "select": {
+    "source": "GAME.OVR",
+    "offset": 131910,
+    "size": 8,
+    "sha256": "2c0a90330285eaecb1000c3024f5a1ffeab4088e941588bc1b070bf53babf276"
+  },
+  "raceNames": {
+    "offset": 52640,
+    "size": 128,
+    "sha256": "4372e80b3857b9eb69493601aeb2e615dfe73d3ab1237d95f8cd17e40e6f87ea"
+  },
+  "classNames": {
+    "offset": 52154,
+    "size": 486,
+    "sha256": "e8d7c4902523f484d4ffc9890d4cafdb4d7688c055f709d4519eb758d408f698"
+  },
+  "alignmentNames": {
+    "offset": 52768,
+    "size": 153,
+    "sha256": "1db01146bcf5946e560f0fe2466cc62a2a8bab0df6099ef836011f1c31a106bd"
+  },
+  "deityNames": {
+    "offset": 52921,
+    "size": 96,
+    "sha256": "5364ab6ee8fc654834d8db02457f265cc860736b6223ae1568254b95353539d9"
+  },
+  "genderNames": {
+    "offset": 53045,
+    "size": 14,
+    "sha256": "331495f04dd40a8709dd4d6bc6a28a0984bfb2771ee112c66a2f323338c14f6a"
+  },
+  "alignmentChoices": {
+    "offset": 50938,
+    "size": 6,
+    "sha256": "8366adacf46964639f87e2a94d42bb0c02dd82f47f2064936a309b572278d30f"
+  },
+  "hpDice": {
+    "offset": 51150,
+    "size": 8,
+    "sha256": "d75808e3398695d5c1e4f7aed55b5cc92a5a9b9f84a66afbb5a5b5383ad128d1"
+  },
+  "hpSides": {
+    "offset": 51158,
+    "size": 8,
+    "sha256": "3c1290683cd5db2a91bb70d43faf03d13223be5af7f12654a35b20e86f83fc78"
+  },
+  "defIconColors": {
+    "offset": 62827,
+    "size": 6,
+    "sha256": "2d21540386a1918e89ab038633ba8cf97aa68712c59f856fa03ba8faccc05e98"
+  },
+  "raceLimits": {
+    "offset": 63040,
+    "size": 112,
+    "sha256": "e7b1f635358120d17fb439c3d71db1fc67ba87108447dc1ec983c7928585daa1"
+  },
+  "ageLimit": {
+    "offset": 63481,
+    "size": 70,
+    "sha256": "aa95cb61b1054cf9e95780349f92ce19563f127be8afbcfc4ce9d2b01383da9c"
+  },
+  "knownSpellTable": {
+    "offset": 65179,
+    "size": 120,
+    "sha256": "4780c36e78e82624addbaeb2eeb80b2a468aa3fece420007b5e7286846057dcc"
+  },
+  "classProgression": {
+    "offset": 63693,
+    "size": 990,
+    "sha256": "c196bbcae66312dcbd4f3cc9b8c9eec7025517052e85b21ea374e590d36b0cf4"
+  },
+  "startAge": {
+    "offset": 63257,
+    "size": 224,
+    "sha256": "9e3125a6e3b4818df7441b74c84ca3a93e1d722dfa4f4c9f6d7938fec223bd24"
+  },
+  "pickRace": {
+    "source": "GAME.OVR",
+    "offset": 133207,
+    "size": 10,
+    "sha256": "02d0f6142c300b0432d0258f78a129d2c229ff1c52ec04f2e8b0dcb67bf440ce"
+  },
+  "pickGender": {
+    "source": "GAME.OVR",
+    "offset": 133228,
+    "size": 12,
+    "sha256": "c668143890b9ee8c7e08315d4242914955e60b8dbec847cb01e55c2382e4d011"
+  },
+  "pickClass": {
+    "source": "GAME.OVR",
+    "offset": 133240,
+    "size": 11,
+    "sha256": "f1286509fc5c2cdda60fa5c6b78d21e97dca054a89c2c445114c5cd4b4b29313"
+  },
+  "pickGod": {
+    "source": "GAME.OVR",
+    "offset": 133251,
+    "size": 9,
+    "sha256": "154173f47524a13790c40f54011565c7c0c59f735ede478e95254d74d75b454f"
+  },
+  "pickAlignment": {
+    "source": "GAME.OVR",
+    "offset": 133260,
+    "size": 15,
+    "sha256": "0a4cf2f59a9e154f2a444b75391d0daaf2856dc28e1327f93ba4e776dc76fcef"
+  },
+  "rerollStats": {
+    "source": "GAME.OVR",
+    "offset": 133309,
+    "size": 15,
+    "sha256": "02887361f7a8e1dde77da0ba6413368736f7a310913bcee71e6c1c80cca21818"
+  },
+  "characterName": {
+    "source": "GAME.OVR",
+    "offset": 133324,
+    "size": 17,
+    "sha256": "d43eb6f370cdd9b966b1c7d2b2e8a9d57e99ebc7fa9e13a6a2a96a1fd1e8c084"
+  },
+  "iconOk": {
+    "source": "GAME.OVR",
+    "offset": 148098,
+    "size": 18,
+    "sha256": "c651f8c2edf49bb693b671af9b13f72b0784b4bea59b8476abbeaf5fa794adb5"
+  },
+  "saveQuery": {
+    "source": "GAME.OVR",
+    "offset": 133341,
+    "size": 6,
+    "sha256": "3f5f1bdf430694c444478e8b8a8ba0a20cea1650ac8fe2a45df8ee2193e3fd04"
+  },
+  "addCharacter": {
+    "source": "GAME.OVR",
+    "offset": 145723,
+    "size": 18,
+    "sha256": "b1b8fddd40bcff21b5d4fe77fd7b2c833ad2ad846286b0c3d3690869ec335958"
+  },
+  "noPaladin": {
+    "source": "GAME.OVR",
+    "offset": 145749,
+    "size": 36,
+    "sha256": "393a829e11be93890bdcd1f74d499bac53b9cee1546af7995be38ced5910c20c"
+  },
+  "tooManyRangers": {
+    "source": "GAME.OVR",
+    "offset": 145785,
+    "size": 26,
+    "sha256": "b5ba78577f2ac3a5b521451f4b738a7f0b42bb8ef223ac5a248bf828870118ae"
+  },
+  "noEvil": {
+    "source": "GAME.OVR",
+    "offset": 145811,
+    "size": 24,
+    "sha256": "bacc44ebf3b18a14a4e5eed48a1bacc72b0c6e2c3ef9c8a3a1771369a7e9bf90"
+  },
+  "loadQuery": {
+    "source": "GAME.OVR",
+    "offset": 127401,
+    "size": 18,
+    "sha256": "1a95bbc5a7b5d5f824f9b12a02fb18eee6fb5986b2930ff7a81338708733bb23"
+  },
+  "saveGameQuery": {
+    "source": "GAME.OVR",
+    "offset": 129202,
+    "size": 18,
+    "sha256": "056d69c3e79b72acc2d7f305f980e1b52802a6360d8e2fe8c5c759d002e3726a"
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SilverMachine</title>
+  <style>
+    html, body { width: 100%; height: 100%; margin: 0; background: #000; overflow: auto; }
+    body { display: grid; grid-template-rows: auto 1fr auto; place-items: center; }
+    #alpha { width: 100%; box-sizing: border-box; padding: 8px 12px; color: #eee; background: #15212b; font: 12px/1.4 system-ui, sans-serif; }
+    #alpha p { margin: 2px 0; }
+    #alpha a { color: #a5dfef; }
+    #alpha { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; }
+    #plus-tile { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;
+      min-width: 12rem; min-height: 76px; padding: 12px 20px; border: 2px solid #a5dfef;
+      border-radius: 8px; background: #223b4b; text-decoration: none; }
+    #plus-tile strong { font-size: 24px; } #plus-tile:hover, #plus-tile:focus-visible { background: #30566c; }
+    #journal-links a { display: inline-block; margin: 0 12px 0 0; font-size: 14px; font-weight: bold; color: #a5dfef; }
+    @media (max-width: 600px) { #alpha { grid-template-columns: 1fr; } #plus-tile { min-height: 60px; } }
+    #under { display: flex; align-items: center; justify-content: center; gap: 18px; width: 100%; height: 26px; box-sizing: border-box; overflow: hidden;
+      padding: 0 8px; background: #15212b; color: #eee; font: 12px/1 system-ui, sans-serif; white-space: nowrap; }
+    #key-hint { display: flex; align-items: center; gap: 10px; pointer-events: none; }
+    #key-hint[hidden], #journal-links[hidden] { display: none; }
+    #key-hint::before { content: "KEYS"; font-weight: bold; letter-spacing: .1em; color: #a5dfef; }
+    #key-hint .row { display: flex; align-items: center; gap: 6px; padding-left: 10px; border-left: 1px solid #2c4a5c; }
+    #key-hint .pad { display: flex; gap: 2px; }
+    #key-hint .pad span, #key-hint kbd { display: inline-block; padding: 2px 4px; border-radius: 4px; background: #223b4b; border: 1px solid #4c6b7d;
+      color: #f9e2af; font: bold 12px/1 system-ui, sans-serif; }
+    #key-hint .pad b { margin-right: 1px; } #key-hint .pad i { font-style: normal; color: #cfe; }
+    #key-hint .pad .mid { display: none; }
+    #key-hint small { color: #9fb; font-size: 11px; }
+    #key-hint em { font-style: normal; }
+    canvas { display: block; image-rendering: pixelated; outline: none; }
+    #focus-hint { position: fixed; bottom: 0; margin: 0; padding: .5em 1em;
+      color: #fff; background: #222; font: 16px sans-serif; pointer-events: none; }
+  </style>
+  <script src="/app.js" defer></script>
+  <script>(() => { const id = Math.random().toString(36).slice(2), tell = word => navigator.sendBeacon('/page', word + ':' + id); tell('open'); addEventListener('pagehide', () => tell('close')); addEventListener('pageshow', event => { if (event.persisted) tell('open'); }); })();</script>
+</head>
+<body>
+  <header id="alpha">
+    <div>
+    <strong>SilverMachine · __SM_VERSION__</strong>
+    <p>plays the SSI Gold Box games from your own copy.</p>
+    <p>Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.</p>
+    <p>Build __SM_BUILD_ID__ · Copy: __SM_CONTENT__ · <a href="/setup">Game folder</a></p>
+    <p id="look-status" role="status" hidden></p>
+    </div>
+    <a id="plus-tile" href="/plus"><strong>Plus</strong><span>Journal · Maps · Help · Options</span></a>
+  </header>
+  <canvas width="320" height="200" tabindex="0" aria-label="SilverMachine game"></canvas>
+  <footer id="under">
+    <nav id="journal-links" aria-label="Journal entries cited on screen" hidden></nav>
+    <aside id="key-hint" aria-label="Direction keys" hidden></aside>
+  </footer>
+  <p id="focus-hint" hidden role="status">Click the game to restore keyboard and mouse control.</p>
+</body>
+</html>

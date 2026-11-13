@@ -1,0 +1,36 @@
+body { max-width: 76rem; margin: 1.5rem auto; }
+header .meta { margin: .25rem 0; }
+header .meta:nth-of-type(n+2) { font-size: .75rem; }
+button, input, select, textarea { font: inherit; color: inherit; background: #172a38; border: 1px solid #648197; border-radius: .3rem; padding: .45rem .65rem; }
+button { cursor: pointer; } button:disabled { cursor: default; opacity: .55; }
+button:hover:enabled, button[aria-selected=true], button[aria-pressed=true] { background: #28536a; border-color: #a5dfef; }
+:focus-visible { outline: 3px solid #f5ce77; outline-offset: 3px; }
+[hidden] { display: none !important; }
+.tabs, .toolbar, .subtabs { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1rem 0; }
+[role=tabpanel] { border: 1px solid #3a5165; padding: 1rem 1.25rem; border-radius: .4rem; min-height: 22rem; }
+[role=tabpanel] h2 { margin: 0 0 .5rem; }
+[role=tabpanel] label { padding: .35rem 0; border: 0; justify-content: flex-start; }
+[role=tabpanel] input { width: auto; height: auto; }
+input[type=checkbox] { width: 1.2rem; height: 1.2rem; }
+#mods-folder, #dqk-folder { width: min(100%, 34rem); min-width: 12rem; height: auto; flex: 1; }
+#dqk-hint { overflow-wrap: anywhere; }
+input[type=search], textarea { width: 100%; box-sizing: border-box; }
+textarea { min-height: 6rem; resize: vertical; }
+.source, .note { color: #b6c5d3; font-size: .9rem; }
+.scroll { overflow: auto; max-height: 36rem; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { padding: .45rem .65rem; text-align: left; border-bottom: 1px solid #3a5165; }
+th { background: #1c3242; position: sticky; top: 0; }
+canvas { image-rendering: pixelated; }
+.map-viewport { overflow: auto; max-height: 65vh; background: #0a141d; }
+.map-viewport canvas { display: block; }
+.gallery-layout { display: grid; grid-template-columns: minmax(12rem, 1fr) 3fr; gap: 1rem; }
+.gallery-list { display: grid; gap: .35rem; max-height: 30rem; overflow: auto; align-content: start; }
+.gallery-view { margin: 0; } .gallery-view canvas { width: 100%; max-width: 640px; height: auto; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: .75rem; }
+.cards article { padding: .8rem; border: 1px solid #3a5165; border-radius: .3rem; }
+.cards h3 { margin: 0 0 .5rem; }
+#options { margin-top: 1.25rem; } summary { cursor: pointer; padding: .5rem 0; font-weight: bold; }
+@media (max-width: 640px) { body { padding: 0 .7rem; } [role=tabpanel] { padding: .8rem; } .gallery-layout { grid-template-columns: 1fr; } .gallery-list { max-height: 10rem; } }
+.browser-folder-drop { border: 2px dashed #7daabd; padding: 1rem; margin-top: .5rem; border-radius: .5rem; }
+.browser-folder-drop.over { background: #234759; border-color: #b6edff; }

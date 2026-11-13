@@ -1,0 +1,321 @@
+{
+  "versions": [
+    {
+      "id": "collectors-cd",
+      "label": "Collector's CD",
+      "files": {
+        "8X8D1.DAX": {
+          "size": 22557,
+          "sha256": "e6cf50dabff7b77b39ca0c8457ad8332bc242405104ed113e62249fce31ba1c9"
+        },
+        "8X8D2.DAX": {
+          "size": 13375,
+          "sha256": "9dad1339f9558b8f6ad3806fa77eaed9bc7651fa73c7ef90d8f9685c63a195fd"
+        },
+        "8X8D3.DAX": {
+          "size": 11038,
+          "sha256": "c1d327dd8fd9fd6fddf1d7d71fcc2a4207e46775f0197bb8668433e6e01178a9"
+        },
+        "8X8D5.DAX": {
+          "size": 1352,
+          "sha256": "5a2ed0104eb77c9d1890a33f9086771f52ffe453e00ff8ff62bef1cd7558210a"
+        },
+        "BIGPIC1.DAX": {
+          "size": 36077,
+          "sha256": "bb282c245118cfd65caf34b01b24925405c99798859dfcd1eddfab0796659c3f"
+        },
+        "BIGPIC2.DAX": {
+          "size": 33570,
+          "sha256": "1598d11d529f2e46da8977ca6ed6a9d2a2c1fb15bceaab8187e55979cddf6132"
+        },
+        "BIGPIC3.DAX": {
+          "size": 68082,
+          "sha256": "7ba997802310b3ab35ab2f1273de57eca763638d38dcbebadbaa3c996624e356"
+        },
+        "CBODY.DAX": {
+          "size": 23889,
+          "sha256": "0c93206b020e30eecc1f761a9408b5befc20113fde18a8b401ae2ddad2c103bd"
+        },
+        "CHEAD.DAX": {
+          "size": 3428,
+          "sha256": "8e61d8cf23b7094353425224f02be4423b880c5e8a7e168d478ec851bfaea568"
+        },
+        "COMSPR.DAX": {
+          "size": 3612,
+          "sha256": "6bff177f6776339a627be3c0199518a41330f01f462e8994f649804e488a86d5"
+        },
+        "CPIC1.DAX": {
+          "size": 47967,
+          "sha256": "c4584b534f25d7cf89bbe7216bc6ec26faf9ad20aad68c1323a680a71702f418"
+        },
+        "DUNGCOM.DAX": {
+          "size": 6589,
+          "sha256": "070a696918593c2e3c21b2db08c71e9a4d74cafe368a873fc78e3319d91b38f4"
+        },
+        "ECL1.DAX": {
+          "size": 31457,
+          "sha256": "0ca71650d078e401743672d7882f5c995476f36a46cd04e8c57d573514faa9c8"
+        },
+        "ECL2.DAX": {
+          "size": 62236,
+          "sha256": "cc16244273d36b06b32e11f58a2d6307db7e99f610f42ecbc49dc485197d5710"
+        },
+        "ECL3.DAX": {
+          "size": 47705,
+          "sha256": "62e2a130882bdef6b531216372533faa94887905fc1e3e7a6cf0e4182951bd21"
+        },
+        "GEO1.DAX": {
+          "size": 3890,
+          "sha256": "27efe6936da5d4a119d4b5e1cd78267360822755b0c5d417fc882a9054ae7416"
+        },
+        "GEO2.DAX": {
+          "size": 6333,
+          "sha256": "63576d743c1482944bf6b9da7eeecb96f79ed3a7323d542fcbbcb56f7d588087"
+        },
+        "GEO3.DAX": {
+          "size": 5260,
+          "sha256": "54594e9898c9867f518cee7141378c3dfc041182a3944f92ff4b7bc6ede00976"
+        },
+        "ITEM1.DAX": {
+          "size": 3972,
+          "sha256": "6c6cb5eadbf6f8f85bb329c9a28f991978370e0d3c76570939421cd516a616c6"
+        },
+        "ITEM2.DAX": {
+          "size": 2413,
+          "sha256": "eb23ac633e0e2f70e6f329bd2443342693bd6c5d70446c3e3c6908ab8e621991"
+        },
+        "ITEM3.DAX": {
+          "size": 833,
+          "sha256": "04c9bff4bd23393549931fa5b6ccc2f086bb2635cf9f7755888be7dc41221751"
+        },
+        "ITEMS": {
+          "size": 2050,
+          "sha256": "9c743c5bd11ed0f99c76a392a12b875c5514f4472fe6e0ab5c112ec4541d063f"
+        },
+        "MON1CHA.DAX": {
+          "size": 7064,
+          "sha256": "67513a8ce09adb74c19d17bf3cda48731eab515da20b0c79da5c6542fb73ee52"
+        },
+        "MON1ITM.DAX": {
+          "size": 3482,
+          "sha256": "c7246daf02d5fa7d2a049bca6cc5e45e0a508859a744ce91df914aa45955d3fd"
+        },
+        "MON1SPC.DAX": {
+          "size": 1242,
+          "sha256": "90aa435237e837c7e727a5e5d399b3401a95aba34cdf706ffe1eb94894b8a603"
+        },
+        "PIC1.DAX": {
+          "size": 26434,
+          "sha256": "571bda15babc2ee1ef7f9b049b181a76bcd08cfd0264a60981e29356502c4a5c"
+        },
+        "PIC2.DAX": {
+          "size": 51677,
+          "sha256": "14daa4b81abdc4a533fdfa1b99110f23144b235ebf4283f5aae5721661bc60ca"
+        },
+        "PIC3.DAX": {
+          "size": 51870,
+          "sha256": "09586eaf1edd65c5201a9d2c84e8267d76305a54f05d5cc92bd465de13a007bb"
+        },
+        "PIC4.DAX": {
+          "size": 22985,
+          "sha256": "4d1ed9171600cd889116fcba23070ae0e3a3320d5780a0e2495c7951ff43e362"
+        },
+        "PIC5.DAX": {
+          "size": 16920,
+          "sha256": "0342a44c10c3eef259f530613a357e483cf3934a6cba6b00105b549f620a5042"
+        },
+        "SKY.DAX": {
+          "size": 2448,
+          "sha256": "1ffe6b50f6d76116a9d72fbb05a94ea70160c8fad2a49b9c4b08776b16fbadf9"
+        },
+        "SOUND.DAX": {
+          "size": 14257,
+          "sha256": "be95d01d14a46c9d20e0b3ec9ade147dc57532d848c74d9c56a0bae0574e9b54"
+        },
+        "SPRIT1.DAX": {
+          "size": 41341,
+          "sha256": "d167d163cfc86eb56512a297feaae80875131b29b09f57e8e80c3fffec1c7430"
+        },
+        "ST.EXE": {
+          "size": 72097,
+          "sha256": "b6c08c3b0a6e0a6ebac76406f2d9abba7d7a3c8d62d4b0ac121778b9c9136036"
+        },
+        "TITLE.DAX": {
+          "size": 55760,
+          "sha256": "a82a8fba35f0a8a32106adc707c492fa53f6cbb44cb75b5813facece6cfa91fa"
+        },
+        "WALLDEF1.DAX": {
+          "size": 5782,
+          "sha256": "ac67d7555f612c78b949180c1407f4a63ec67fa86ca0b9b15bb6e52e3603b392"
+        },
+        "WALLDEF2.DAX": {
+          "size": 4266,
+          "sha256": "6c2ee041007daceff958ddff109c4fb9b26ca7550c765b01902f8cf3fe5654c6"
+        },
+        "WALLDEF3.DAX": {
+          "size": 3041,
+          "sha256": "542a791dcc269ba2eea9fe2dd3e19ef9782037fcf647cf7893399a1b2efb0b11"
+        }
+      }
+    },
+    {
+      "id": "gog",
+      "label": "GOG",
+      "files": {
+        "8X8D1.DAX": {
+          "size": 22557,
+          "sha256": "e6cf50dabff7b77b39ca0c8457ad8332bc242405104ed113e62249fce31ba1c9"
+        },
+        "8X8D2.DAX": {
+          "size": 13375,
+          "sha256": "9dad1339f9558b8f6ad3806fa77eaed9bc7651fa73c7ef90d8f9685c63a195fd"
+        },
+        "8X8D3.DAX": {
+          "size": 11038,
+          "sha256": "c1d327dd8fd9fd6fddf1d7d71fcc2a4207e46775f0197bb8668433e6e01178a9"
+        },
+        "8X8D5.DAX": {
+          "size": 1352,
+          "sha256": "5a2ed0104eb77c9d1890a33f9086771f52ffe453e00ff8ff62bef1cd7558210a"
+        },
+        "BIGPIC1.DAX": {
+          "size": 36077,
+          "sha256": "bb282c245118cfd65caf34b01b24925405c99798859dfcd1eddfab0796659c3f"
+        },
+        "BIGPIC2.DAX": {
+          "size": 33570,
+          "sha256": "1598d11d529f2e46da8977ca6ed6a9d2a2c1fb15bceaab8187e55979cddf6132"
+        },
+        "BIGPIC3.DAX": {
+          "size": 68082,
+          "sha256": "7ba997802310b3ab35ab2f1273de57eca763638d38dcbebadbaa3c996624e356"
+        },
+        "CBODY.DAX": {
+          "size": 23889,
+          "sha256": "0c93206b020e30eecc1f761a9408b5befc20113fde18a8b401ae2ddad2c103bd"
+        },
+        "CHEAD.DAX": {
+          "size": 3428,
+          "sha256": "8e61d8cf23b7094353425224f02be4423b880c5e8a7e168d478ec851bfaea568"
+        },
+        "COMSPR.DAX": {
+          "size": 3612,
+          "sha256": "6bff177f6776339a627be3c0199518a41330f01f462e8994f649804e488a86d5"
+        },
+        "CPIC1.DAX": {
+          "size": 47967,
+          "sha256": "c4584b534f25d7cf89bbe7216bc6ec26faf9ad20aad68c1323a680a71702f418"
+        },
+        "DUNGCOM.DAX": {
+          "size": 6589,
+          "sha256": "070a696918593c2e3c21b2db08c71e9a4d74cafe368a873fc78e3319d91b38f4"
+        },
+        "ECL1.DAX": {
+          "size": 31457,
+          "sha256": "0ca71650d078e401743672d7882f5c995476f36a46cd04e8c57d573514faa9c8"
+        },
+        "ECL2.DAX": {
+          "size": 62236,
+          "sha256": "cc16244273d36b06b32e11f58a2d6307db7e99f610f42ecbc49dc485197d5710"
+        },
+        "ECL3.DAX": {
+          "size": 47705,
+          "sha256": "62e2a130882bdef6b531216372533faa94887905fc1e3e7a6cf0e4182951bd21"
+        },
+        "GEO1.DAX": {
+          "size": 3890,
+          "sha256": "27efe6936da5d4a119d4b5e1cd78267360822755b0c5d417fc882a9054ae7416"
+        },
+        "GEO2.DAX": {
+          "size": 6333,
+          "sha256": "63576d743c1482944bf6b9da7eeecb96f79ed3a7323d542fcbbcb56f7d588087"
+        },
+        "GEO3.DAX": {
+          "size": 5260,
+          "sha256": "54594e9898c9867f518cee7141378c3dfc041182a3944f92ff4b7bc6ede00976"
+        },
+        "ITEM1.DAX": {
+          "size": 3972,
+          "sha256": "6c6cb5eadbf6f8f85bb329c9a28f991978370e0d3c76570939421cd516a616c6"
+        },
+        "ITEM2.DAX": {
+          "size": 2413,
+          "sha256": "eb23ac633e0e2f70e6f329bd2443342693bd6c5d70446c3e3c6908ab8e621991"
+        },
+        "ITEM3.DAX": {
+          "size": 833,
+          "sha256": "04c9bff4bd23393549931fa5b6ccc2f086bb2635cf9f7755888be7dc41221751"
+        },
+        "ITEMS": {
+          "size": 2050,
+          "sha256": "9c743c5bd11ed0f99c76a392a12b875c5514f4472fe6e0ab5c112ec4541d063f"
+        },
+        "MON1CHA.DAX": {
+          "size": 7064,
+          "sha256": "67513a8ce09adb74c19d17bf3cda48731eab515da20b0c79da5c6542fb73ee52"
+        },
+        "MON1ITM.DAX": {
+          "size": 3482,
+          "sha256": "c7246daf02d5fa7d2a049bca6cc5e45e0a508859a744ce91df914aa45955d3fd"
+        },
+        "MON1SPC.DAX": {
+          "size": 1242,
+          "sha256": "90aa435237e837c7e727a5e5d399b3401a95aba34cdf706ffe1eb94894b8a603"
+        },
+        "PIC1.DAX": {
+          "size": 26434,
+          "sha256": "571bda15babc2ee1ef7f9b049b181a76bcd08cfd0264a60981e29356502c4a5c"
+        },
+        "PIC2.DAX": {
+          "size": 51677,
+          "sha256": "14daa4b81abdc4a533fdfa1b99110f23144b235ebf4283f5aae5721661bc60ca"
+        },
+        "PIC3.DAX": {
+          "size": 51870,
+          "sha256": "09586eaf1edd65c5201a9d2c84e8267d76305a54f05d5cc92bd465de13a007bb"
+        },
+        "PIC4.DAX": {
+          "size": 22985,
+          "sha256": "4d1ed9171600cd889116fcba23070ae0e3a3320d5780a0e2495c7951ff43e362"
+        },
+        "PIC5.DAX": {
+          "size": 16920,
+          "sha256": "0342a44c10c3eef259f530613a357e483cf3934a6cba6b00105b549f620a5042"
+        },
+        "SKY.DAX": {
+          "size": 2448,
+          "sha256": "1ffe6b50f6d76116a9d72fbb05a94ea70160c8fad2a49b9c4b08776b16fbadf9"
+        },
+        "SOUND.DAX": {
+          "size": 14257,
+          "sha256": "be95d01d14a46c9d20e0b3ec9ade147dc57532d848c74d9c56a0bae0574e9b54"
+        },
+        "SPRIT1.DAX": {
+          "size": 41341,
+          "sha256": "d167d163cfc86eb56512a297feaae80875131b29b09f57e8e80c3fffec1c7430"
+        },
+        "START.EXE": {
+          "size": 72097,
+          "sha256": "8b937984878ec72aa531335dd381a21bda67675408b5fd8e716a35ccd049999e"
+        },
+        "TITLE.DAX": {
+          "size": 55760,
+          "sha256": "a82a8fba35f0a8a32106adc707c492fa53f6cbb44cb75b5813facece6cfa91fa"
+        },
+        "WALLDEF1.DAX": {
+          "size": 5782,
+          "sha256": "ac67d7555f612c78b949180c1407f4a63ec67fa86ca0b9b15bb6e52e3603b392"
+        },
+        "WALLDEF2.DAX": {
+          "size": 4266,
+          "sha256": "6c2ee041007daceff958ddff109c4fb9b26ca7550c765b01902f8cf3fe5654c6"
+        },
+        "WALLDEF3.DAX": {
+          "size": 3041,
+          "sha256": "542a791dcc269ba2eea9fe2dd3e19ef9782037fcf647cf7893399a1b2efb0b11"
+        }
+      }
+    }
+  ],
+  "missing": []
+}
