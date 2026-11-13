@@ -1,0 +1,6 @@
+{
+  "PYODIDE-LICENSE.txt": "https://raw.githubusercontent.com/pyodide/pyodide/0.28.3/LICENSE",
+  "PYTHON-LICENSE.txt": "https://raw.githubusercontent.com/python/cpython/v3.13.2/LICENSE",
+  "EMSCRIPTEN-LICENSE.txt": "https://raw.githubusercontent.com/emscripten-core/emscripten/4.0.9/LICENSE",
+  "MUSL-COPYRIGHT.txt": "https://raw.githubusercontent.com/emscripten-core/emscripten/4.0.9/system/lib/libc/musl/COPYRIGHT"
+}

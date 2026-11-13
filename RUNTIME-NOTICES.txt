@@ -1,0 +1,5 @@
+Unmodified Pyodide 0.28.3, CPython 3.13.2, Emscripten 4.0.9.
+License texts, copyrights and exact source links: licenses/.
+Pyodide source: https://github.com/pyodide/pyodide/tree/0.28.3
+Python source: https://github.com/python/cpython/tree/v3.13.2
+SilverMachine code: LICENSE. No game data included.

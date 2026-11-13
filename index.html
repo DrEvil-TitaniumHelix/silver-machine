@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SilverMachine — browser demo</title><link rel="stylesheet" href="demo.css"><script src="demo.js" defer></script></head>
+<body><header id="alpha"><div><a class="wordmark" href="./">SilverMachine</a><span class="badge">Browser demo</span>
+<p>plays the SSI Gold Box games from your own copy.</p></div>
+<button id="plus-tile" hidden><strong>Plus</strong><span>Journal · Maps · Help · Options</span></button></header>
+<main><section id="welcome"><div class="introduction"><p class="eyebrow">Your adventure. Your copy.</p>
+<h1>Bring your own copy.<br>Play here.</h1>
+<p class="lead">SilverMachine runs a classic computer role-playing engine in your browser. Your game folder supplies the world, characters and artwork.</p>
+<p>Supported: the GOG release (recommended, buy it) or the original Collector's CD.</p>
+<div class="features"><div><strong>Play</strong><p>The original game screens and keyboard controls.</p></div><div><strong>Explore Plus</strong><p>Your journal, area maps, game tables and picture gallery.</p></div><div><strong>Keep your progress</strong><p>Save in this browser. Export a file to keep a backup.</p></div></div></div>
+<section id="drop-zone" tabindex="0" aria-label="Drag your game folder here"><div class="folder-mark" aria-hidden="true">▱</div>
+<h2>Drag your game folder here</h2><p>Files stay in your browser. Your original folder is read only.</p>
+<button id="choose" disabled>Or choose folder</button><label id="compatibility" class="fallback" hidden>Or use the compatibility picker<input id="folder" type="file" webkitdirectory multiple disabled></label>
+<p class="small">GOG installs under Program Files: drag that folder here. Select the folder containing the game files. A larger GOG installation folder also works if it contains one supported copy.</p></section></section>
+<p id="status" role="status" aria-live="polite">Preparing SilverMachine…</p>
+<section id="start-options" hidden><h2>Your copy is ready</h2><p id="copy"></p><button id="resume" hidden>Resume saved game</button><button id="new-game">Play</button>
+<p>A ready party is waiting: choose LOAD SAVED GAME, then A, then BEGIN ADVENTURING. Or create your own characters.</p></section>
+<section id="playing" hidden><canvas width="320" height="200" tabindex="0" aria-label="SilverMachine game"></canvas>
+<p id="focus-hint" hidden role="status">Click the game to restore keyboard and mouse control.</p>
+<nav id="journal-links" aria-label="Journal entries cited on screen" hidden></nav>
+<div class="save-bar"><span>F10: Save / Load · F2: Area · Enter: Select · Esc: Back</span><button id="export-save">Export saves</button>
+<label class="import-label">Import saves<input id="import-save" type="file" accept=".zip,application/zip"></label><button id="restart">Change copy / reload</button></div>
+<p class="small">Saves and settings stay in this browser. Export a backup before clearing browser data or changing devices. Import replaces the saved slots and settings in this browser.</p></section>
+<section id="plus-view" hidden><button id="close-plus">← Back to game</button><iframe id="plus-frame" title="SilverMachine Plus"></iframe></section>
+</main><footer><p>Chrome and Edge are the first supported browsers. Other browsers can use the compatibility picker if their game runtime is supported; Firefox and Safari have not been qualified.</p>
+<p>Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or their successors. Requires your own copy of the games.</p><p>Code licensed under MIT. No game data is included.</p></footer></body></html>
