@@ -8,11 +8,11 @@ Fan project; not affiliated with or endorsed by Wizards of the Coast, SSI or the
 
 Built with AI. Almost no AI content: the game's content and visuals come from the player's own copy of the original.
 
-**Beta 0.1.10 — Windows x64.** Plays Secret of the Silver Blades (PC/DOS) from the GOG release or the original Collector's CD. Compatible with Champions of Krynn (PC/DOS): GOG. Other titles will join the same app in later releases.
+**Beta 0.1.11 — Windows x64.** Plays Secret of the Silver Blades (PC/DOS) from the GOG release or the original Collector's CD. Compatible with Champions of Krynn (PC/DOS): GOG. Other titles will join the same app in later releases.
 
 ## Play
 
-1. From RecompLauncher or Quiver: install, point the launcher at your game folder when it asks, press **Play**; the game opens directly. Without a launcher: download `SilverMachine-0.1.10-windows-x64.zip`, extract the whole folder, and double-click **SilverMachine.exe**. Nothing to install. The title list opens in your browser; choose **Play**.
+1. From RecompLauncher or Quiver: install, point the launcher at your game folder when it asks, press **Play**; the game opens directly. Without a launcher: download `SilverMachine-0.1.11-windows-x64.zip`, extract the whole folder, and double-click **SilverMachine.exe**. Nothing to install. The title list opens in your browser; choose **Play**.
 2. Without a launcher, point it at your game folder: use **Browse**, type the folder path, or drag your game folder onto **SilverMachine.exe** (the game then opens directly). Your original files are only read, never changed.
 3. The first time, the party menu opens. Create and save your characters, **Add** them to the party, then choose **Begin**. If you already have a save A or an autosave, the game continues from it.
 

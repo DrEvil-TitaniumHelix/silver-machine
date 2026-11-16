@@ -1,7 +1,7 @@
 {
   "format": 1,
-  "version": "0.1.10",
-  "windows_asset": "SilverMachine-0.1.10-windows-x64.zip",
+  "version": "0.1.11",
+  "windows_asset": "SilverMachine-0.1.11-windows-x64.zip",
   "files": [
     "LICENSE",
     "README.md",
