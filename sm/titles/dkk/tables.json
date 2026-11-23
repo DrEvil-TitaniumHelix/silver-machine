@@ -1,0 +1,5372 @@
+{
+  "resident_bytes": 82336,
+  "resident_sha256": "8a3883bfbfea9883a3842fe01936c28fbc135f19d139fe2944a85f5e5d1d81ce",
+  "tables": {
+    "soundCueTable": {
+      "offset": 48354,
+      "size": 6,
+      "sha256": "7f5fe41bea96c2ae99463240616cebd76a7f2c7881f4477009feb1216a646fa9",
+      "shape": [
+        6
+      ],
+      "format": "B"
+    },
+    "shopStockStart": {
+      "offset": 48360,
+      "size": 8,
+      "sha256": "cea9bc1c5ee796089400981e1c03222ace287fcb756a923682ddf64d87300b2f",
+      "shape": [
+        8
+      ],
+      "format": "B"
+    },
+    "shopStockCount": {
+      "offset": 48368,
+      "size": 8,
+      "sha256": "addc174d823a75a953b9f73018f8c2a0129f0bf9deb110467e6a3fb4b27ce21e",
+      "shape": [
+        8
+      ],
+      "format": "B"
+    },
+    "shopStockItems": {
+      "offset": 48376,
+      "size": 56,
+      "sha256": "ebf27ecd98266f5ce1091f5874e24302fa27f67c72138978e35e1b56bb7ec01f",
+      "shape": [
+        56
+      ],
+      "format": "B"
+    },
+    "templeMenuSpells": {
+      "offset": 49132,
+      "size": 11,
+      "sha256": "10e9d01cf21b85211402843ad5711ee3a5c6e7ea5b15cf601441d8b658a9b4cd",
+      "shape": [
+        11
+      ],
+      "format": "B"
+    },
+    "aiDirOffsets": {
+      "offset": 49143,
+      "size": 30,
+      "sha256": "889b6ee4b02e187de4b285d02a780cd455d63caf920400debfc3939f1bd9dba9",
+      "shape": [
+        6,
+        5
+      ],
+      "format": "B"
+    },
+    "placementDirections": {
+      "offset": 49174,
+      "size": 16,
+      "sha256": "6eb3511d57e7705f2de07752237987e7f1950a336634e19997ffdc919678827d",
+      "shape": [
+        4,
+        4
+      ],
+      "format": "B"
+    },
+    "combatApproachDirections": {
+      "offset": 49190,
+      "size": 16,
+      "sha256": "7b5d1b03210c50346f68b248f36367eb1162fbc54b91e1fabc831e931869973b",
+      "shape": [
+        4,
+        4
+      ],
+      "format": "B"
+    },
+    "halfDirections": {
+      "offset": 49206,
+      "size": 4,
+      "sha256": "7dde7343fca717d7417634c1786c932416c6248af5f33a5498095a64a4f7b3a4",
+      "shape": [
+        4
+      ],
+      "format": "B"
+    },
+    "approachOffsetX": {
+      "offset": 49210,
+      "size": 8,
+      "sha256": "a6b24dca1f0fc9b8f07c11f93d4f001a6dd0374db8ae1ea79f5e2b714d7bfbef",
+      "shape": [
+        2,
+        4
+      ],
+      "format": "b"
+    },
+    "approachOffsetY": {
+      "offset": 49218,
+      "size": 8,
+      "sha256": "f3deb66fff4455ad854c22dad0fd504f5fda85fddfadaf2f644701d23cdb3752",
+      "shape": [
+        2,
+        4
+      ],
+      "format": "b"
+    },
+    "occupancyRanges": {
+      "offset": 49226,
+      "size": 60,
+      "sha256": "505c860b2f99dd4a28c048c0b26fa3fd368c829b332721591ae123c61b690949",
+      "shape": [
+        5,
+        6,
+        2
+      ],
+      "format": "b"
+    },
+    "combatantTiles": {
+      "offset": 49294,
+      "size": 32,
+      "sha256": "9f1507fe44321e135e069681e6a93708e1a094ff8004849c745bf4d94058e346",
+      "shape": [
+        32
+      ],
+      "format": "B"
+    },
+    "nameBlanks": {
+      "offset": 49736,
+      "size": 16,
+      "sha256": "984f8c0a4443619637661c2b5760883018f9236abc67024461ce6c016581862d",
+      "shape": [
+        1,
+        16
+      ],
+      "format": "B"
+    },
+    "alignmentChoices": {
+      "offset": 49764,
+      "size": 6,
+      "sha256": "8366adacf46964639f87e2a94d42bb0c02dd82f47f2064936a309b572278d30f",
+      "shape": [
+        6
+      ],
+      "format": "b"
+    },
+    "iconMenuModes": {
+      "offset": 49770,
+      "size": 5,
+      "sha256": "6c66af87c90e9472ea11fc306f54bad7e3f8d03d9dca63db86bb7b473172bdc9",
+      "shape": [
+        5
+      ],
+      "format": "B"
+    },
+    "startingItems": {
+      "offset": 49776,
+      "size": 20,
+      "sha256": "d85c0cbf54211032ad8c8e3e27855830e0e4205b1fdfb2983fd6f8b7888d6247",
+      "shape": [
+        5,
+        4
+      ],
+      "format": "B"
+    },
+    "knightRequirements": {
+      "offset": 49796,
+      "size": 12,
+      "sha256": "4d28cab05f4ce3e0643073f991d0c9a49fc383a8b6bef75bf71c91ef7f3493b1",
+      "shape": [
+        2,
+        6
+      ],
+      "format": "B"
+    },
+    "turnUndeadTable": {
+      "offset": 49808,
+      "size": 143,
+      "sha256": "2b2bf3a3e8beba3ee8462aac361a696cce39cbeb4c1c0a3041eeb8324031142e",
+      "shape": [
+        13,
+        11
+      ],
+      "format": "b"
+    },
+    "areaHalfWidths": {
+      "offset": 49951,
+      "size": 21,
+      "sha256": "bcbe0adbaca195ba16dc1354f2d61ff375f5ea3b4b1d99a35428750b9f7d006a",
+      "shape": [
+        7,
+        3
+      ],
+      "format": "b"
+    },
+    "firstLevelHitDice": {
+      "offset": 49974,
+      "size": 8,
+      "sha256": "d75808e3398695d5c1e4f7aed55b5cc92a5a9b9f84a66afbb5a5b5383ad128d1",
+      "shape": [
+        8
+      ],
+      "format": "B"
+    },
+    "hitDieSides": {
+      "offset": 49982,
+      "size": 8,
+      "sha256": "3c1290683cd5db2a91bb70d43faf03d13223be5af7f12654a35b20e86f83fc78",
+      "shape": [
+        8
+      ],
+      "format": "B"
+    },
+    "directionNearX": {
+      "offset": 49990,
+      "size": 8,
+      "sha256": "39b7309e238fe92db02d3bfc2af0574184ff17c111d2b3cbd717c7bd302ce23d",
+      "shape": [
+        8
+      ],
+      "format": "b"
+    },
+    "directionNearY": {
+      "offset": 49998,
+      "size": 8,
+      "sha256": "f331c25044999bf9e29ac61368a0fcdfc3ca909f943c683109e929e9d8395c71",
+      "shape": [
+        8
+      ],
+      "format": "b"
+    },
+    "directionFarX": {
+      "offset": 50006,
+      "size": 8,
+      "sha256": "28f61e347a7bf816a186f07480ff65d96766347050f30177ec03b825fc55466c",
+      "shape": [
+        8
+      ],
+      "format": "b"
+    },
+    "directionFarY": {
+      "offset": 50014,
+      "size": 8,
+      "sha256": "e31403e30fd7ed39ac6226535a50e07e25783a3022408e63dca78ae46cbfde7e",
+      "shape": [
+        8
+      ],
+      "format": "b"
+    },
+    "hitPointEffectIds": {
+      "offset": 50022,
+      "size": 16,
+      "sha256": "78bb3282b65628b7b817473204a121c1c05b72539cb17709b5b97045e3410eb2",
+      "shape": [
+        16
+      ],
+      "format": "B"
+    },
+    "sliceSymbolStart": {
+      "offset": 50086,
+      "size": 10,
+      "sha256": "2fe5ffcf9f62db12698e8b439a0d4bbd021cdc67d85e638d4800b244b7ea7433",
+      "shape": [
+        10
+      ],
+      "format": "B"
+    },
+    "sliceColumns": {
+      "offset": 50096,
+      "size": 10,
+      "sha256": "675323f4865534fff78b19b63a3166a83182774eecf0c25728af2c77f3d4c84d",
+      "shape": [
+        10
+      ],
+      "format": "B"
+    },
+    "sliceRows": {
+      "offset": 50106,
+      "size": 10,
+      "sha256": "7f9d3f8b4a3980d0baaa44d1be35351aa56203e523c992c5e31aba607920a7e4",
+      "shape": [
+        10
+      ],
+      "format": "B"
+    },
+    "sliceX": {
+      "offset": 50116,
+      "size": 20,
+      "sha256": "4dbd99bc9c0be9bb32a5c781c2f9a151747877a6c8e27beb6da0160e5aca1c5c",
+      "shape": [
+        10
+      ],
+      "format": "h"
+    },
+    "sliceY": {
+      "offset": 50136,
+      "size": 20,
+      "sha256": "f842d3904516b1a3b70620bf7d59880ab4c02738fff5a3ae51517eeabfac4eaa",
+      "shape": [
+        10
+      ],
+      "format": "h"
+    },
+    "borderTopRow": {
+      "offset": 50156,
+      "size": 40,
+      "sha256": "0a02ba31172bde5e128ea3fd22174777970954673134438d5e4cc2913b804b30",
+      "shape": [
+        40
+      ],
+      "format": "B"
+    },
+    "borderBottomRow": {
+      "offset": 50196,
+      "size": 40,
+      "sha256": "401382dfcb42ca3766f74f55a36a948053ad1d1f8a5acb5028b4227d7a4f9b8a",
+      "shape": [
+        40
+      ],
+      "format": "B"
+    },
+    "dividerRow": {
+      "offset": 50236,
+      "size": 40,
+      "sha256": "7a3e9d206559357d7bc2c0abb92c50a806cbbbb6384a009cfdb43ed234b3a14c",
+      "shape": [
+        40
+      ],
+      "format": "B"
+    },
+    "insetColumn": {
+      "offset": 50276,
+      "size": 40,
+      "sha256": "45ac1349483e074ef0c449d5f0b3561bb318dde81c20469db3d6c4f4ac5f06c3",
+      "shape": [
+        40
+      ],
+      "format": "B"
+    },
+    "dualPaneColumn": {
+      "offset": 50316,
+      "size": 23,
+      "sha256": "fe343b32f8d5c64fb15cfa67ebb1b257172b4574d822b53e93b93fbb1ce5ca84",
+      "shape": [
+        23
+      ],
+      "format": "B"
+    },
+    "unreadColumn": {
+      "offset": 50339,
+      "size": 22,
+      "sha256": "1ea7b00f7487aa995c4f00829590c61b2e917de019a1e495f94638b7c4d62329",
+      "shape": [
+        22
+      ],
+      "format": "B"
+    },
+    "combatLeftColumn": {
+      "offset": 50361,
+      "size": 22,
+      "sha256": "8a1d4ed3345b899f7a62598546eeaf6b536a6e54022f10b3a782fd376a13ae87",
+      "shape": [
+        22
+      ],
+      "format": "B"
+    },
+    "combatRightColumn": {
+      "offset": 50383,
+      "size": 23,
+      "sha256": "1d16856bcc5ccd9a5779a073d2a50747ce0f41204f754355a1115526216bbf54",
+      "shape": [
+        23
+      ],
+      "format": "B"
+    },
+    "combatMidColumn": {
+      "offset": 50406,
+      "size": 14,
+      "sha256": "6bbbac881ccec8d9d682a0ba01affad7a0e5500682e2573bc5f0144d4a016d70",
+      "shape": [
+        14
+      ],
+      "format": "B"
+    },
+    "cgaFillBytes": {
+      "offset": 50420,
+      "size": 4,
+      "sha256": "03b722a15d4658be01f1eb9def5e8be124710cc0e88842f78107abfda3e23ea8",
+      "shape": [
+        4
+      ],
+      "format": "B"
+    },
+    "tandyFillBytes": {
+      "offset": 50424,
+      "size": 16,
+      "sha256": "a8faed6abbf35c12a4b26e40f6feb19d736d90045c83b9f9a31f638d323e6811",
+      "shape": [
+        16
+      ],
+      "format": "B"
+    },
+    "pressToContinue": {
+      "offset": 50504,
+      "size": 34,
+      "sha256": "51873826434cb6dfab85a0661c792ffdea70bfdfff5b8a3491e0154590c48103",
+      "shape": [
+        1,
+        34
+      ],
+      "format": "B"
+    },
+    "pressToContinueMenu": {
+      "offset": 50538,
+      "size": 35,
+      "sha256": "61c643147f4edeff0744d5e37c21f970d79fbf78121df71564a3850f45af3b55",
+      "shape": [
+        1,
+        35
+      ],
+      "format": "B"
+    },
+    "classNames": {
+      "offset": 50573,
+      "size": 486,
+      "sha256": "bae5b17c129d88cdc2c84ae6fae2bf9facffa7a58bea70271d0a881c78b12c13",
+      "shape": [
+        18,
+        27
+      ],
+      "format": "B"
+    },
+    "raceNames": {
+      "offset": 51059,
+      "size": 128,
+      "sha256": "4372e80b3857b9eb69493601aeb2e615dfe73d3ab1237d95f8cd17e40e6f87ea",
+      "shape": [
+        8,
+        16
+      ],
+      "format": "B"
+    },
+    "alignmentNames": {
+      "offset": 51187,
+      "size": 153,
+      "sha256": "1db01146bcf5946e560f0fe2466cc62a2a8bab0df6099ef836011f1c31a106bd",
+      "shape": [
+        9,
+        17
+      ],
+      "format": "B"
+    },
+    "deityNames": {
+      "offset": 51340,
+      "size": 96,
+      "sha256": "5364ab6ee8fc654834d8db02457f265cc860736b6223ae1568254b95353539d9",
+      "shape": [
+        8,
+        12
+      ],
+      "format": "B"
+    },
+    "robeOrderNames": {
+      "offset": 51436,
+      "size": 28,
+      "sha256": "7128df9e357b1c31ba9cfee9aeda4f1fc5a010acc4cb978976b688939b7709e0",
+      "shape": [
+        4,
+        7
+      ],
+      "format": "B"
+    },
+    "genderNames": {
+      "offset": 51464,
+      "size": 14,
+      "sha256": "331495f04dd40a8709dd4d6bc6a28a0984bfb2771ee112c66a2f323338c14f6a",
+      "shape": [
+        2,
+        7
+      ],
+      "format": "B"
+    },
+    "moneyNames": {
+      "offset": 51478,
+      "size": 77,
+      "sha256": "a87e16e1dcdb61e79f9e7697f60c9daa6fc654ed6002ce0a53c98149303fcb64",
+      "shape": [
+        7,
+        11
+      ],
+      "format": "B"
+    },
+    "statusNames": {
+      "offset": 51555,
+      "size": 117,
+      "sha256": "c345546ee86a370a9ac0ed524f898e6ad86826d6898e43ef066022973e788635",
+      "shape": [
+        9,
+        13
+      ],
+      "format": "B"
+    },
+    "partyMenuItems": {
+      "offset": 51672,
+      "size": 546,
+      "sha256": "1cc896b0c52c84de705ab0da79ee3b3ddda7093e840480f166d873e350f2134d",
+      "shape": [
+        13,
+        42
+      ],
+      "format": "B"
+    },
+    "loseQuery": {
+      "offset": 52218,
+      "size": 11,
+      "sha256": "dc2fe1ae442b5207f409867254a06811d752a3cd058904a9103c13213378fc39",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "cantCastHereText": {
+      "offset": 52229,
+      "size": 31,
+      "sha256": "4608497994cee53315f31da1e6a5be87ed1c2a4277322f523125f754b93af81a",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "itemLabel": {
+      "offset": 52260,
+      "size": 11,
+      "sha256": "5b35f8b7e126f79c25307e56ae28f4ed89ef2207896b1586994f24d62ffff1ae",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "combatOnlyItemText": {
+      "offset": 52271,
+      "size": 31,
+      "sha256": "1205191fef33d8758251eb54ccd8474908f033e42aced1d57bc4e6741335f888",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "useItemPrompt": {
+      "offset": 52302,
+      "size": 11,
+      "sha256": "9363369d257da26f3bb12aa56abbeec4da7a4b2ee64d739471088e4fc33f6482",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "castsText": {
+      "offset": 52313,
+      "size": 11,
+      "sha256": "4c140e3dc8e44bfd45225a0b1b586a97722fcf923ccf7185ae685dc7968617d1",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "abortSpellPrompt": {
+      "offset": 52324,
+      "size": 21,
+      "sha256": "d0a9b6826ebf925bf35580752d6cc9157cff0eac646349a17f6ae00da992f520",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "spellAbortedText": {
+      "offset": 52345,
+      "size": 21,
+      "sha256": "98a73e1b29fdf2ed2a98101db4a42a18b06cf5ba9a17119ab1ca41c5bce34331",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "howMany": {
+      "offset": 52366,
+      "size": 11,
+      "sha256": "a2aacc5e478300c5863f0c6023a7da1b0a0f2afb596a8616a7dc045336f78261",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "takePromptTail": {
+      "offset": 52377,
+      "size": 21,
+      "sha256": "62736c3421add1297f53cc0e274fa3f84c86592c3ffc362492bfba80ce56d906",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "howMuch": {
+      "offset": 52398,
+      "size": 11,
+      "sha256": "9495bb2805328573445cb1eb2b1a262e0a3adec6afebc0ef17d3b6ffd31fcbbe",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "gemsCountLabel": {
+      "offset": 52409,
+      "size": 11,
+      "sha256": "6a177c716718f11334f16d9cf28bf315d11fd113a30fda9ab592b6c0102daa52",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "jewelryCountLabel": {
+      "offset": 52420,
+      "size": 11,
+      "sha256": "79221981299630b8df647d8354eda6542e73b07f143198bbbf357988408971c6",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "collectionMessage": {
+      "offset": 52431,
+      "size": 31,
+      "sha256": "ee03b8c7ab2cb77d2cf5cbf562b9873ba9ee7f60e5e6c34c38128b844b7b16c9",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "gemValuePrefix": {
+      "offset": 52462,
+      "size": 31,
+      "sha256": "32f5ba310ee5ea0edf5660b118aa7dc15082e5e0d2110f7809482d7bb9029a40",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "jewelValuePrefix": {
+      "offset": 52493,
+      "size": 31,
+      "sha256": "4c3132f32f6639d13c8c6ef9682ce354cd30d122967695302bed71827a0aa32e",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "selectCoinQuery": {
+      "offset": 52524,
+      "size": 21,
+      "sha256": "ce706a1ad9dccd3f96d83571a7307123187bd297ebe6f0e8787cc95f2c851523",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "tradeToText": {
+      "offset": 52545,
+      "size": 11,
+      "sha256": "ba31a3df3db229d921809ccaf566e96751244b29de75b062250e6035e01e034f",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "tradeAmountText": {
+      "offset": 52556,
+      "size": 21,
+      "sha256": "7919f896c26839a32c0af2864f70586f2ba4b4676d75a48c74f55bfd474d53a1",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "noGemsMessage": {
+      "offset": 52577,
+      "size": 21,
+      "sha256": "2d80996fb990e4ad818543f52102ee0b8697d91bcbc47d4e5f7d2aab4a412df2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "goldValueSuffix": {
+      "offset": 52598,
+      "size": 11,
+      "sha256": "18464467821120734dbabcf1b6df1f587666c6d1d7c6e2c7ccfac8b56f90c328",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "stopRestPrompt": {
+      "offset": 52609,
+      "size": 21,
+      "sha256": "a8b53344cbfc2e0c4fde903960d8b6c4a585c7bf82ae8e1daf3fe6571de69b26",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "scribeMessage": {
+      "offset": 52630,
+      "size": 41,
+      "sha256": "2c638dd224e233d503cf8d7cbb8f3d65410e225569797df87ed0c85fdecd7285",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "itemsLabel": {
+      "offset": 52671,
+      "size": 11,
+      "sha256": "ae6857ee8f85abfe1e821bb2050c4f9a16df9d1d82191a903ff949ba121d3bda",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "readyItemLabel": {
+      "offset": 52682,
+      "size": 21,
+      "sha256": "bf19c7af7d1ba37843b207f52dce0d1bcece55b9298d670d56366b1ccaffa3e5",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "dropYour": {
+      "offset": 52703,
+      "size": 11,
+      "sha256": "2fdb5b1edb8a37414f378d72557627f5f4431fcc662cd221355ca036d096e329",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "goneForever": {
+      "offset": 52714,
+      "size": 21,
+      "sha256": "f9036ded73120b66c2485eace3265c555776573af04d5589fda13046c91c4542",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "mustBeReadied": {
+      "offset": 52735,
+      "size": 21,
+      "sha256": "c3b00ef2d86e3ea2760de4aba601e64ee8763c36de75463b08969f0b500d6578",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "sellOfferPrefix": {
+      "offset": 52756,
+      "size": 21,
+      "sha256": "44283f08b6b1412a5e3e4541ed426a0a103108cca2bfe763578e588ac89396b2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "steelPiecesFor": {
+      "offset": 52777,
+      "size": 31,
+      "sha256": "960bdbc49639c0a18c69611ec03563477f40a631e5ecf883172d9f894da91f5d",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "dealQuery": {
+      "offset": 52808,
+      "size": 21,
+      "sha256": "beb20a9a76696993e38380bdb745d48d2eb70e6682094ebb01739df6f5d3a3c3",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "soldText": {
+      "offset": 52829,
+      "size": 11,
+      "sha256": "32de346f63ef4d49190b965782bde05b8ad6987f4e1d796acaa32dd96ed0049c",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "overloadPoolText": {
+      "offset": 52840,
+      "size": 41,
+      "sha256": "30f80b999284eab60d581f35ce475f1efc7e2fabffe177c865d075958385aaf5",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "identifyOfferText": {
+      "offset": 52881,
+      "size": 41,
+      "sha256": "ee07cea1f93bc4c00ab83e1ca5d393a9862207260c86126bda47da79acc75ab8",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "identifyNoNewsText": {
+      "offset": 52922,
+      "size": 41,
+      "sha256": "8edacbede3695ae88b38ccdd97b0d0ddafd82e8e54941518a2fc41e384432574",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "identifyKindText": {
+      "offset": 52963,
+      "size": 31,
+      "sha256": "9e264228babd3ba6cfa613105719a3852805730580bce5466c33ab3d6b259c01",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "dropAmountText": {
+      "offset": 52994,
+      "size": 21,
+      "sha256": "ca5e4543c6a5d8d76c12941db291e4fe6e1489ebf70cb1b1bd48ecdceb1b347f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "giveAmountText": {
+      "offset": 53015,
+      "size": 21,
+      "sha256": "7cacf800f00ad3703c6cb327fab2b320fa9ef963fbb26ea0527dacd674f4fde7",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "quitToDosPrompt": {
+      "offset": 53036,
+      "size": 21,
+      "sha256": "4d72bdb297dc1c2e33f9a33b1901cd6788236f88f02b90fa58010d64258c606f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "quitUnsavedQuery": {
+      "offset": 53057,
+      "size": 31,
+      "sha256": "2b4898aaf0f09675ff4265cbbc30e634f83df2f3cb38a370a8fa8a7647a2b466",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "pickRaceMenu": {
+      "offset": 53088,
+      "size": 11,
+      "sha256": "4c33843178a9738705a9a29dd5baf062006344bf7dd4e9ef5501c76ec11204bd",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "pickGenderMenu": {
+      "offset": 53099,
+      "size": 21,
+      "sha256": "b500b6a8c4b18a695b0b9b5481b236462ce3a5f887487542e96a08183807b08e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "pickClassMenu": {
+      "offset": 53120,
+      "size": 11,
+      "sha256": "f1286509fc5c2cdda60fa5c6b78d21e97dca054a89c2c445114c5cd4b4b29313",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "pickDeityMenu": {
+      "offset": 53131,
+      "size": 11,
+      "sha256": "9fa5d68fab449f66f75fa77d509c21cb59d9011650304528b2210bdb1cdb189e",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "pickAlignmentMenu": {
+      "offset": 53142,
+      "size": 21,
+      "sha256": "490006afc221385b7f9671fbf2cc7414eaab62d9a0a3c8a963517c54bdfa2706",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "rerollStatsQuery": {
+      "offset": 53163,
+      "size": 21,
+      "sha256": "b171b46beb6aae50024897845a0873f6f86c7ef2a4d38e96ea69aa6c8356e28f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "characterNameQuery": {
+      "offset": 53184,
+      "size": 21,
+      "sha256": "8c006819fa83d3d8f6284665cf234b495c0f6b097bf137429b0413417733f653",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "saveCharacterQuery": {
+      "offset": 53205,
+      "size": 21,
+      "sha256": "2aee366480116931b92ac4ad01eac2e8447f83f20a6bb275f0f134a83b11d7e2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "dropPrefix": {
+      "offset": 53226,
+      "size": 11,
+      "sha256": "5df9ac378c5d8aba2e38f07e6b3913fbfeea9320726e8887b3839141c0f9959e",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "foreverText": {
+      "offset": 53237,
+      "size": 11,
+      "sha256": "4d8410a4f5c76e488a7834c79ec3b28572c67fd0bbc72c68c077e0a96715276e",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "areYouSureQuery": {
+      "offset": 53248,
+      "size": 21,
+      "sha256": "206e80dd39d72b779e7ae9fb91b240bfd531e41127ba2bef28ecd32b7721535e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "dumpedOutBackText": {
+      "offset": 53269,
+      "size": 21,
+      "sha256": "812f154d2a06726d56fdbacebca55ae4f992e5a2afd9e2e0f692ccae8ab887ee",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "bidsFarewellText": {
+      "offset": 53290,
+      "size": 21,
+      "sha256": "c80e53b89ba8e6231a56e0caf8c1e1abc7dae5ebe3b2064e2775eed4b118f5f8",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "sighOfReliefText": {
+      "offset": 53311,
+      "size": 31,
+      "sha256": "3a160f898aa38aa2c86ab405c08ef0b8154b7c5d3dce5c788d9de3e7dbf59ff8",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "cantBeModifiedText": {
+      "offset": 53342,
+      "size": 21,
+      "sha256": "18604c893d364fbd7f4a6c662823924ebd9a3aea4b7d991fa1ad3751abf85cb8",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "addFromWhereQuery": {
+      "offset": 53363,
+      "size": 21,
+      "sha256": "6a447691d62100c840995347b00c9dfcc233823520fb4b85525b69a98bfb5ce6",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "addCharacterQuery": {
+      "offset": 53384,
+      "size": 21,
+      "sha256": "66a3a9b3c26cd5f3c7defc472ce88c56dc67a762b4d7acc8d3db4cc1476c9604",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "sorryNotInCgaText": {
+      "offset": 53405,
+      "size": 21,
+      "sha256": "5d0666b5df5010f22d7fb915b33865b667f6f99c65b8e2e0e9e749d541cc28f7",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "readyActionHeading": {
+      "offset": 53426,
+      "size": 21,
+      "sha256": "90511dfe3b10d41b44c1e0620e0e0870512d229e009f2d239744dcbeb8fa8dda",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "newText": {
+      "offset": 53447,
+      "size": 11,
+      "sha256": "331197cf2e9fed168afffcd915ba1bc2db551ae4866d8d1f067fbd7963046eff",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "oldText": {
+      "offset": 53458,
+      "size": 11,
+      "sha256": "73ab9d2b3c1bd76a7b9c487141f2de72095b1293e74588f9a3451cc88ab67b38",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "iconOkQuery": {
+      "offset": 53469,
+      "size": 21,
+      "sha256": "51c056790febe8c2965c9659e1b8966f5f678d73de5928cccece538b018f910a",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "notEnoughExperienceText": {
+      "offset": 53490,
+      "size": 21,
+      "sha256": "77625911b34c10b4656a18549bc1727b48d6d02b6240b8e1d2592c44aa2211e9",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "willBecomeText": {
+      "offset": 53511,
+      "size": 21,
+      "sha256": "872ed3162d5b91e995f5a7a23fccbc082f09e320969e5dbeeffff661f6322d7a",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "aLevelText": {
+      "offset": 53532,
+      "size": 21,
+      "sha256": "86cb59b79a406e10481b44e6f4dc996daa26c26b7bf4d67e025b5236d8e18188",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "andALevelText": {
+      "offset": 53553,
+      "size": 21,
+      "sha256": "41d95627bd0a46013821d5b2dbec3a0ff3fd2f0f8586341b8945e31efa01d523",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "wishToTrainQuery": {
+      "offset": 53574,
+      "size": 31,
+      "sha256": "5b303e8442bea9c8e0f25ae0ee207946a3277005c24f6a304bde38ec0d05ed8c",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "congratulationsText": {
+      "offset": 53605,
+      "size": 21,
+      "sha256": "bf842eb9882512f6846fbc59d98b024fba29cca30d461731c3d865881bb3122e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "petitioningText": {
+      "offset": 53626,
+      "size": 31,
+      "sha256": "6816ee798f52cf63febec23d9518d6584eb727387e668916b6cf9fc0abe1d5a4",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "swordText": {
+      "offset": 53657,
+      "size": 11,
+      "sha256": "a4bea61941556d81e128eafb8e11c1cf3844621c079b72ea85cb703e677aebdb",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "roseText": {
+      "offset": 53668,
+      "size": 11,
+      "sha256": "c626a63e042ee39cdadb34a36a534d740ff8e0e7f60c2900193597e3ce304719",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "knightOfTheText": {
+      "offset": 53679,
+      "size": 21,
+      "sha256": "b44b4dbf9cf84479d3bebe2b39e39066d9e297c36aa10e8f5778d02b56e6540a",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "tooInexperiencedText": {
+      "offset": 53700,
+      "size": 21,
+      "sha256": "53917c86fd2aadaba1007720be7bde23e5c1f7204f182b8552c5fb73688832a2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "doesNotQualifyText": {
+      "offset": 53721,
+      "size": 21,
+      "sha256": "790869f62fb1066a909f1cf0aff5c487a5c0ed3c3733c8290b74d63a311cb2f8",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "mayBecomeText": {
+      "offset": 53742,
+      "size": 21,
+      "sha256": "6e263b8ad77f5c143cbdb9e845caec2619b70033616515b010a37e58bfd31730",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "tooManyRangers": {
+      "offset": 53763,
+      "size": 31,
+      "sha256": "f40a69774745874fdff6de4b9c185180a4c0320054ada6c87466ce817b8bfa65",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "consciousTrainingMessage": {
+      "offset": 53794,
+      "size": 31,
+      "sha256": "43222043954cd6de135a3ee15d7d49c88b6964f3fa84f644f70cb2d42f75f25b",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "classTrainingMessage": {
+      "offset": 53825,
+      "size": 41,
+      "sha256": "b30e577ff99c0960679793e3b81ae0ff424394c1bc9be5056ffcc862076f6671",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "askChampionsDiskPrefix": {
+      "offset": 53866,
+      "size": 41,
+      "sha256": "8725936a782b7a97945b8401730a3cd176a2d09dcb497512db643afbf49c2108",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "askSaveDiskPrefix": {
+      "offset": 53907,
+      "size": 31,
+      "sha256": "724e59b85e9092f008011a5248ebb334f73cd28903ac8d91eedcc67a74b19324",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "askDiskSuffix": {
+      "offset": 53938,
+      "size": 11,
+      "sha256": "2443271d6c8bc547b52e23e83eacb2f4fd0ab9e2335d6274bf403ff35c6727fb",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "noSaveDirectoryMessage": {
+      "offset": 53949,
+      "size": 41,
+      "sha256": "94cf5bfb5c38064500baa2f18f5281ce9d8f648d416e7899b99c7b165d5703ff",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "noChampionsDirectoryMessage": {
+      "offset": 53990,
+      "size": 41,
+      "sha256": "b3c13e659614f5967582214f4b2a6d939d14f504588ae0db73571ab2f5c1eb2c",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "diskFullMessage": {
+      "offset": 54031,
+      "size": 31,
+      "sha256": "db1a4ed9725ea969c2f1f311e3fa503b269e0c9d10338edf90a4ac3a7e584580",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "overwritePrefix": {
+      "offset": 54062,
+      "size": 11,
+      "sha256": "89e9d7d3365d4095e2fcc8d07102e7e52f096268d41941ff18ca3e4c72724a39",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "overwriteSuffix": {
+      "offset": 54073,
+      "size": 11,
+      "sha256": "f8c6d4087b1a277336cbdb49326dbf9e7f0cf16ffbd80aa300581cff3dfc2ebb",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "newFileNamePrompt": {
+      "offset": 54084,
+      "size": 21,
+      "sha256": "ab360ab033c812dcacd63d60910fa6a5a9ec95efd0d046f969a3da33f6100468",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "hasBeenSelected": {
+      "offset": 54105,
+      "size": 21,
+      "sha256": "78c1951791ce13eb915332778683e53873dae040e8b4d188d0bcddccd031af57",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "gameSpeedPrompt": {
+      "offset": 54126,
+      "size": 41,
+      "sha256": "90a74ca7c0127faf03b6ddc44222080159b321534f438005a5711030ca3ac96b",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "partyMakesCamp": {
+      "offset": 54167,
+      "size": 21,
+      "sha256": "6b0791e81bcad6a6acd20c5b719dbd461d88ce456a96f320ec371e1463859d12",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "notHere": {
+      "offset": 54188,
+      "size": 11,
+      "sha256": "c134b812a953da7e10b7524c9df5f96c25b6da7d3275a572063de8dcb7675381",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "attackAllyPrompt": {
+      "offset": 54199,
+      "size": 21,
+      "sha256": "a55b9155dd1f54473f60f304f0ba9d6e213f9d8d69c781eac45976367b960210",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "rangeLabel": {
+      "offset": 54220,
+      "size": 11,
+      "sha256": "98fa407c4f01c589d8e129ae56ce46f50b89fced8bf8d03eff3d7b4bffa7cfdd",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "magicOnMsg": {
+      "offset": 54231,
+      "size": 11,
+      "sha256": "ca6ae2eaf3efb627d8537d58fdc83bf0963c1b63ff47f4ef847a024a0f06217d",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "magicOffMsg": {
+      "offset": 54242,
+      "size": 11,
+      "sha256": "102129897495235e6d37054847a566217950c7703422a598ac16c3ccddf7c7b3",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "fleePrompt": {
+      "offset": 54253,
+      "size": 11,
+      "sha256": "3b44ae096a2368f04989249202008e180ac6824897f14819b6232ce5ce133f52",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "cantGoThere": {
+      "offset": 54264,
+      "size": 21,
+      "sha256": "e5010c31424adbced6be11f21d5cef4426b972e01e27ded272d1381bf187b16e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "buysText": {
+      "offset": 54285,
+      "size": 11,
+      "sha256": "7c9965dcfb017fcc8112b5f10d69daae29a1de9d3e6adfd7c7d2266d15d97dcd",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "buysAText": {
+      "offset": 54296,
+      "size": 11,
+      "sha256": "14c9149acfb5701c914304b353fd96e1e41c3e7dc495522329d6083187f7c122",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "notEnoughMoneyText": {
+      "offset": 54307,
+      "size": 21,
+      "sha256": "e12c08952e0cd2bf7697f98b8d3e71a4a51de81013e4e398bbf7f496889472df",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "leftMoney1": {
+      "offset": 54328,
+      "size": 81,
+      "sha256": "3789e64c9486ed4dad79f33fb23de4585d59a983bcec333a06452158b70ab32d",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "leftMoney2": {
+      "offset": 54409,
+      "size": 81,
+      "sha256": "746a91353d2d0d4834814b31f231a15a2a7aa7fe10534200b8f6fc9eb32cf29e",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "msgPartyFled": {
+      "offset": 54490,
+      "size": 21,
+      "sha256": "7549723b608f994dd729a54e6b06d638516ed2898a91ad248af4130c3e0b8f23",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "msgLostFight": {
+      "offset": 54511,
+      "size": 31,
+      "sha256": "fe28461fe2c0fbda55cd7d01e86ede6eabb56caccc2231801023e74cc12f1506",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "msgWonDuel": {
+      "offset": 54542,
+      "size": 31,
+      "sha256": "7585559b7533ffdf67a6b2bbe779af6c0def94bbbc524d548c6a4018c8243657",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "msgPartyWon": {
+      "offset": 54573,
+      "size": 21,
+      "sha256": "076b806ec6dfb33d2a4536e06fc6102a6aebf7e8655119f4aba6052954e795bd",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "withdrawalFeeText1": {
+      "offset": 54594,
+      "size": 41,
+      "sha256": "3893e16160a2618be6606d3287510d1b10ad47dd6bacef8762acf5208d144fb6",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "withdrawalFeeText2": {
+      "offset": 54635,
+      "size": 41,
+      "sha256": "47b134d3cc258a1746761e9fb5e9beeb433b7724ee571ce0a76ad3e8cebbb7c6",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "msgPartyTreasure": {
+      "offset": 54676,
+      "size": 31,
+      "sha256": "e94b7b58be3c0fabfc80adcff427232aa03fc824d6694d202ef967432f16d24d",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "msgNoTreasure": {
+      "offset": 54707,
+      "size": 41,
+      "sha256": "61246038adc7239d91412d84a52907331dd149815600023138edf1fe6c2e50f3",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "duelistReceives": {
+      "offset": 54748,
+      "size": 31,
+      "sha256": "e74c1a2e6c266fbe8a38878d72999dd6afec1270932decd9439c14ecddcf7ecf",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "eachReceives": {
+      "offset": 54779,
+      "size": 31,
+      "sha256": "fd5282b1a2e7aa890f5a672f12fe88a12e36de747408bbacb69565fb1d8090fb",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "experiencePoints": {
+      "offset": 54810,
+      "size": 21,
+      "sha256": "1c2af16e94c43cf54a9bddc1ee8f965b17560a772c809bc88c5cff69e45dab06",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "treasureLeft1": {
+      "offset": 54831,
+      "size": 41,
+      "sha256": "ae0ca48fe441102a113b707ab53ed225c6e2315d625b1edf5c717a2ccc07c680",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "treasureLeft2": {
+      "offset": 54872,
+      "size": 81,
+      "sha256": "e48fd71fade53f610e77b10a1cc5f5c896dffa566320354e1a449934bf3749cb",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "castAnywayPrompt": {
+      "offset": 54953,
+      "size": 21,
+      "sha256": "8b3302b03c77e52d7ebd41eef9b924a50d7ff5797fc3aabbd9798818826fe89e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "payForCureQuery": {
+      "offset": 54974,
+      "size": 21,
+      "sha256": "ead2bf05ab261e9015c3e4c1e9e41a61e004dc258806ec3535c1acb03fdc9bc3",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "isCuredText": {
+      "offset": 54995,
+      "size": 11,
+      "sha256": "154dcbde0afb5741f7c34d22babf053637d848dc921b6585ed14785a28b505e5",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "notBlindMessage": {
+      "offset": 55006,
+      "size": 21,
+      "sha256": "b3dff4efcb8645ae983ee75097f8fcd1c62ba7cc3b3607a276265c64b2da9e61",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "notDiseasedMessage": {
+      "offset": 55027,
+      "size": 21,
+      "sha256": "d211ed3305168f4d253143441080ed018e8ccd94765fe4d24ca5046493b8c4e1",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "cannotRaiseMessage": {
+      "offset": 55048,
+      "size": 21,
+      "sha256": "372c69215a81523b60043e36d6a600a1c679693872094e5a8369c15f2780ef74",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "notDeadMessage": {
+      "offset": 55069,
+      "size": 21,
+      "sha256": "8fa1d8f9545d0945d739b422e0d8b1010bfd580b41f7dd49cac323cb7cb356c9",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "notPoisonedMessage": {
+      "offset": 55090,
+      "size": 21,
+      "sha256": "00956c2246a7d82d57327588f2e3f3c4cbdbbec3d01d402390f188a52b87c17c",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "notCursedMessage": {
+      "offset": 55111,
+      "size": 21,
+      "sha256": "65bfa07a60ff8d1433bd46f56d115af8ae82b960a231ebe2f1a1ca24bc65a864",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "notStonedMessage": {
+      "offset": 55132,
+      "size": 21,
+      "sha256": "301e89ce4623b65d03b384cc4c8dd7242f5cdf17d7a0f0f9bcde22513a5b0ab7",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "noLostLevelsMessage": {
+      "offset": 55153,
+      "size": 21,
+      "sha256": "e7f6089619bdaaa931fef2da07db95520686ebedafebbc97667de8a81c750385",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "howCanWeHelp": {
+      "offset": 55174,
+      "size": 21,
+      "sha256": "a356c6463e049b5f8e4f6ae4877903104c8da1f22f79308b3e8c25fc8dead422",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "itemError": {
+      "offset": 55195,
+      "size": 31,
+      "sha256": "5ac47b68db01dd39647ae7cb416f959a37339f9c670e83072bf35f680439a846",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "overlayMissing": {
+      "offset": 55226,
+      "size": 31,
+      "sha256": "c7fac3badc1225a7a350ba9000adb0200d79f1a0cb45d22225db629944439178",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "promptColon": {
+      "offset": 55257,
+      "size": 11,
+      "sha256": "f36fcc2c56e6bef259306b881c02b97e14f9666c580e25c5582c1a5524e7241d",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "couldntFind": {
+      "offset": 55268,
+      "size": 21,
+      "sha256": "999696a14eaa662edf03a6e2f2485eae70cba59a61d6ae63b02dd5b7a5ed74ab",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "checkInstall": {
+      "offset": 55289,
+      "size": 21,
+      "sha256": "d6cb2feb4e0d4acf1f9cfedb39b736b4cf2d18d670850f1c1f4431a7081ec7e2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "upperPrompt1": {
+      "offset": 55310,
+      "size": 41,
+      "sha256": "472b3d8d4d6e41402b4fff143485df26d5dd32d9c025f7bd3e391a836bd75d75",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "upperPrompt2": {
+      "offset": 55351,
+      "size": 41,
+      "sha256": "5d60fcb626ea5429ada97244aa62aa7cef2717fed4e0d766c466955395150fe7",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "joystickReadError": {
+      "offset": 55392,
+      "size": 31,
+      "sha256": "db3ea5b67c9b7751a21013c094b210794d8c03b8b9367075695230710e263a9b",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "lowerPrompt1": {
+      "offset": 55423,
+      "size": 41,
+      "sha256": "68464c757a2cc999519f111d7e1edbe4a2283e619e36041934f9ff20ed61aded",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "lowerPrompt2": {
+      "offset": 55464,
+      "size": 41,
+      "sha256": "b446bde1a802ce605e75772e1452df9facdb9cceb09e0c1967ec290da707a703",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "wantsToKill": {
+      "offset": 55505,
+      "size": 21,
+      "sha256": "67cbf8ddd1d77a0fb889eead276176a9cc6621c546f099150d9e82c4e13e2d90",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "startsCoughing": {
+      "offset": 55526,
+      "size": 21,
+      "sha256": "2717b1891f97ab83100e604277bd53ab4215e1c982d4d2cec41518893797b140",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "chokesFromNausea": {
+      "offset": 55547,
+      "size": 31,
+      "sha256": "e33c7ecccb9ddf17198cc6eeda1c3ea0f1de1e60ce15fd3f49e68b49824da8b8",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "lostSpellMessage": {
+      "offset": 55578,
+      "size": 21,
+      "sha256": "bb13275c97ab293a4d5df8d90818dafe61ea8ed68cde8c62d3b8ddb9408323f1",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "takesPrefix": {
+      "offset": 55599,
+      "size": 11,
+      "sha256": "89d7f1fba9d3f89bf2c74342118f80fc8d34da20e3248c5d62094d99e40f8292",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "pointsDamage": {
+      "offset": 55610,
+      "size": 21,
+      "sha256": "fdc6ef927f1717c9bad94f5bc97ebf227359f6cc4be6ec3b046e00270ad0149d",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "onePointDamage": {
+      "offset": 55631,
+      "size": 31,
+      "sha256": "0f3467345f7546e9e4251fd99da746a6e6067a2e7196a7ea87de90c864f17285",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "fromFire": {
+      "offset": 55662,
+      "size": 11,
+      "sha256": "82650bddbaed1e2ed93c1251ee3652af539d7f7c0212d3f81c9078223e4fa3ef",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "fromCold": {
+      "offset": 55673,
+      "size": 11,
+      "sha256": "122539340889fa3ce572d77bf744ce8aad03279e10d6509d20025104b5ad9fcb",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "fromElectricity": {
+      "offset": 55684,
+      "size": 21,
+      "sha256": "6f5ca75b331e1bf087e0116903ed099f8e3c4b488686ee6d187cce4da54f543f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "fromAcid": {
+      "offset": 55705,
+      "size": 11,
+      "sha256": "3be282c51bd6c19f5c3e6a6426c9cc1d6c5fee7aa89cc4412bf66320cf7334b5",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "fromMagic": {
+      "offset": 55716,
+      "size": 11,
+      "sha256": "6f9842cadca12d459f213a0ef3d44ba0fad74725b161c36f9c5e67a30644a3aa",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "poisonedMessage": {
+      "offset": 55727,
+      "size": 21,
+      "sha256": "3e24e46c2f9c3b27328178040540510b737a9955be7fea0f6caf120d62b64c05",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "killedMessage": {
+      "offset": 55748,
+      "size": 11,
+      "sha256": "18e5a3945998e43433a7ba4d51e2ef31c50c3440053397dd84b7c38e7612c3e2",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "dyingSuffix": {
+      "offset": 55759,
+      "size": 21,
+      "sha256": "099d09b9270f0152e1f2b19a0dfb7f63e66c86b6083484df523d766147fb6f76",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "goesDown": {
+      "offset": 55780,
+      "size": 11,
+      "sha256": "7ae548852a6515e5a537ae5dde3ab6fb07fa692dff83ad4cd037268d736d1026",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "unaffectedMessage": {
+      "offset": 55791,
+      "size": 21,
+      "sha256": "ddf3b6b0373b7d206323e8b542c79f91d77dac77615a702cf65a56c187465146",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "isAffectedText": {
+      "offset": 55812,
+      "size": 21,
+      "sha256": "89eaaf5bc9051558bf8b37acaf03324d15f937bb74cc9aa27617adca54e2d1b8",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "isProtectedText": {
+      "offset": 55833,
+      "size": 21,
+      "sha256": "0739ece4e0ca7120edee4e810c219cc8df8cc9b99c5fd28eb9cab2868b25a816",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "explosionMessage": {
+      "offset": 55854,
+      "size": 31,
+      "sha256": "5a4f12412e5636ba5c1f549059a48a4b89c056911f0da56e546afe2a083f26ea",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "paralysisNoticeText": {
+      "offset": 55885,
+      "size": 21,
+      "sha256": "5ea7a09c23692e39ce5de4a4c08e2b8ed13fd02c9a54b71859cf3115349223be",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "stunnedText": {
+      "offset": 55906,
+      "size": 21,
+      "sha256": "93f6ccb3a902a67150477b27a3b1ccb5a7b232c2f6afbc5cbd0322ff443cd872",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "fightingSnakesText": {
+      "offset": 55927,
+      "size": 31,
+      "sha256": "24d3771010651ed17d6d82c00df3c75fc6d62b609c914aa1696e8fa4464f669a",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "silencedText": {
+      "offset": 55958,
+      "size": 21,
+      "sha256": "acd0ddef8a4d6e55533c2bbbd7f5edc77b9b058e3d7b4a69c65ebf8193a9f671",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "poisonCollapseText": {
+      "offset": 55979,
+      "size": 31,
+      "sha256": "ae7af852f99e0970b73832ea29c66b0570e362f0026abd27ad04d9c10b5d332e",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "gainsItemText": {
+      "offset": 56010,
+      "size": 21,
+      "sha256": "9ddcedc618e67e92bb5ae4fa9c228d0f567179e7727a48a302b2f5db72a914d8",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "lostImageText": {
+      "offset": 56031,
+      "size": 21,
+      "sha256": "7bd07eccd9e6433ba193b97a5a0a398e69c3108ad8956cf9df1ccba8dd9ebe1d",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "coughingText": {
+      "offset": 56052,
+      "size": 21,
+      "sha256": "28acac05918cdc418bf5467951288759b7440b79f2bc0540d200a1f5376b335d",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "dispelledText": {
+      "offset": 56073,
+      "size": 21,
+      "sha256": "6e9dcbd98e5bf2c991f5ff99b444ce47e7b62144f5fd17ff4bddf2756706562f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "resistsDispelEvilText": {
+      "offset": 56094,
+      "size": 31,
+      "sha256": "df73e946c6b17036d139777ed7c9b10bbd9908b9bfa7ad4fcd874b7c4d24a43d",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "runsAwayText": {
+      "offset": 56125,
+      "size": 21,
+      "sha256": "4f3dc25da16546bdd536dd9c35218b12e985bf5045dee567a589ec1ab54af907",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "confusedText": {
+      "offset": 56146,
+      "size": 21,
+      "sha256": "d33efb777a72214d40e91ff375406dd5dcfce60ee82518ac4f24f2389d354b76",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "berserkText": {
+      "offset": 56167,
+      "size": 21,
+      "sha256": "a7749bd1d575f4279f6282ed051334c0fc7a758d48052b5b79f594c83a9e3686",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "enragedText": {
+      "offset": 56188,
+      "size": 11,
+      "sha256": "490d847b76ed166a013e3d2d70731052ebb38795652f9f93b519a4d53f0db298",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "agesText": {
+      "offset": 56199,
+      "size": 11,
+      "sha256": "43cbafceaebddcc192f6c31aa4d7aa1742ee08e17b51b4408f7a5c10b93010a4",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "avoidsItText": {
+      "offset": 56210,
+      "size": 11,
+      "sha256": "34e8594b719c8a49c22651a2136452581c7b8fea8d96654f79810b5986cee3f4",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "drainedText": {
+      "offset": 56221,
+      "size": 21,
+      "sha256": "de714c6802a3e764f3ea891ec0073159ce6755084a3266ee1901213b890a0f99",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "drainDeathText": {
+      "offset": 56242,
+      "size": 21,
+      "sha256": "f9369fb77a5575c111f7707905aabb91e64adda5b600e68c6a6e49c6f5088b4b",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "drainCollapseText": {
+      "offset": 56263,
+      "size": 31,
+      "sha256": "f7505e5909b4b58ad1b4e57eca925cfa839a497af344ea490eff2f0a062f52de",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "reflectsSpellText": {
+      "offset": 56294,
+      "size": 21,
+      "sha256": "7750e261e83f889690894a825d8b03988c67721f30e7765274d0ee87f72db369",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "terrifiedText": {
+      "offset": 56315,
+      "size": 21,
+      "sha256": "d18b0da8593a76e0f319e47eba703ba4804baa582b73e8f0e04249f15b801b16",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "healedMessage": {
+      "offset": 56336,
+      "size": 11,
+      "sha256": "bb96f941e7b3f71e0caecd59ae266d0f15de6200d0058d3553a9af82fb74d4b2",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "evilStenchText": {
+      "offset": 56347,
+      "size": 21,
+      "sha256": "824caaf321abaad98568457aee64e9ee6e74f31bb0ca514927da7a6acea2da15",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "blindedBySmokeText": {
+      "offset": 56368,
+      "size": 21,
+      "sha256": "223378080bf665b8dc0355feea88572bca7c3f3a8a8a73879f24e7f8659646f5",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "zappedText": {
+      "offset": 56389,
+      "size": 21,
+      "sha256": "035981949bc8d5c4b72d86e1ac64aaf58a638e665ce41e3d131126c129775901",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "disruptedText": {
+      "offset": 56410,
+      "size": 21,
+      "sha256": "84b44bfeef997c7cbc3c00b41cc6a306d8e6da183cb03f5aaee709048b3551b1",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "resurrectedText": {
+      "offset": 56431,
+      "size": 21,
+      "sha256": "e84445defdd9015857a1f97006a2800390c5bdae228c3850b78eb02bc5e3f811",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "coldResistantText": {
+      "offset": 56452,
+      "size": 21,
+      "sha256": "be2a39dd5c34b8ab5ead65d1b30bddc40baf61c1c43c476f9bb57fe70d0bf9c2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "charmedText": {
+      "offset": 56473,
+      "size": 21,
+      "sha256": "cb4dd4fa85da6eed9ad939f6d8d7003664ea957ebba42243403d27059436d466",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "strongerText": {
+      "offset": 56494,
+      "size": 21,
+      "sha256": "679c6d62ae1c0cb15a6859166a1e72a23ee13dba6c479bf2ce37522e6b13a12e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "reducedText": {
+      "offset": 56515,
+      "size": 21,
+      "sha256": "0b4efb8689e426c6b120bdb80ecf8daa857705f8a6f208bafdeeff2f8d010ff9",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "friendlyText": {
+      "offset": 56536,
+      "size": 21,
+      "sha256": "63f9b9f00a374c94806304cfa4c91bda20cdb1906cf0da16e292a189f6506d7b",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "shieldedText": {
+      "offset": 56557,
+      "size": 21,
+      "sha256": "ee658716664c22e2f8b62d98956143729cf60ed7c3c437eb63e8b73aad208638",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "fallsAsleepText": {
+      "offset": 56578,
+      "size": 21,
+      "sha256": "f281c1b7e020ecbd951aed30b7cf030652f1fb82c3f7ea0e05eb4559eb52fbf4",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "heldText": {
+      "offset": 56599,
+      "size": 21,
+      "sha256": "bc3dd7cee9d6c2af603bd830c8829d6947af2e782428e279dd7024a0902edda6",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "fireResistantText": {
+      "offset": 56620,
+      "size": 21,
+      "sha256": "26591b8635c005136b84676e8f91b9ce5e567ad10231f6ad970da93a7617a2de",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "invisibleText": {
+      "offset": 56641,
+      "size": 21,
+      "sha256": "e0c9c56e5114d90c652d859d328e97362cb9c2ffe7e135a67b73b3666c282abd",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "duplicatedText": {
+      "offset": 56662,
+      "size": 21,
+      "sha256": "a195bcb15a9710b13b5107f56a0f6e8933fa5006a825b2e54cc9c54adb22bfd9",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "weakenedText": {
+      "offset": 56683,
+      "size": 21,
+      "sha256": "79fb27e4fdd511b7a6a9b43cffd75352909012687ce82b1b49deb2e5f0ce91d7",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "canSeeText": {
+      "offset": 56704,
+      "size": 21,
+      "sha256": "c08db7e2fc57f4bdc45c4ee9d7de6abad409646e6756c1f0a8769200752082f2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "blindText": {
+      "offset": 56725,
+      "size": 21,
+      "sha256": "83640876f9c01f9ca62d0db2fd10e99882bbe9fcaca2e03f47ab3fc62dc2de4b",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "paralyzedText": {
+      "offset": 56746,
+      "size": 21,
+      "sha256": "d5307c4b9b1e8541c4af668beb5a4426a0a87e725d75886a4a37c6e8926a5c82",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "prayingText": {
+      "offset": 56767,
+      "size": 21,
+      "sha256": "d37c2785def12f0776976489359157d415a27751b759b218252464fd0a9d6692",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "uncursedText": {
+      "offset": 56788,
+      "size": 21,
+      "sha256": "40ae6983426c24f91a25903dc2dd083ec6d1f4f89af8fb8a9ce282548514b0e8",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "itemUncursedText": {
+      "offset": 56809,
+      "size": 31,
+      "sha256": "1561b97dcf3e628b438130e97d325e5ceeaca32d7ee6b82e2c8b0208e1088983",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "cursedText": {
+      "offset": 56840,
+      "size": 21,
+      "sha256": "c7b90e3e84c2df55cb99632443ae8c3e05ff307476a23098eff242677a711ebc",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "blinkingText": {
+      "offset": 56861,
+      "size": 21,
+      "sha256": "d8ae08bd9340e7afc52817e1c04f890c8bc8f4262dfd345518ddd753a86d4320",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "hastedText": {
+      "offset": 56882,
+      "size": 21,
+      "sha256": "d44d74af1c40eb85cb8251390fe2603baf86b89092214badae06a31eb3fc52c5",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "regainsIntellectText": {
+      "offset": 56903,
+      "size": 21,
+      "sha256": "85a5b11802d39cc750f6bbc66f1f53903e29059992ce47930b4475fcf2c3466d",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "slowedText": {
+      "offset": 56924,
+      "size": 21,
+      "sha256": "3d9be3bc50396e8479c561a0078829a7b823213fe6ae05947b5c4ea9c0db8404",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "dropsDeadText": {
+      "offset": 56945,
+      "size": 21,
+      "sha256": "6e8dc86f19f1397947e1390b0544c1a7e790de7f7ef19dc0d7a37fef0110fd54",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "disintegratesText": {
+      "offset": 56966,
+      "size": 21,
+      "sha256": "42adc90de84303f451213cbffbd72bbf89f9a4f4fc6bc0b181e234b0db8361e1",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "noLongerStatusText": {
+      "offset": 56987,
+      "size": 31,
+      "sha256": "3c921cc816df718a9c2dd70db10cf677a791c12e43e47cbc95454c891e3b91c2",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "unpoisonedText": {
+      "offset": 57018,
+      "size": 21,
+      "sha256": "abc19c1abd7cbece45e434575e40b53ea6c1b230f0eab54fbc57891e0c3ca4b2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "smashesFlatText": {
+      "offset": 57039,
+      "size": 21,
+      "sha256": "578e0da1a6830ddd0c13cc1b8dd3ef91b31a7a46079da1966aadc4b779b7e7f3",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "turnedToStoneText": {
+      "offset": 57060,
+      "size": 21,
+      "sha256": "4dddbed80110b175af855a20eb8fbd508d3198fc81fabbc8805ac5126313bd7b",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "raisedText": {
+      "offset": 57081,
+      "size": 11,
+      "sha256": "219e6e0e955603fb9ad3481de2b082dee3dd306d5af99e3a66854b3da2e024cf",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "slainText": {
+      "offset": 57092,
+      "size": 11,
+      "sha256": "17b73e8d1d1d83f19481d802e76eea92e2d8b1cd2eafa13099f250571e89d510",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "entangledText": {
+      "offset": 57103,
+      "size": 21,
+      "sha256": "a8e11757869197460e406fd74a4215bae1b11ada65bd402504dd69dc4f36eb92",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "highlightedText": {
+      "offset": 57124,
+      "size": 21,
+      "sha256": "9872cace3f508d1a434c2cd6a4155f107c6b5059eb307b488012423cf76f49a4",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "teleportsText": {
+      "offset": 57145,
+      "size": 11,
+      "sha256": "55e400f59a1c64c49bf8a499529861c5e566fc3d1db989bb59e5c46eabf3efe1",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "clumsyText": {
+      "offset": 57156,
+      "size": 11,
+      "sha256": "bcc3268493c5aba067a1c64aa957b3cebbd4d3690deb66d7042cff29149754cf",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "eighteenYearsOldText": {
+      "offset": 57167,
+      "size": 21,
+      "sha256": "166cf4d13a3e3196e73a955b10dde7c635f52f98f603ec3de419bfba4ab12dcc",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "youngerText": {
+      "offset": 57188,
+      "size": 21,
+      "sha256": "9b2c74add7d0e621c8f153b6b11d03588ce9fad2a9c274f588cf097a0fa8b8b9",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "coveredInFlameText": {
+      "offset": 57209,
+      "size": 21,
+      "sha256": "eb7c2d9342e9ffd94a86b2d5f56d93f5727bc6b80d0f0056e746511bfbd86a18",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "dancingText": {
+      "offset": 57230,
+      "size": 31,
+      "sha256": "e5efee44274c466b14aba3e3e724fb1b9538b17f9c9abcc27872446fda58d889",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "gazesText": {
+      "offset": 57261,
+      "size": 11,
+      "sha256": "94b00588567c16c6055adf30ebf58699e8d281a0a4913f30f3348a771b355eb9",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "breathesText": {
+      "offset": 57272,
+      "size": 11,
+      "sha256": "ed9fb8ea48b00cae1c4edc85c784334c0f30860918a07140fcd284aaf56f20fe",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "acidText": {
+      "offset": 57283,
+      "size": 11,
+      "sha256": "144c6f4ca3919c33ba2a3530a663a4913e905a282a521a9479952206aae15982",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "deathText": {
+      "offset": 57294,
+      "size": 11,
+      "sha256": "dbd72897e74f9295d7917751e1a24b9ee48b6b3507211f7c7a801a0be658f839",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "fireText": {
+      "offset": 57305,
+      "size": 11,
+      "sha256": "d639393010725314f0a6d9ecef2fcca0361a9197fa2386792a84df77dd8101f5",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "castsSpellText": {
+      "offset": 57316,
+      "size": 21,
+      "sha256": "d3675df964e8b3e994f0e158495ae50e123654478968c01551b8245950de1ca5",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "ageWarningMsg": {
+      "offset": 57337,
+      "size": 31,
+      "sha256": "f7cf9690b88dfff4e58ebf6a0e09690e7a2b6fb5ad100ab71eb14aa254c77faa",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "ageStrainMsg": {
+      "offset": 57368,
+      "size": 81,
+      "sha256": "1deedbfccc635c2f8f9c5ed858a5344df045f57acc89938620cb8aa9bc43f454",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "lastBreathMsg": {
+      "offset": 57449,
+      "size": 81,
+      "sha256": "244f3cbc718fabe8a26fc7bfa4b9f043c5b294bf5e666fc5d1e8f4efc1d44de0",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "heMsg": {
+      "offset": 57530,
+      "size": 11,
+      "sha256": "1635e6aeb972bf2d867e5bc4949db744227adaf3ec9e6e7c90b61cae15965a94",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "sheMsg": {
+      "offset": 57541,
+      "size": 11,
+      "sha256": "3c5e454ddf4b5e5ccd824ae4eef9814eb4aafb5f2f8c06151aa64e74c2a9c49e",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "ageDeathMsg": {
+      "offset": 57552,
+      "size": 21,
+      "sha256": "74d927b4b2400e4809d3ed43c8264d719fbf96f23c46ebe4e013c762e5941180",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "noWitnessMsg": {
+      "offset": 57573,
+      "size": 81,
+      "sha256": "ff352e15104237389b348217b3de397769b5ba05936d47eef55419805afb396a",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "oneWitnessMsg": {
+      "offset": 57654,
+      "size": 81,
+      "sha256": "1adfbb3d2633da993a94498a9a479e29501cb7099996521a01667efe520ae3ba",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "manyWitnessMsg": {
+      "offset": 57735,
+      "size": 81,
+      "sha256": "0efbbe4c56900cc8a80155983a2fc2987446136415a1d1b91b0187059d8c2ec7",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "bodySearchMsg": {
+      "offset": 57816,
+      "size": 31,
+      "sha256": "8913c0a66cff2caa52a4278528d95da0feab442527783706772893303c4c4c2d",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "teammateDying": {
+      "offset": 57847,
+      "size": 31,
+      "sha256": "0fe8fd220d2ec4bc5e10b5e77a5939a4c56f6133785b9f3e4c53aaaaf705dece",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "notWithWeapon": {
+      "offset": 57878,
+      "size": 31,
+      "sha256": "bbdd9c4db8668e5c1a98459430be3930b3dae4938445acdf85d870afb606a755",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "restLabel": {
+      "offset": 57909,
+      "size": 11,
+      "sha256": "2fb758ba5e4efe1d14056efb9e1c64c33bac1464d7e8226c47d503f0ee3d3bba",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "partyHealedText": {
+      "offset": 57920,
+      "size": 31,
+      "sha256": "4eb6fdb588066fd15d1e206467defa4bf9ba471b7e8d46c551fa4246f42bb2db",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "memorizedText": {
+      "offset": 57951,
+      "size": 21,
+      "sha256": "1346ea3cf84f70bef4350a41a266989467741da215660499de3f13275f8923de",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "scribedText": {
+      "offset": 57972,
+      "size": 21,
+      "sha256": "1c2dd65518d7b9dad1ae3a72ed05422de3a637f5b2b8a0aa0e3a431afae9de38",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "interruptedText": {
+      "offset": 57993,
+      "size": 41,
+      "sha256": "36801da113613cfec9c2e0168e091f7df774f2f36acb39d909e512dedb30e195",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "unexpectedErrorPrefix": {
+      "offset": 58034,
+      "size": 31,
+      "sha256": "099f0d66de791eb5d8c915ff7401e962ff3093ae95138989e0dadb12225fe228",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "unableToLoadMonster": {
+      "offset": 58065,
+      "size": 31,
+      "sha256": "911da486592494703b0062305ce48b118141664167c2e5d2e17b4f91a0d8ccec",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "warningSaving": {
+      "offset": 58096,
+      "size": 41,
+      "sha256": "05b0b0b54a519a302dc6e1ce54c17063d480a2c18ab56aa1df3919f80dd8a7cd",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "noRoomMessage": {
+      "offset": 58137,
+      "size": 41,
+      "sha256": "b3f6ba371ec98a6b165e5f24d3115e62cc8d392074e6a9793831f185b88d7dc7",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "insertDiskMessage": {
+      "offset": 58178,
+      "size": 31,
+      "sha256": "b0dca0338da99589978ddacd9b9e468e12b2ab54ea1c60bf07209b73b40f099a",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "pressAnyKey": {
+      "offset": 58209,
+      "size": 31,
+      "sha256": "0feb704178c1efb42f5837bf7daf0e266b1e76fbca84e7d404c6e86d34b1a7e8",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "loadError": {
+      "offset": 58240,
+      "size": 21,
+      "sha256": "c6121d510e13c4285fe04581ac268a08002e9057235747d27096d80d43fb98cf",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "from8x8": {
+      "offset": 58261,
+      "size": 21,
+      "sha256": "776253380050750db14457ea7b195b1d52c2d1d9887532157acf0329e212330f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "graphicsPrompt": {
+      "offset": 58404,
+      "size": 81,
+      "sha256": "ea4c983b330246ff51ef770ac0f6de7b8f270d375f3b3d4e365ba53c25d9babf",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "soundPrompt1": {
+      "offset": 58485,
+      "size": 31,
+      "sha256": "77dcb8328479442a8ed6a876019de9273b3378aacf18525a4a84ed86ba36675e",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "soundPrompt2": {
+      "offset": 58516,
+      "size": 31,
+      "sha256": "a6ef41eb63dc73db3d2447d82666d8f153706fa3c96aede0dd6d08ea552471b6",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "soundPrompt3": {
+      "offset": 58547,
+      "size": 31,
+      "sha256": "19b30b4784399c0b7f66a64cc4a850037cb1029fdab847d716105652926a7023",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "soundPrompt4": {
+      "offset": 58578,
+      "size": 31,
+      "sha256": "e159b436271c9d0a4889f34a7e88ffde5eb80a758daf0c67e8a55dfc6433f9b1",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "soundPrompt5": {
+      "offset": 58609,
+      "size": 31,
+      "sha256": "a23434017c3c370a51c455f687fe028a4f80cb537d693cd0eb079712d35a8a49",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "inputPrompt": {
+      "offset": 58640,
+      "size": 81,
+      "sha256": "5533f26712d2c3968acb2b1eb6a49c67e813ab3d01c7ba625b413f94d8eac940",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "saveDirectoryName": {
+      "offset": 58721,
+      "size": 11,
+      "sha256": "2cb48fd8ff88626407d0d7787d8ef32420539651a9112961de2d15a6d6868b11",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "pathPrompt": {
+      "offset": 58732,
+      "size": 31,
+      "sha256": "76d1d233752428bf6e91832e04e851bd1b2e3fdd3bd51caf8bf1e04e8f0478fd",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "pathSuffixA": {
+      "offset": 58784,
+      "size": 11,
+      "sha256": "9f37b7ea1e99f506d43d36b6c292b73c2aac6d268167a3215b6428402b0e6994",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "pathSuffixB": {
+      "offset": 58795,
+      "size": 21,
+      "sha256": "22d409d5f858dcf897a4eaf624de2cdbe384f731c8fdcaea299263c068960c0d",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "secondPathPrompt": {
+      "offset": 58816,
+      "size": 81,
+      "sha256": "bb64be42f3afd393eb78684c0d4195aa7b1172670a42324acd1a3d57794f8b0d",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "tandyNotice": {
+      "offset": 58897,
+      "size": 81,
+      "sha256": "6b6fced738b1eb66cdb59b31442702e86f8109cd8f14823db4fad1315c06a6bc",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "memErrorText": {
+      "offset": 58978,
+      "size": 81,
+      "sha256": "42ad1b3a0ce42804da5765406b3c8833a3851a0c1c0b9e90e4505139780efc58",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "moreBytesText": {
+      "offset": 59059,
+      "size": 21,
+      "sha256": "331102d09324cad0da1220d22678533992d9e63433cb24990307488f2d0f0e41",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "overlayErrorText": {
+      "offset": 59080,
+      "size": 31,
+      "sha256": "fa65ac94bb0bbc9f9e60d372e1e7dccf5ea709d9fb82a15890e75c45b025defc",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "battleBegins": {
+      "offset": 59111,
+      "size": 21,
+      "sha256": "3a796aec297426cabedac1dc70bc5129beea5ea510925c9fc3c192491fbc9c64",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "partyKilledText": {
+      "offset": 59132,
+      "size": 31,
+      "sha256": "b35f939982bd9e500ebeace0f6b6918a2a5b1d8a7db89f0c3f5731040cff89d8",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "partyGainsText": {
+      "offset": 59163,
+      "size": 41,
+      "sha256": "2aa3bf2cacfa234aeff5c399aca29b18ab45e562ce2133a55e2a148b6d54208b",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "gainsSuffix": {
+      "offset": 59204,
+      "size": 21,
+      "sha256": "5f42b95109b9a20f76cad68481f9d1846a51a0c7de4592952d0df7f4a5725a16",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "journalEntryPrefix": {
+      "offset": 59225,
+      "size": 41,
+      "sha256": "5fcac1eaa8e4f72cda8ba78f990991c25f17bea87aa439b5a444634fe9f82c27",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "goldLabel": {
+      "offset": 59266,
+      "size": 21,
+      "sha256": "e953011d06929504e165e7c30244200b6047dd32fd0de7ee6212d218ef1750b7",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "poolLabel": {
+      "offset": 59287,
+      "size": 21,
+      "sha256": "ffccb762a4f8a238396c89af0552910916190b4ec78b2242bf5c67b9af6b326c",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "tradeOverloadMessage": {
+      "offset": 59308,
+      "size": 21,
+      "sha256": "174b8ac9a39251820ff28b58010c777d68f987f3bb7f932c473849267395f4ac",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "insufficientMemoryText": {
+      "offset": 59329,
+      "size": 31,
+      "sha256": "b71dd9dfc1dd8ebc6522641fdd22b164de1c7a43b1d7edd165990c0a5d86f0f5",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "fromWallMsg": {
+      "offset": 59360,
+      "size": 21,
+      "sha256": "5f53678469328daa9d4be2f6209098ee9c00eb6298d202e3e654731c4269cb0f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "geoError": {
+      "offset": 59381,
+      "size": 41,
+      "sha256": "ab301eb22300db0068abb1b5cfb53e81b5ac7a1dc5fcdb286482b14a9ae3b6ae",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "panicText": {
+      "offset": 59422,
+      "size": 21,
+      "sha256": "fd41b30682e71115e9ff3c26f819ab116ced532d3c0e501f9b81a98aa9dffbc9",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "forcedToFlee": {
+      "offset": 59443,
+      "size": 21,
+      "sha256": "5d06bb6187406e2f1a2f5f20e57451fb85dbd6c977b0a7f4f4079f3ccb628116",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "surrenders": {
+      "offset": 59464,
+      "size": 21,
+      "sha256": "fb39776a8a8ed78da83360ec59dbd62fd0613d396f8a7c95f6d8f5fa2a697942",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "spriteError": {
+      "offset": 59485,
+      "size": 31,
+      "sha256": "02063ccd5efd2f2d16e61fd0c32e4ad032a08f82702af9e99355aa87abfac221",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "partyDestroyed": {
+      "offset": 59516,
+      "size": 81,
+      "sha256": "b42c56265ef9545ac211b5d4ceb44d969ff2d335369e369ce4c7bc0e156996fd",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "whatDoYouDoText": {
+      "offset": 59597,
+      "size": 21,
+      "sha256": "4a34699e50e183cf37c8ddbdea9e78d2e41bd7057e11f9d55c3756d611824bd6",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "equippedText": {
+      "offset": 59618,
+      "size": 11,
+      "sha256": "8788483d2690bf6cbf63a175232d619c225cefe588f6c9fdf148ee695c70efa9",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "unequippedText": {
+      "offset": 59629,
+      "size": 11,
+      "sha256": "251e45fdb806b30018326913dd7fe6b11f26b79023e4c198e9c5160c6afa9de3",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "nameHeader": {
+      "offset": 59640,
+      "size": 11,
+      "sha256": "3af7ab0223ed6ef9916287b8eeb03adea1bf3fc74c0716b911977d6ffe25c717",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "statsHeader": {
+      "offset": 59651,
+      "size": 11,
+      "sha256": "7303a6f722447f6ec785c883977c4970aba13c661de440f9ac790fd365421090",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "hitPointsHeader": {
+      "offset": 59662,
+      "size": 11,
+      "sha256": "23aed1da507edb35bc5f55914ef55e6dfdd8b08d9fbe3411f7cf6a90863af5f6",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "armorClassHeader": {
+      "offset": 59673,
+      "size": 11,
+      "sha256": "de5eb73b20a2ffb8ad9a0fd33f4cbfec66d5f763ca8600b48695b908d2d366dc",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "helplessText": {
+      "offset": 59684,
+      "size": 11,
+      "sha256": "6275d73c2c18d8e9d64d064b363b8b40a91a93cd2f4bc63b90f48ed5fc7c59e0",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "castingText": {
+      "offset": 59695,
+      "size": 11,
+      "sha256": "ac2dea902517f807108b375bbfb52624fa3f44888b1c993c6981e530f9393e5c",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "nilItemText": {
+      "offset": 59706,
+      "size": 31,
+      "sha256": "809dcfb37bb496a6ac887e42e6fa75a913a68cd195145abe01d00da35e30da4c",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "missingItemText": {
+      "offset": 59737,
+      "size": 31,
+      "sha256": "9e04d2b2234fa8f9ca3a2b942730f8c6b35c0d73a113dfeee6c7308330bac384",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "fullyHealedText": {
+      "offset": 59768,
+      "size": 21,
+      "sha256": "8c6dd96980e7abb879efa770dc033fb44d67f2cf9e7a009f4a42c6e17a3fa167",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "partiallyHealedText": {
+      "offset": 59789,
+      "size": 21,
+      "sha256": "ef344b74c6a93a4d7a1af18c5b1bbacceadf5931ab8a6119f60c98d1212199a0",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "guardingText": {
+      "offset": 59810,
+      "size": 11,
+      "sha256": "3fe5905ca57a3fd20cabee23b8a6fde2103630ddb7fd30bb659d0671a6da53af",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "noncombatMessage": {
+      "offset": 59821,
+      "size": 21,
+      "sha256": "6a1dcbeebc982d25792c201b6e8973144502116dfda0c9a76dca85143713b5f0",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "combatInfoText": {
+      "offset": 59842,
+      "size": 11,
+      "sha256": "dce7dcbe7106a2bf76002e5a13221f03b996555646111e513ca9346b873f3b98",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "exploreInfoText": {
+      "offset": 59853,
+      "size": 11,
+      "sha256": "93625e4ba0c1548931e79efb6d2a362c43489f1c99d6d521adc2659ce6cf8ba6",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "bandageText": {
+      "offset": 59864,
+      "size": 21,
+      "sha256": "12cfa8480ac992d02fc54f8a4361ab81b74b4c0056dea468528b4fb75a5f0734",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "backstabsText": {
+      "offset": 59885,
+      "size": 21,
+      "sha256": "255d1038a848cbb81883c16d764d85019ba1e35e96f97157a081c1d3e8e6818e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "slaysHelplessText": {
+      "offset": 59906,
+      "size": 21,
+      "sha256": "58423e34ebfe7ac173275477f410ad12bf0fb588fd83c2e8ba6c1746517e3ec5",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "attacksText": {
+      "offset": 59927,
+      "size": 11,
+      "sha256": "81089d8c773d37ae9cd5c5883d727bbe1b5903a95a386a04a7d7ee743470e062",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "fromBehindText": {
+      "offset": 59938,
+      "size": 21,
+      "sha256": "8ce943d2bffaa68a6dba0cef25afc1fa78da2d39fa454817d82af69896395d35",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "cruelBlowText": {
+      "offset": 59959,
+      "size": 21,
+      "sha256": "793c7f619858935d06c1d83b33f93dec6c330d4850e92cb0942d0bf6282db2a8",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "damagePointText": {
+      "offset": 59980,
+      "size": 11,
+      "sha256": "61108ea881099b50eb9031739528020b95ef650b7783887027e9aed8b5bc5d2f",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "damagePointsText": {
+      "offset": 59991,
+      "size": 11,
+      "sha256": "5c6fcb5c6f982802df32a207d9b4016987fc5266177b4b233a2d57b5564c145f",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "damageSuffix": {
+      "offset": 60002,
+      "size": 11,
+      "sha256": "d5c8148a67c3bb6d341e22050005932d6270167fcc6514d25c66e3f0b94de4e9",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "missesText": {
+      "offset": 60013,
+      "size": 11,
+      "sha256": "1f3274da11af2dba26c261a78a094fc208801b77b3caa86cd8188ea9a143508f",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "gotAwayText": {
+      "offset": 60024,
+      "size": 11,
+      "sha256": "3b121a240711bc71b02c7fe155c82e59defcbb661f59963087561790d0a96da8",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "escapeBlockedText": {
+      "offset": 60035,
+      "size": 21,
+      "sha256": "0aa7828f510f3b813a94772e6e8212c0f5fa0335c1dc06e358ea1bca5b4b69da",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "sweepsText": {
+      "offset": 60056,
+      "size": 11,
+      "sha256": "d0c9cfcd24b8b9000686bacf749830fef07cc3b6030b546c932ef74a3069b739",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "turnsUndeadText": {
+      "offset": 60067,
+      "size": 21,
+      "sha256": "0342cd1d475deb5b74d339383e2ee72b85eef5f2a5399896d55135771ec07d41",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "turnedText": {
+      "offset": 60088,
+      "size": 11,
+      "sha256": "f959a5fbe820f47120a84bcb64275435d892eaae3a20a221a12d4fb730db7556",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "destroyedText": {
+      "offset": 60099,
+      "size": 21,
+      "sha256": "7dd39c575acd928bcba167145659e8c55eae3b4d4d123662d52b26be03d17f91",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "nothingHappensText": {
+      "offset": 60120,
+      "size": 21,
+      "sha256": "68d3f19bbf698d6bf1f2a05388fd2d2aec542d3402b0f1fa2950e40e1fb07e74",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "antiMagicMessage": {
+      "offset": 60141,
+      "size": 31,
+      "sha256": "2797ec2a9cb38959e5d40ab267892de51124a80e9426a0435d8ee204dfea2862",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "incapacitatedPrefix": {
+      "offset": 60172,
+      "size": 21,
+      "sha256": "78cf3d5100e918c737547ccd4b9e7878c9816c42a65bf165973b800addba9698",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "castingSuffix": {
+      "offset": 60193,
+      "size": 21,
+      "sha256": "e2210c8d1428f88441ebf1306f39bcd402bae16eb71a46226f386d208c9e5fd6",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "memorizingSuffix": {
+      "offset": 60214,
+      "size": 21,
+      "sha256": "388a30d70ea5bcb2471e4543081a1b39cc5e2f0240887a7ca6cad93b940e058f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "scribingSuffix": {
+      "offset": 60235,
+      "size": 21,
+      "sha256": "9b46c34c3dfeca792f446dd5aa67400c739a303678d26bc92c6c8969970236b1",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "noSpellsMessage": {
+      "offset": 60256,
+      "size": 31,
+      "sha256": "13a18a8750d85a0cb42c068c34d2d4058f2da7821aca891944919017d9dc42c7",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "clericSpellsLabel": {
+      "offset": 60287,
+      "size": 21,
+      "sha256": "8a257d3a99eb3ff68e248d91302569dc13b17814a827c6af706e703493b5738f",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "druidSpellsLabel": {
+      "offset": 60308,
+      "size": 21,
+      "sha256": "f5f9073dab49d9ae6c38620d68af71220307c644a22d63ed734edc6cc5edd5e3",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "specialSpellsLabel": {
+      "offset": 60329,
+      "size": 21,
+      "sha256": "30723f57bf4afdb550823791417a150863fba64afd9a09bcd00f60e04cf19452",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "magicUserSpellsLabel": {
+      "offset": 60350,
+      "size": 21,
+      "sha256": "bb62266dc7318ad7bb3147df11985e514569eede69aa7818ed8d8c18b6af587a",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "bonusSpellsLabel": {
+      "offset": 60371,
+      "size": 21,
+      "sha256": "ebc3bbb0ffa6a0c64965e07f4c908a2e16dcf3942c6c77130f557b012c800f33",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "cannotMemorizeMessage": {
+      "offset": 60392,
+      "size": 31,
+      "sha256": "fb450f310f75e5fb764f1ae299edc27f927b1b6afb804dae8d7161d4945f0f97",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "noCopyableMessage": {
+      "offset": 60423,
+      "size": 31,
+      "sha256": "cf2e4ad26acf5c42af5baa5e8daa10d00ac5f97f76dd981e204671cd4d524a62",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "alreadyKnowsMessage": {
+      "offset": 60454,
+      "size": 31,
+      "sha256": "8d320ceef9b478fd695644f50bfcf73ff5da1f606a47063f22c944637db533c7",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "alreadyScribingMessage": {
+      "offset": 60485,
+      "size": 41,
+      "sha256": "1aff2964e4e8b88384107f5a8ae3d3d7e8e8142440a133f2b25ee69a53e41c4c",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "cannotScribeMessage": {
+      "offset": 60526,
+      "size": 31,
+      "sha256": "f223973500d17ebf07be3113b2ddd7b6176f8f2504ab940a7d0c34594285e3fe",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "gameTitle": {
+      "offset": 60560,
+      "size": 41,
+      "sha256": "e5cc217f05bafcf23cb67d1c04e6b86e328d84b017d92609363c626f347280eb",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "chooseSpellQuery": {
+      "offset": 60601,
+      "size": 21,
+      "sha256": "232849cbfc3eb75bbac257596fd976015307d3859b8d7307882207687f30918e",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "flameTypePrompt": {
+      "offset": 60622,
+      "size": 21,
+      "sha256": "3fddc07d1610f5a922ba4b7b06ccb069820b0ded318459193f935b56b4680226",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "appraiseQuery": {
+      "offset": 60643,
+      "size": 21,
+      "sha256": "790eda4e01a3c8ea9713adcb4fbd48da967607a16e8e83ef6ae89e77c323325c",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "pickCharacterText": {
+      "offset": 60664,
+      "size": 21,
+      "sha256": "03d4d4ec6b4d002b5e00f5de0ed62a9f4f1f50d66dbf832fc0e65adcc42058a3",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "modifyQuery": {
+      "offset": 60685,
+      "size": 11,
+      "sha256": "77d39e549cacd514049fef74ad7b2b20f1d0460fab5cf8198599f5886e66e7c4",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "initInputQuery": {
+      "offset": 60696,
+      "size": 31,
+      "sha256": "416f1c84f9cbc3a06d3eff120e7015f1c1c2fb751b0b0e2d6920082d52b715c4",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "loseCharacterPrompt": {
+      "offset": 60727,
+      "size": 21,
+      "sha256": "66f36ebe7596921c65b701974a409944fe5519d149bea64d00c4f5fdd2690147",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "loadFromWherePrompt": {
+      "offset": 60748,
+      "size": 21,
+      "sha256": "bbb5fc2c5e67de0542eba090d3fee72467ba70ea3110beebca1079e5db64d9e3",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "loadWhichGamePrompt": {
+      "offset": 60769,
+      "size": 21,
+      "sha256": "f80e6897db527736d2ab27df447d35a542eb96bcc8d5dba794a99a26573c9505",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "saveWhichGamePrompt": {
+      "offset": 60790,
+      "size": 21,
+      "sha256": "16a836eb2e108fce4082a6bac8bc78ddeb0b77c588ab555605ad232108bad873",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "spellsOkQuery": {
+      "offset": 60811,
+      "size": 21,
+      "sha256": "335f73409a3832ebe555b247ca49bf727682c1bab7cd4ac0efea5ae97c7e5f57",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "scribeConfirmPrompt": {
+      "offset": 60832,
+      "size": 31,
+      "sha256": "ae02a0658377266f37130011a490ec7e15477f1da1a44f1ba59d690088719bc4",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "orderQuery": {
+      "offset": 60863,
+      "size": 21,
+      "sha256": "937843b6b1f63b234e9e8afe53da08b049cc9f6587943d8d232e95425003ca93",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "gameSpeedLabel": {
+      "offset": 60884,
+      "size": 21,
+      "sha256": "367101f6cfb24575c69deb62cbc70e284b9113c0c2445b5b07d09b9f3144d6ac",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "aimPrompt": {
+      "offset": 60905,
+      "size": 11,
+      "sha256": "d3ee9251161e1ff159574b73983e7f8b3f8d38c621d33b14884c185c5500b647",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "cursorPrompt": {
+      "offset": 60916,
+      "size": 21,
+      "sha256": "8707af49fc5b37001fe3a681ebbdb0c2074421a2201c2085f8ed3a0294f86db6",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "continueBattle": {
+      "offset": 60937,
+      "size": 21,
+      "sha256": "4cb8caaa47a6a41be127f771723c5cab03ec044e5cd5af69ae1e15a5c5f553ff",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "moveQueryLabel": {
+      "offset": 60958,
+      "size": 31,
+      "sha256": "ae551ae3c40389585aceb52fb5c6a60219bd958fb028c2baac7693811407d516",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "itemsQuery": {
+      "offset": 60989,
+      "size": 11,
+      "sha256": "67c69ebb5626f753caaa5e5add6788b241c9ff3e981c88c38b62a5928aea7eee",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "takeQuery": {
+      "offset": 61000,
+      "size": 11,
+      "sha256": "511ac3982e89e56fe8e0f24a8c94e51b52aec90b0bec2ad80ab3e2ab5151b369",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "moveAttackPrompt": {
+      "offset": 61011,
+      "size": 31,
+      "sha256": "92bfbd8014c732e77f7d8facaad48487aa6237f9c8d4b8a61bb01c76ecf4207c",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "spellTargetPrompt": {
+      "offset": 61042,
+      "size": 21,
+      "sha256": "4e01640274e7db9f9c8f04adb5dac3028adfb881b22b4a5a9f069ef00dcbaf26",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "enterAnswerPrompt": {
+      "offset": 61063,
+      "size": 11,
+      "sha256": "897fbc5d274799a9950290ceeccfe0ba3659d4bbf1d0281e80ab3876318d0e40",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "spellLabel": {
+      "offset": 61074,
+      "size": 11,
+      "sha256": "dd09588dcac584706790d12b24e5d3feb4002dc9885f06a7ef2c5db4a94fc8f2",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "playDemoMenu": {
+      "offset": 61088,
+      "size": 11,
+      "sha256": "4d3457f9dddc03f5e7246ae9713f3b81a8d5345b721e6c2f6f76101b55627275",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "yesNoOptions": {
+      "offset": 61099,
+      "size": 11,
+      "sha256": "15482bcd634674ba4d2c876fb4978955534149616cfc75567b4052390168fe69",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "selectMenuText": {
+      "offset": 61110,
+      "size": 11,
+      "sha256": "b4a1ab96065a00eef3a87ad3a46ef6cea9c7be4f3f67b36eb43f394f8d047cb9",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "castMenu": {
+      "offset": 61121,
+      "size": 11,
+      "sha256": "da206af995d1843107dd9a51f58aeec2799bd4ab7bdc72f2e89b98ec5c6932df",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "memorizeMenu": {
+      "offset": 61132,
+      "size": 11,
+      "sha256": "25aa004a050f7ce9cef6315187fced774795f0d238415c3a924777f213d5a192",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "keepMenu": {
+      "offset": 61143,
+      "size": 11,
+      "sha256": "f0ebbe2214af5188d1cf76c758ce86da070e7b2c356057d847f59951aac07ed6",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "scribeMenu": {
+      "offset": 61154,
+      "size": 11,
+      "sha256": "4d0b9dadf497645c03e89a2161777d57adcc34dc41d6200db7c0ef50ce14e855",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "learnMenu": {
+      "offset": 61165,
+      "size": 11,
+      "sha256": "246d48ae450cd94417830386b64fb5c77659894c30f74b04b4b0fa410b490bd5",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "flameTypeMenu": {
+      "offset": 61176,
+      "size": 11,
+      "sha256": "efd599398caf681e79526f2f3fe416bcddd83929aa81b536fed53f847c6a71cc",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "appraiseOptions": {
+      "offset": 61187,
+      "size": 21,
+      "sha256": "1ef5ccd91f9b489df9f499f0d37b0a1653bccb9f0c2bdeb99acf1eac1d72e6c5",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "sellMenu": {
+      "offset": 61208,
+      "size": 21,
+      "sha256": "cdbb3fa5755349a7f94e5af1918cfe09f9231c2aaa4f4568b5d9c174fae496c2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "restMenu": {
+      "offset": 61229,
+      "size": 41,
+      "sha256": "1cf11fc3cf5164d7a81bfbaf14ccf17c8aaced054ab4c6671aa7bd3313a59900",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "viewMenu": {
+      "offset": 61270,
+      "size": 81,
+      "sha256": "637290753d739efb2eb01cda010963c5bd9d41b6ff33026a2757f82f22792bba",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "itemsMenu": {
+      "offset": 61351,
+      "size": 81,
+      "sha256": "d805d3675330489ac50159dcf9045b62c7fd3af87d8f4d06cec81c8870e2ff94",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "modifyMenu": {
+      "offset": 61432,
+      "size": 31,
+      "sha256": "9859525fe068edb2e62cfece578efe84fe3e17e97d22ca1dd8dade067145ef8b",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "sourceGameMenu": {
+      "offset": 61463,
+      "size": 31,
+      "sha256": "fd0936c3fcec4216fb730ee3491273e9953db8ae77c9656e23d61726ee377d73",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "addMenu": {
+      "offset": 61494,
+      "size": 11,
+      "sha256": "3fb9b3b9e83684f66e0507b6f83d1b5eb77ea8774a19c7c8bbabc3b1ee37a465",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "changeExitMenu": {
+      "offset": 61505,
+      "size": 21,
+      "sha256": "cafc657377d94461eb95fa5487bbf6317e55d3bf63c76631674221c2e059454c",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "mouseOn": {
+      "offset": 61526,
+      "size": 11,
+      "sha256": "fc9f0583d8600ec1755a9f00d7cc350fad661d8d6f731c2084e9af31dddc2774",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "mouseOff": {
+      "offset": 61537,
+      "size": 11,
+      "sha256": "95a4784491fe6cd1aa6cfe6758263c1b7e8aad1ae393bedc90b4903de2b5fb80",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "joystickOn": {
+      "offset": 61548,
+      "size": 21,
+      "sha256": "bafa348e44baa1832ae4fb93b49592a3ed580eb369ce06830067905abf930515",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "joystickOff": {
+      "offset": 61569,
+      "size": 21,
+      "sha256": "0c716c82f23a03ecf7cbd93a0d95f56c2c92e3aa9c49903ff3acfee2fc572ab6",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "disableBoth": {
+      "offset": 61590,
+      "size": 21,
+      "sha256": "10329bc87cdef89724ff512aca4c44fc01f9db90dd162ea2ebd07a8ac697edad",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "tryAnotherDiskMenu": {
+      "offset": 61611,
+      "size": 21,
+      "sha256": "5465846633028bf6a0f3cfb36843eb29006b19d41469372fe7cf1c8160626e41",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "saveSlotMenu": {
+      "offset": 61632,
+      "size": 21,
+      "sha256": "aa6e071382c885676fcec1d012a6ddfcda051a2b8618565925dbd4317a7c9998",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "orderMenu": {
+      "offset": 61653,
+      "size": 21,
+      "sha256": "98a273640874dc9c2ca465e7c10206a9c364aa6ddafdcd43b930550999b7fc3b",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "speedChoices": {
+      "offset": 61674,
+      "size": 21,
+      "sha256": "85b512854cef04a503e2d90e3939fa0d1e08a7d78474840f9b764bc72489f4da",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "dungeonMenu": {
+      "offset": 61695,
+      "size": 41,
+      "sha256": "a34ace7537520df46c5a372a7bc41ae4302fab11ea7a807208c198774684b190",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "exitMenu": {
+      "offset": 61736,
+      "size": 11,
+      "sha256": "d93eca79d5395de6df56c48a8aba4966c06f70505489ddc85725d43331116a92",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "commandChoices": {
+      "offset": 61747,
+      "size": 81,
+      "sha256": "0d7279e5dfa5a594906cbc7cd1a7c5d7b8e46cca41eb088a61055f41c51febc5",
+      "shape": [
+        1,
+        81
+      ],
+      "format": "B"
+    },
+    "moveChoices": {
+      "offset": 61828,
+      "size": 11,
+      "sha256": "80a4ebc3a3e1cee178223c9507ed4a69db23f224e789935ec87243f8b7e4ea63",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "aimMenuOptions": {
+      "offset": 61839,
+      "size": 41,
+      "sha256": "a204ce8be5a26c41ae88495526c4767f45dd7c14d8a1c0faf77c25276e848c9e",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "cursorMenu": {
+      "offset": 61880,
+      "size": 21,
+      "sha256": "0cd121d949a00063887ba67a7e91b19c11b764f7b4a7aaf10c9c6a93bb10316c",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "buyMenu": {
+      "offset": 61901,
+      "size": 11,
+      "sha256": "aa0c17dbb2d9c8e9f1d7e57d7fed27331aa040d57f3d9c89d13ad4b175f12c6d",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "shopMenu": {
+      "offset": 61912,
+      "size": 41,
+      "sha256": "cc4fdaafe2770466eba54c83e4862ab3882df93835dc6150488f1af129e47648",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "spaces30": {
+      "offset": 61953,
+      "size": 31,
+      "sha256": "07cb24ff7b14ee8f2ba6c594959e5ef889cace480c5bd5b2cd655fa990996dfe",
+      "shape": [
+        1,
+        31
+      ],
+      "format": "B"
+    },
+    "takeMenu": {
+      "offset": 61984,
+      "size": 11,
+      "sha256": "d0bd4581df99151e8d92172633f23e985ecd733c571be4e2a9f2ed8e8ebf8757",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "moneyItemsMenu": {
+      "offset": 61995,
+      "size": 21,
+      "sha256": "71485ca1987c61096dd46ea00b5ff73c024c996847419a433d011dc03283696a",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "treasureMenu": {
+      "offset": 62016,
+      "size": 41,
+      "sha256": "813e1b26f2dc207430ecfa59648db7621c2b6768da9b32bc85a3f460cd7ac2d5",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "templeMenu": {
+      "offset": 62068,
+      "size": 41,
+      "sha256": "36549e2445ae0b8b1d6c6aa780044e0696d4a187b45b20b27bad301d7a870b46",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "vaultMenu": {
+      "offset": 62109,
+      "size": 41,
+      "sha256": "e3bc6febe22e219c67da12bba7c7a5286816e5f4698284ef46bba2aab51ff069",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "iconMenus": {
+      "offset": 62150,
+      "size": 230,
+      "sha256": "9f9ed3773dfbf81740b543a047b12185a55f14fe9d6e3622a6fd0b4689994300",
+      "shape": [
+        5,
+        46
+      ],
+      "format": "B"
+    },
+    "campMenu": {
+      "offset": 62380,
+      "size": 41,
+      "sha256": "7e841083a7e2ff53530875f7027c9a8da7c3c762607a15ed1b528c9e717bd0de",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "magicMenu": {
+      "offset": 62421,
+      "size": 41,
+      "sha256": "738e733fc3ff3e7c97271ba9029a871d08f576cf5522f19df3d9315ad51ef3aa",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "alterMenu": {
+      "offset": 62462,
+      "size": 41,
+      "sha256": "71860be14125bbf510dcf9fedad602a19ea244cb787eb87b43dc310d390c19de",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "levelMenu": {
+      "offset": 62503,
+      "size": 41,
+      "sha256": "984e5307192431d9bc7ea7ebe0b3dfc4f03668477584b45c7baec5cd6d0cbd8d",
+      "shape": [
+        1,
+        41
+      ],
+      "format": "B"
+    },
+    "spellLevelLabels": {
+      "offset": 62544,
+      "size": 110,
+      "sha256": "fbd800769ff4deada535f4b8951652b0431fa5694fb5f6c924067d150e821cf5",
+      "shape": [
+        10,
+        11
+      ],
+      "format": "B"
+    },
+    "menuNextText": {
+      "offset": 62654,
+      "size": 11,
+      "sha256": "1e58a2744cf16ad8ef40d93d3c25033a6f776cd224a38d15d4adcdfab15426ca",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "menuPrevText": {
+      "offset": 62665,
+      "size": 11,
+      "sha256": "ea3897f30f3f025801ed6067a8af2d015b13d10f7233bcabe649c71186e2d845",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "menuExitText": {
+      "offset": 62676,
+      "size": 11,
+      "sha256": "b9a39a47f2763eba3bec7c41a78e69441a17d4f52a2db256af6673a2cb9ab966",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "itemNameParts": {
+      "offset": 62687,
+      "size": 2625,
+      "sha256": "2be7745390c848a1160d6122601bd521c2ed66ec86b4d38897ddd9b9320f7664",
+      "shape": [
+        125,
+        21
+      ],
+      "format": "B"
+    },
+    "unreadRetraceCheck": {
+      "offset": 65321,
+      "size": 4,
+      "sha256": "10fafb80d74a94d092e8294439d26d5b33d8c8b11771363258cd009983d31d11",
+      "shape": [
+        4
+      ],
+      "format": "B"
+    },
+    "unreadRotateFunctions": {
+      "offset": 65342,
+      "size": 4,
+      "sha256": "bdb11c99d6418180156eea47b9eb755f8736055603c19e57f9dfb4cdffcf8c3a",
+      "shape": [
+        4
+      ],
+      "format": "B"
+    },
+    "directionNames": {
+      "offset": 65352,
+      "size": 24,
+      "sha256": "ee214b732b170ebed65275cb6466b010cfc5460ee9d488ca407406edc8e197b5",
+      "shape": [
+        8,
+        3
+      ],
+      "format": "B"
+    },
+    "directionMatrix": {
+      "offset": 65376,
+      "size": 9,
+      "sha256": "8839b7fb27a33388b95a883ad08ea9f9f01cf2adb18f77d9ad5348cc2dc66d3a",
+      "shape": [
+        3,
+        3
+      ],
+      "format": "B"
+    },
+    "unreadPixelTable": {
+      "offset": 65385,
+      "size": 16,
+      "sha256": "832a1780620a803dcbbd817aa8c7c3b719e3465ccbfb61993effb6d680f7f1b0",
+      "shape": [
+        16
+      ],
+      "format": "B"
+    },
+    "cgaAttributeColors": {
+      "offset": 65401,
+      "size": 16,
+      "sha256": "0286e7ba2983043c001c0463b8fc33daa36a6048e25df78662c845ec388d8533",
+      "shape": [
+        16
+      ],
+      "format": "B"
+    },
+    "cgaPixelMasks": {
+      "offset": 65417,
+      "size": 16,
+      "sha256": "4b01b073ca16c2a046679cef34f17b90f437107985e8aa1650be83db26ede15d",
+      "shape": [
+        8
+      ],
+      "format": "H"
+    },
+    "cgaPixelValues": {
+      "offset": 65438,
+      "size": 16,
+      "sha256": "a4bb4a47689dea29170e57e95082972e92ac10c46af9cbe6c576d721389ec68d",
+      "shape": [
+        4,
+        4
+      ],
+      "format": "B"
+    },
+    "daxExtension": {
+      "offset": 65538,
+      "size": 5,
+      "sha256": "a374cb557933d9962ea3cc729cdda2459992f5b370d3bd9be9c42407eef0951e",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "loadingMessage": {
+      "offset": 65543,
+      "size": 22,
+      "sha256": "3268e5ee46c67c0bb66ab90e8f2c5b34da5aa23c6ab52d5b19fb80ceba9071af",
+      "shape": [
+        1,
+        22
+      ],
+      "format": "B"
+    },
+    "savingMessage": {
+      "offset": 65565,
+      "size": 21,
+      "sha256": "7210eb7e5508d2608e3ec0d4088f77bf5294d734f484a4242dfca9e13dc080b2",
+      "shape": [
+        1,
+        21
+      ],
+      "format": "B"
+    },
+    "insertDiskMessages": {
+      "offset": 65586,
+      "size": 150,
+      "sha256": "61158e593756c7480a5eb5cccb0d39ce17f0515dfd70fe9b716d673b01cfeeca",
+      "shape": [
+        5,
+        30
+      ],
+      "format": "B"
+    },
+    "fontExtension": {
+      "offset": 65738,
+      "size": 5,
+      "sha256": "d71667ae3dfba2e6ff9e1ba630fa29ca63ef1e7f01f6990ee1f122358000425c",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "unreadQuad": {
+      "offset": 65750,
+      "size": 4,
+      "sha256": "ccd04883bd4a051627979efa1cc5e402084a22db5c1297e48e6b3af80cd9c26b",
+      "shape": [
+        4
+      ],
+      "format": "B"
+    },
+    "symbolSetFirst": {
+      "offset": 65754,
+      "size": 10,
+      "sha256": "030a9ccf77e070527bd28996a3bb8731545b910a0b8d03f0cbcede8888927ec6",
+      "shape": [
+        5
+      ],
+      "format": "H"
+    },
+    "symbolSetLast": {
+      "offset": 65764,
+      "size": 10,
+      "sha256": "b4fc7fafabb5eb104b4f10c55878418c7c4d54b027a8bf01fcc25524d5f791db",
+      "shape": [
+        5
+      ],
+      "format": "H"
+    },
+    "symbolSetLastTail": {
+      "offset": 65774,
+      "size": 4,
+      "sha256": "7e76dc7e6870a8287d62b84e1201b7a7f6a179f6d348838b865d397d9ce817e0",
+      "shape": [
+        4
+      ],
+      "format": "B"
+    },
+    "directionX": {
+      "offset": 65778,
+      "size": 9,
+      "sha256": "1b7e28c966795b6ec5f41c88185b2271d29b3f6fea35ef15c3c70bb77e0bca84",
+      "shape": [
+        9
+      ],
+      "format": "b"
+    },
+    "directionY": {
+      "offset": 65787,
+      "size": 9,
+      "sha256": "8331a79aebc0185dae7d0e0d161cc6256cf30c7e03c1d78a72af306a8e8a43bf",
+      "shape": [
+        9
+      ],
+      "format": "b"
+    },
+    "terrain": {
+      "offset": 65796,
+      "size": 276,
+      "sha256": "eedb3ed94a1e6b86cbb85e713487cb6a19088e2b4f60ffd319bfae0f0e63dd13",
+      "shape": [
+        276
+      ],
+      "format": "B"
+    },
+    "iconDelta": {
+      "offset": 66072,
+      "size": 32,
+      "sha256": "680f39869307fa7b6e9cac182985e2299becda8e34bf41af48dbb449b18da0f5",
+      "shape": [
+        32
+      ],
+      "format": "B"
+    },
+    "clearEffects": {
+      "offset": 66109,
+      "size": 19,
+      "sha256": "7836b861a9de7f314084f35aabf070a5a52cf95189abe9c9fe174fdec6f22105",
+      "shape": [
+        19
+      ],
+      "format": "B"
+    },
+    "isText": {
+      "offset": 66128,
+      "size": 4,
+      "sha256": "f20e9b05bdf71ffd29e15cd245c8ef0423d2bc127db596c019260c2897be10a6",
+      "shape": [
+        1,
+        4
+      ],
+      "format": "B"
+    },
+    "notText": {
+      "offset": 66132,
+      "size": 5,
+      "sha256": "045acbc083007568b34c1f362dd9d7bf8251e4b685d382e8b19eac43c3dce5b7",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "healedText": {
+      "offset": 66137,
+      "size": 7,
+      "sha256": "8302ab7c50e3e9664d207c50d408d37a55b114867c1dada63c18ad8900c68a8c",
+      "shape": [
+        1,
+        7
+      ],
+      "format": "B"
+    },
+    "affectedText": {
+      "offset": 66144,
+      "size": 9,
+      "sha256": "81c809dc5bf6932b74c5e0418ec7de04d14c0a9733fd47ce84a37c3c62a101c4",
+      "shape": [
+        1,
+        9
+      ],
+      "format": "B"
+    },
+    "unaffectedText": {
+      "offset": 66153,
+      "size": 11,
+      "sha256": "38a98965bbb17d8d0dbf029f8df62b613315f22d6d2f966e87de2e234a3e999c",
+      "shape": [
+        1,
+        11
+      ],
+      "format": "B"
+    },
+    "protectedText": {
+      "offset": 66164,
+      "size": 10,
+      "sha256": "dbd4ef76b83a1bf009c5def06ebaaf5cfd39d5c780520b12d5945e7b7c09d9a6",
+      "shape": [
+        1,
+        10
+      ],
+      "format": "B"
+    },
+    "gainsText": {
+      "offset": 66174,
+      "size": 7,
+      "sha256": "46eda7bf4d5db2c3da88ce87d0dec53bbd1a3d5c77cbf0546fbbdbb7d80767f6",
+      "shape": [
+        1,
+        7
+      ],
+      "format": "B"
+    },
+    "protectedFromText": {
+      "offset": 66181,
+      "size": 16,
+      "sha256": "051e475c1e2c6f23b2db1f2cf6d225c19156999fb9772ff54cbdd0f2ce53eb8a",
+      "shape": [
+        1,
+        16
+      ],
+      "format": "B"
+    },
+    "effectNames": {
+      "offset": 66197,
+      "size": 4560,
+      "sha256": "d6f1a2450f64ee29c9c803c485b77b4355db9ebd20c72112aa581c501701bd72",
+      "shape": [
+        120,
+        38
+      ],
+      "format": "B"
+    },
+    "characterExtension": {
+      "offset": 70796,
+      "size": 5,
+      "sha256": "d9b7f99c06ef1d4cd2233c8e4f5d4a5dfbc4579e5c32b80f0ca200e02d52deb4",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "savedCharacterExtension": {
+      "offset": 70801,
+      "size": 5,
+      "sha256": "13f65be977c67ca340b45afa0f8a2566367d0fb3d0b13a8e75593da479684264",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "whoExtension": {
+      "offset": 70806,
+      "size": 5,
+      "sha256": "940f84a13ce5cfb998919d5a34575f41a3ebd33d8b7693c4e50bf4e7b5f28bd7",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "championsSavedExtension": {
+      "offset": 70811,
+      "size": 5,
+      "sha256": "b62e1e6d72460352cdcf1a56fc80b48afadc448d103ec7e9a739d6f2a99b7402",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "digitKeys": {
+      "offset": 70818,
+      "size": 9,
+      "sha256": "8e03d7b5f380b4269a403408dd01118af044b3642a642403ec1d2cd7c467db6e",
+      "shape": [
+        9
+      ],
+      "format": "B"
+    },
+    "directionKeys": {
+      "offset": 70827,
+      "size": 121,
+      "sha256": "77a79a392274762d477012a5832be21975faec9227b96c249117bc4a5897c26a",
+      "shape": [
+        11,
+        11
+      ],
+      "format": "B"
+    },
+    "patchDir": {
+      "offset": 70948,
+      "size": 9,
+      "sha256": "894d1856cf46f2dae822c4e381ad05c2a342340a80beef317276cc44db969bd2",
+      "shape": [
+        9
+      ],
+      "format": "B"
+    },
+    "spellNames": {
+      "offset": 70958,
+      "size": 4674,
+      "sha256": "3bf25ce97620b7d82c611f2edf752a887dd71a1025f08b67a3f1fd4ca589ad84",
+      "shape": [
+        114,
+        41
+      ],
+      "format": "B"
+    },
+    "spellTable": {
+      "offset": 75632,
+      "size": 1824,
+      "sha256": "7afc586da90c999e80632d77c904f5816d5b57d0c42906813cd10794a0d12856",
+      "shape": [
+        1824
+      ],
+      "format": "B"
+    },
+    "spellsExtension": {
+      "offset": 77472,
+      "size": 5,
+      "sha256": "ee969c91dc4c06f4426f719298ca20ceedfc8c4eb9ddc992a90f3bbc8eed82c2",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "itemsExtension": {
+      "offset": 77477,
+      "size": 5,
+      "sha256": "1e7e83659ed4d1ea0754c2c8284bf6e4153ff597d552bf4e9bd7e8b33b90e185",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "effectsExtension": {
+      "offset": 77482,
+      "size": 5,
+      "sha256": "35500a09d0befb0ab1b16d4baa87abad64f49da90737fb7f9cccf995f6982e65",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "championsItemsExtension": {
+      "offset": 77487,
+      "size": 5,
+      "sha256": "2d04b3d710333f3e1c4f8c21664100415b83c4f3818b92ebc0b8e350010e1365",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "championsEffectsExtension": {
+      "offset": 77492,
+      "size": 5,
+      "sha256": "5c9f54a4afa501d1797738f9f729db3c5d7c5571bfed82270fb2257648a828de",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "saveGameStem": {
+      "offset": 77497,
+      "size": 7,
+      "sha256": "c1acad7324c1a34a1699a54f286fdbd3d020f7972ce481391d20dc0603766983",
+      "shape": [
+        1,
+        7
+      ],
+      "format": "B"
+    },
+    "putSaveDiskPrefix": {
+      "offset": 77504,
+      "size": 18,
+      "sha256": "cb2247d8e036127fdc14edbe785093db176bb7d8161838f29269dd151755cf80",
+      "shape": [
+        1,
+        18
+      ],
+      "format": "B"
+    },
+    "thac0Table": {
+      "offset": 77522,
+      "size": 152,
+      "sha256": "de8778a4c04298e1ab6a296416068c874d3aaf0fd3e0977a7ad9a646160aa38e",
+      "shape": [
+        8,
+        19
+      ],
+      "format": "B"
+    },
+    "classMaskBits": {
+      "offset": 77674,
+      "size": 8,
+      "sha256": "289828d1a52ebe3bc9ba92956420ba31b0c8bcffb61f8c52d809f5efdc041b21",
+      "shape": [
+        8
+      ],
+      "format": "B"
+    },
+    "trainingClassBits": {
+      "offset": 77683,
+      "size": 8,
+      "sha256": "5d020b40a6732aa302c75332924df75c5d084b41c33154696ea06e6f88138d13",
+      "shape": [
+        8
+      ],
+      "format": "B"
+    },
+    "unreadClassBits": {
+      "offset": 77691,
+      "size": 9,
+      "sha256": "f6ba0a2f8fb55e300eaf5e0335b45adcd79a2420fe29f127746f146e96345df5",
+      "shape": [
+        9
+      ],
+      "format": "B"
+    },
+    "firstFixedHpLevel": {
+      "offset": 77700,
+      "size": 8,
+      "sha256": "b32571d2c9f093c5787e6b1df6366783c58c5900afabd1a390df2c19bad09301",
+      "shape": [
+        8
+      ],
+      "format": "B"
+    },
+    "iconColorSlots": {
+      "offset": 77710,
+      "size": 6,
+      "sha256": "2d21540386a1918e89ab038633ba8cf97aa68712c59f856fa03ba8faccc05e98",
+      "shape": [
+        6
+      ],
+      "format": "B"
+    },
+    "thiefSkillBase": {
+      "offset": 77716,
+      "size": 144,
+      "sha256": "97f1b4f93c89c52e9352c43ee5b32f887c26729887c0299d6dccc6be9410f4cc",
+      "shape": [
+        18,
+        8
+      ],
+      "format": "B"
+    },
+    "thiefSkillRaceAdjust": {
+      "offset": 77860,
+      "size": 56,
+      "sha256": "04f3db726f1b81fcd7693473223f6fe3821d1ff7273947a43a379ef3bbf3d632",
+      "shape": [
+        7,
+        8
+      ],
+      "format": "b"
+    },
+    "thiefSkillDexterityAdjust": {
+      "offset": 77916,
+      "size": 55,
+      "sha256": "9048b9ece0b023929df391c849cae40d420b870c2b5bfb271a556edbff8257a6",
+      "shape": [
+        11,
+        5
+      ],
+      "format": "b"
+    },
+    "raceStatLimits": {
+      "offset": 77971,
+      "size": 112,
+      "sha256": "d80967e119f45c689464b0b35cf71397d4e9340b07513b5153fffd3d63087872",
+      "shape": [
+        112
+      ],
+      "format": "B"
+    },
+    "raceClasses": {
+      "offset": 78083,
+      "size": 105,
+      "sha256": "0da7ba319835084d3f2f95450e36c2b172f6c4e4afc81850de2fadefd949e208",
+      "shape": [
+        105
+      ],
+      "format": "B"
+    },
+    "startingAges": {
+      "offset": 78188,
+      "size": 224,
+      "sha256": "9e3125a6e3b4818df7441b74c84ca3a93e1d722dfa4f4c9f6d7938fec223bd24",
+      "shape": [
+        224
+      ],
+      "format": "B"
+    },
+    "ageThresholds": {
+      "offset": 78412,
+      "size": 70,
+      "sha256": "aa95cb61b1054cf9e95780349f92ce19563f127be8afbcfc4ce9d2b01383da9c",
+      "shape": [
+        7,
+        5
+      ],
+      "format": "H"
+    },
+    "classStatMinimums": {
+      "offset": 78482,
+      "size": 102,
+      "sha256": "afd9731e01f50eb0f92133cfe4264eeb39a999dac49c385588340aa722b80f48",
+      "shape": [
+        17,
+        6
+      ],
+      "format": "B"
+    },
+    "classAlignments": {
+      "offset": 78584,
+      "size": 17,
+      "sha256": "c2c15d27eed809f2c3debda0bf243b9c0928fba658281d75ea87b3b487dcb2fb",
+      "shape": [
+        17
+      ],
+      "format": "B"
+    },
+    "constitutionHitPointTable": {
+      "offset": 78601,
+      "size": 23,
+      "sha256": "54064c87fe3ead3951dffb3a727f6ab7dfbd62565685731bf37fa1d2c4ac40fd",
+      "shape": [
+        23
+      ],
+      "format": "b"
+    },
+    "classProgression": {
+      "offset": 78624,
+      "size": 2244,
+      "sha256": "ad2d7548243d7af7e2b3c10415b18424125cbbddcb37505600b8e7b7828a66b5",
+      "shape": [
+        2244
+      ],
+      "format": "B"
+    },
+    "startingGoldDice": {
+      "offset": 80868,
+      "size": 16,
+      "sha256": "d80b831d196d6c4f647ecc0826de6d8c43007dc631d0d1b6a5f2c1bf0273d9b4",
+      "shape": [
+        8,
+        2
+      ],
+      "format": "B"
+    },
+    "savingThrows": {
+      "offset": 80884,
+      "size": 720,
+      "sha256": "0f5e9e7cda4fd88f8d2d0403385cb35c9a3040ae7ffde4ea6b6bef0284f52648",
+      "shape": [
+        8,
+        18,
+        5
+      ],
+      "format": "B"
+    },
+    "spellsByLevel": {
+      "offset": 81604,
+      "size": 240,
+      "sha256": "38ac674cccbbf2baafc1fa38028c1c8dd43df2dc321a58dcf94868d81604fcf8",
+      "shape": [
+        3,
+        8,
+        10
+      ],
+      "format": "B"
+    },
+    "racialLevelCaps": {
+      "offset": 81844,
+      "size": 56,
+      "sha256": "ef5501454020043957fdbd90b71fd618fac9e7cc3abe5e532e5b15cde7f1e193",
+      "shape": [
+        7,
+        8
+      ],
+      "format": "B"
+    },
+    "woofText": {
+      "offset": 82015,
+      "size": 5,
+      "sha256": "98f1fe13d99d385e9ffc68f6fd1b7da414c61d3e7309da6cf48abe89b0779c63",
+      "shape": [
+        1,
+        5
+      ],
+      "format": "B"
+    },
+    "bitMasksLow": {
+      "offset": 82020,
+      "size": 5,
+      "sha256": "fe529a3661a8bcdf69c0ac0edb061bca95f4ebedf938945117205df4519c2b8c",
+      "shape": [
+        5
+      ],
+      "format": "B"
+    },
+    "mouseFunctions": {
+      "offset": 82029,
+      "size": 33,
+      "sha256": "dd06853377d5787db996d34049c8e376b80b0508a98d19851bbc9d0dab46417f",
+      "shape": [
+        33
+      ],
+      "format": "B"
+    },
+    "cursorMaskEga": {
+      "offset": 82062,
+      "size": 64,
+      "sha256": "190ee43123697c530cd83ea50bcdf1bff32c2090252608e171b1a6ae702fc0f1",
+      "shape": [
+        64
+      ],
+      "format": "B"
+    },
+    "cursorMaskCga": {
+      "offset": 82126,
+      "size": 64,
+      "sha256": "a4ab70cf0c9cb4b97ffed26741e40ea500e26f1eea0a685f871d3f93066939bc",
+      "shape": [
+        64
+      ],
+      "format": "B"
+    },
+    "joystickZoneMap": {
+      "offset": 82194,
+      "size": 36,
+      "sha256": "02011154de147a1fe64776d276599b3a1de69c16e2799b44118e1b87be9e4a3a",
+      "shape": [
+        6,
+        6
+      ],
+      "format": "B"
+    },
+    "joystickZoneKeys": {
+      "offset": 82230,
+      "size": 10,
+      "sha256": "313145d6c6a9cd4a1edbebbaece41221b7874aefebd31637d99236d6c56d657f",
+      "shape": [
+        10
+      ],
+      "format": "B"
+    },
+    "clockUnitScale": {
+      "offset": 77456,
+      "size": 14,
+      "sha256": "04f4b96f390481e33da6fe17236f0a25480c61a1ad1894111da8dcf6e7919bf5",
+      "shape": [
+        7
+      ],
+      "format": "H"
+    },
+    "helplessEffects": {
+      "offset": 66106,
+      "size": 3,
+      "sha256": "88aa1692b3c8474d09b7f5e572f6a35f278d94fabb25ab2057fc8c7f13bdf559",
+      "shape": [
+        3
+      ],
+      "format": "B"
+    }
+  }
+}

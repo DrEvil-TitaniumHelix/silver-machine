@@ -1,7 +1,7 @@
 {
   "format": 1,
-  "version": "0.1.11",
-  "windows_asset": "SilverMachine-0.1.11-windows-x64.zip",
+  "version": "0.1.12",
+  "windows_asset": "SilverMachine-0.1.12-windows-x64.zip",
   "files": [
     "LICENSE",
     "README.md",
@@ -148,7 +148,58 @@
     "sm/titles/cok/ui/__init__.py",
     "sm/titles/cok/ui/_screen_test.py",
     "sm/titles/cok/ui/plus.py",
-    "sm/titles/cok/ui/screen.py"
+    "sm/titles/cok/ui/screen.py",
+    "sm/titles/dkk/PROFILE.md",
+    "sm/titles/dkk/__init__.py",
+    "sm/titles/dkk/_cli.py",
+    "sm/titles/dkk/_combat_test.py",
+    "sm/titles/dkk/_creation_test.py",
+    "sm/titles/dkk/_effects_test.py",
+    "sm/titles/dkk/_first_fight.py",
+    "sm/titles/dkk/_intake_test.py",
+    "sm/titles/dkk/_magic_test.py",
+    "sm/titles/dkk/_services_test.py",
+    "sm/titles/dkk/_town_test.py",
+    "sm/titles/dkk/alter.py",
+    "sm/titles/dkk/camp.py",
+    "sm/titles/dkk/check.py",
+    "sm/titles/dkk/combat.py",
+    "sm/titles/dkk/creation.py",
+    "sm/titles/dkk/data.py",
+    "sm/titles/dkk/ecl.py",
+    "sm/titles/dkk/effects.py",
+    "sm/titles/dkk/effects_ability.py",
+    "sm/titles/dkk/effects_area.py",
+    "sm/titles/dkk/effects_handlers.py",
+    "sm/titles/dkk/faults.py",
+    "sm/titles/dkk/intake.py",
+    "sm/titles/dkk/inventory.py",
+    "sm/titles/dkk/journal_lock.json",
+    "sm/titles/dkk/magic.py",
+    "sm/titles/dkk/magic_lists.py",
+    "sm/titles/dkk/magic_study.py",
+    "sm/titles/dkk/menu.py",
+    "sm/titles/dkk/records.py",
+    "sm/titles/dkk/rules.py",
+    "sm/titles/dkk/save.py",
+    "sm/titles/dkk/save_chars.py",
+    "sm/titles/dkk/save_checks.py",
+    "sm/titles/dkk/save_start.py",
+    "sm/titles/dkk/save_vault.py",
+    "sm/titles/dkk/services_alter.py",
+    "sm/titles/dkk/shop.py",
+    "sm/titles/dkk/supported_versions.json",
+    "sm/titles/dkk/tables.json",
+    "sm/titles/dkk/temple.py",
+    "sm/titles/dkk/town.py",
+    "sm/titles/dkk/ui/__init__.py",
+    "sm/titles/dkk/ui/_plus_test.py",
+    "sm/titles/dkk/ui/_screen_test.py",
+    "sm/titles/dkk/ui/plus.py",
+    "sm/titles/dkk/ui/screen.py",
+    "sm/titles/dkk/ui/title.py",
+    "sm/titles/dkk/world_explore.py",
+    "sm/titles/dkk/world_vault.py"
   ],
   "excluded": [
     "CLAUDE.md",
@@ -160,8 +211,7 @@
     "sm/_suspending_test.py",
     "sm/web/",
     "sm/titles/coab/",
-    "sm/titles/por/",
-    "sm/titles/dkk/"
+    "sm/titles/por/"
   ],
   "allowed_phrases": [
     {
@@ -233,6 +283,7 @@
       "text": "GOG (Dungeons & Dragons: Krynn Series)",
       "paths": [
         "sm/titles/cok/supported_versions.json",
+        "sm/titles/dkk/supported_versions.json",
         "sm/release_manifest.json"
       ],
       "reason": "0.1.8 source: the name GOG sells the supported copy under, shown to the player as the copy's label (factual, as for the first title)"
@@ -264,6 +315,22 @@
         "sm/release_manifest.json"
       ],
       "reason": "0.1.8 source: the same item in the route test's method and checkpoint names"
+    },
+    {
+      "text": "Compatible with Death Knights of Krynn (PC/DOS): GOG.",
+      "paths": [
+        "README.md",
+        "sm/release_manifest.json"
+      ],
+      "reason": "0.1.12: factual compatibility line for the third title, the wording the title list already shows (titles.json)"
+    },
+    {
+      "text": "Death Knights of Krynn",
+      "paths": [
+        "sm/titles/dkk/PROFILE.md",
+        "sm/release_manifest.json"
+      ],
+      "reason": "0.1.12 source: the third title named in its own profile page, as the second title is in its own files"
     }
   ]
 }

@@ -34,13 +34,13 @@
   <main>
     <h2>Choose your game folder</h2>
     <p>Enter the folder containing the data files from your own PC/DOS copy. Files stay on this computer.</p>
-    <p id="supported-intro">Supported: the GOG release (recommended, buy it) or the original Collector's CD.</p>
+    <p id="supported-intro" hidden>Supported: the GOG release (recommended, buy it) or the original Collector's CD.</p>
     <p id="supported">Checking supported editions…</p>
-    <p id="recommend">We recommend the GOG release as the supported way to own the game: Secret of the Silver Blades is in Forgotten Realms: The Archives - Collection Two.</p>
+    <p id="recommend" hidden>We recommend the GOG release as the supported way to own the game: Secret of the Silver Blades is in Forgotten Realms: The Archives - Collection Two.</p>
     <form id="folder-form">
       <label for="folder">Game folder</label>
       <input id="folder" name="folder" type="text" required autocomplete="off" spellcheck="false" placeholder="Full path to your game data folder">
-      <p class="notice" id="locations">Usual locations: GOG under <code>C:\Program Files (x86)\GOG Galaxy\Games\</code> or <code>C:\GOG Games\</code>; Collector's CD under <code>WIZWORKS\SECRET</code>.</p>
+      <p class="notice" id="locations" hidden>Usual locations: GOG under <code>C:\Program Files (x86)\GOG Galaxy\Games\</code> or <code>C:\GOG Games\</code>; Collector's CD under <code>WIZWORKS\SECRET</code>.</p>
       <button id="browse" type="button">Browse…</button>
       <button type="submit">Verify and continue</button>
     </form>

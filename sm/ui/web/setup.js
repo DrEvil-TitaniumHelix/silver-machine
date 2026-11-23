@@ -21,6 +21,7 @@
           if (node) { node.textContent = text; node.hidden = !text; }
         }
       }
+      for (const id of ["supported-intro", "recommend", "locations"]) if (!(state.setup && id in state.setup)) document.getElementById(id).hidden = false;
       document.querySelector("#supported").textContent = `Supported now: ${state.expected.join(", ")}. ` +
         (state.missing.length ? `Samples missing, not yet supported: ${state.missing.map(v => v.label).join(", ")}.` : "");
       if (state.source !== "settings") {

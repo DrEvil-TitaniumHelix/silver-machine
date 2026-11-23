@@ -15,7 +15,8 @@ PAGE_RANGES = ((1, 7, 16), (8, 18, 17), (19, 28, 18), (29, 37, 19),
                (38, 44, 20), (45, 50, 21), (51, 56, 22), (57, 66, 23), (67, 72, 24))
 PAGES = {n: page for low, high, page in PAGE_RANGES for n in range(low, high + 1)}
 BOOKS = dict(ssb=dict(file='adventurers journal.pdf', sha256=PDF_SHA256, pages=PAGES, highest=72, machine_read=True),
-             cok=dict(file='journal.pdf', sha256=None, pages={}, highest=88))
+             cok=dict(file='journal.pdf', sha256=None, pages={}, highest=88),
+             dkk=dict(file='journal.pdf', sha256=None, pages={}, highest=66))
 REFERENCE = re.compile(r'\bjournal\s+entr(?:y|ies)\s*(?:number\s*|no\.?\s*|#\s*)?(\d{1,3})\b', re.I)
 
 

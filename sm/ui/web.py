@@ -64,7 +64,7 @@ class Server(ThreadingHTTPServer):
             if session.profile is not self.profile: raise ValueError('Session and presentation profiles differ')
             self.controller = self.screen.Controller(session, save_root=self.save_root, presentation=self.presentation)
             if self.plus: self.controller.apply_plus(self.plus)
-            if self.profile.name in ('ssb', 'cok'):
+            if self.profile.name in ('ssb', 'cok', 'dkk'):
                 from sm.ui.journal import Journal
                 self.controller.journal = Journal(self.controller, self.intake, self.profile.name)
             self.assets = self.screen.Assets()
@@ -336,7 +336,7 @@ class Handler(BaseHTTPRequestHandler):
             self.reply(PAGE_BYTES['journal.css'], 'text/css; charset=utf-8')
             return
         if request.path == '/plus/data':
-            if self.server.profile.name not in ('ssb', 'cok') or self.server.controller is None:
+            if self.server.profile.name not in ('ssb', 'cok', 'dkk') or self.server.controller is None:
                 self.json(dict(error='Start SSB with your own game folder to use these tabs.'), status=409)
                 return
             from importlib import import_module
@@ -611,6 +611,7 @@ def run(session=None, port=8320, browser=True, *, session_factory=None, profile=
             print('SilverMachine: ' + server.url + ' (F10 Save / Load / Quit; Ctrl+C stops the server)')
             if browser: open_browser(server.url)
             server.serve()
+            print('SilverMachine ended: ' + ('the page was closed' if getattr(server, 'closed_by_pages', False) else 'quit from the game' if server.controller and server.controller.quit_requested else 'stopped'), flush=True)
     except KeyboardInterrupt:
         pass
     finally:

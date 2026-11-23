@@ -334,9 +334,13 @@ def check_http_playback():
     import json
     from threading import Thread
     from sm.ui.web import Server
+    from sm.ui.plus import Settings
+    from tempfile import TemporaryDirectory
+    from pathlib import Path
     from sm.titles.ssb.ui._web_test import Browser
     game,battle,ui=scene(); ui.session.close=lambda: None
-    with Server(ui.session,0) as server:
+    with TemporaryDirectory() as folder, Server(ui.session,0) as server:
+        server.plus=Settings(Path(folder)/'plus.json'); server.controller.apply_plus(server.plus)
         server.controller.autosave_enabled=False
         shops.message(game,'HTTP first'); shops.message(game,'HTTP second')
         first=game.presentation[0]

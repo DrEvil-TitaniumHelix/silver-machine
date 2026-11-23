@@ -1,0 +1,223 @@
+{
+  "versions": [
+    {
+      "id": "gog",
+      "label": "GOG (Dungeons & Dragons: Krynn Series)",
+      "files": {
+        "8X8D1.DAX": {
+          "size": 11191,
+          "sha256": "375b687e49ab842f256291ad847225894e0ce32d90366bdae944e3fe1fc0d217"
+        },
+        "8X8D2.DAX": {
+          "size": 14092,
+          "sha256": "5de95d585b24a793efbe112a9d8118eb230fa8b09008a120eceedf4411cb60fd"
+        },
+        "8X8D3.DAX": {
+          "size": 14221,
+          "sha256": "1f0d778dbcf260fb710720d78258d5715436551d56a0b55d2ed7d91c9032166f"
+        },
+        "8X8D4.DAX": {
+          "size": 8053,
+          "sha256": "7b6ceb3159df3a5e224cf09a299e42cf927d591c9e14ca1776dfc7968a29a180"
+        },
+        "8X8D5.DAX": {
+          "size": 8308,
+          "sha256": "e152925abedfd9053e62061007ce4bb78c5350dbbc0aca83a8e77bbee673ccec"
+        },
+        "BACK1.DAX": {
+          "size": 1619,
+          "sha256": "7f82fa23593c211789309142dbf443177eae9918ac669d603caa627371e665d5"
+        },
+        "BACK2.DAX": {
+          "size": 5904,
+          "sha256": "aae168f54c4f80403710cc6e8893887f7b08a7a6712994eddd8ba5810e3a7dac"
+        },
+        "BACK3.DAX": {
+          "size": 6507,
+          "sha256": "add1c1cfd5d39474a774d763696306eebb5b8209ccef052741e5fa675ae98ab7"
+        },
+        "BACK4.DAX": {
+          "size": 2639,
+          "sha256": "d0f1a3f2d4973f2d9e233c35d3fbf2539837af0bea7c5d7a58d859eaf43b277d"
+        },
+        "BACK5.DAX": {
+          "size": 3684,
+          "sha256": "6ddf6cd3a29c9b4135eb86853c5ba221edac5092e5bc8f9fc77dde8b1a2cfa3d"
+        },
+        "BIGPIC1.DAX": {
+          "size": 31959,
+          "sha256": "29ba9df21876330065a2e684bc948bf98f7c0f0c43b5a8430ce50c14382c3b74"
+        },
+        "BIGPIC2.DAX": {
+          "size": 15480,
+          "sha256": "0b0189fb0e506b2c0d5af9b7a0266957131e9ea2626c22f5e0e6a6618af63368"
+        },
+        "BIGPIC3.DAX": {
+          "size": 17236,
+          "sha256": "99e825bb93d477099e5588d0f85fd763febd4a25427f77f9bb71599398c18724"
+        },
+        "CBODY.DAX": {
+          "size": 23889,
+          "sha256": "0c93206b020e30eecc1f761a9408b5befc20113fde18a8b401ae2ddad2c103bd"
+        },
+        "CHEAD.DAX": {
+          "size": 3428,
+          "sha256": "8e61d8cf23b7094353425224f02be4423b880c5e8a7e168d478ec851bfaea568"
+        },
+        "COMSPR.DAX": {
+          "size": 8053,
+          "sha256": "34acdd09aee4835dcc292a19a17b669be545fcad5e67fdc03b40203bd3e696e0"
+        },
+        "CPIC1.DAX": {
+          "size": 44087,
+          "sha256": "16fff33df5db6cf799d0af2fe76297211442afc6a12a7adda0529330339915fa"
+        },
+        "DUNGCOM.DAX": {
+          "size": 5542,
+          "sha256": "827176e941f24176f1907bde40a81928cb4c2da66231ca6b07c72b0b03a0bf2a"
+        },
+        "ECL1.DAX": {
+          "size": 42474,
+          "sha256": "d2fe2c3937dfc71d692aa60e3e54d251a9a52dd708a457b04859090e2664dd44"
+        },
+        "ECL2.DAX": {
+          "size": 48613,
+          "sha256": "98c25f3da4ce41c1e5c83a6ab1b0039c1b8d75f80f3b27b17837a0a885ca5b5a"
+        },
+        "ECL3.DAX": {
+          "size": 55391,
+          "sha256": "3466698e189b0965c8c375599d4ea666aed098a7cb5ae55052ea6c7c363d4e52"
+        },
+        "GAME.OVR": {
+          "size": 252469,
+          "sha256": "fdbe7265ac9b04c67f8648331d9845bf33c6a1438e676389eae3f4526796c817"
+        },
+        "GEO1.DAX": {
+          "size": 3738,
+          "sha256": "7a50a2652d83ad7b9b22f9fbfda3aecf41da1f855dce251f6c741a69719d2356"
+        },
+        "GEO2.DAX": {
+          "size": 6808,
+          "sha256": "f2166655f5c8a1b5e48218376a149af8691f3969243c61ea243903a4104a2352"
+        },
+        "GEO3.DAX": {
+          "size": 6277,
+          "sha256": "4da692da07d8097cfecc691cf50e3e4206b7d62f9b2ff3d60667d30d9fab7f8c"
+        },
+        "ITEM0.DAX": {
+          "size": 1745,
+          "sha256": "6867c307b1d3061db8b13f1e607bbce822d482737dec7b833872b7ce588ac915"
+        },
+        "ITEMS": {
+          "size": 2050,
+          "sha256": "ba1f22b8e9687b808ce493f0317f611e6029194325bd0e07152d1a192f8c140a"
+        },
+        "MON1CHA.DAX": {
+          "size": 6733,
+          "sha256": "7da08dc4ef8c315610d475237003a38101db74717a6243fccce48dbd91025770"
+        },
+        "MON1ITM.DAX": {
+          "size": 2243,
+          "sha256": "f1b491b3434cb753f4261e10af03b20bd66b0ccd3cb44b52d47c9cfc04391f1f"
+        },
+        "MON1SPC.DAX": {
+          "size": 2346,
+          "sha256": "e62addd048b45b94508f5853178e50ad16a7c978292ca68152d249fdff713648"
+        },
+        "MON1WIZ.DAX": {
+          "size": 670,
+          "sha256": "46829b8958fc98e6af5657e5c02495f70b5455058c4a68d94794c73d4884eb32"
+        },
+        "MUSIC.DAX": {
+          "size": 28017,
+          "sha256": "da84b9c27126305b89604d9e2d69fa39ad45235ba69d8b8cc6f772c7cb102987"
+        },
+        "PIC1.DAX": {
+          "size": 19630,
+          "sha256": "8dcace556a500be3d0c0c7a0d1c3841897101798327bd0df1e7d1f4cfb4e35c2"
+        },
+        "PIC2.DAX": {
+          "size": 45756,
+          "sha256": "a321515da514acef8ccb81983b212ec2d1ad74d1de5fd87e3ee8bf28af56207e"
+        },
+        "PIC3.DAX": {
+          "size": 71128,
+          "sha256": "c041773e95657db639003d28cdcbff405c5c230f96b83b0bad483150f2156aec"
+        },
+        "PIC4.DAX": {
+          "size": 8610,
+          "sha256": "76c737f7f4f1cce59ed610616558287c82b3ab1dc53ec28c333e64a0a76cbe46"
+        },
+        "PIC5.DAX": {
+          "size": 19847,
+          "sha256": "f1f73063c5abf2e3a29c24aea7c58c91b2aa1fb493e49a1335c6a98b1a39cd4e"
+        },
+        "PIC6.DAX": {
+          "size": 19243,
+          "sha256": "26a3add49d45577a53bbfbe2d0adb45eae2389bd73c1c44eeb4ba497af199edf"
+        },
+        "PIC7.DAX": {
+          "size": 3386,
+          "sha256": "7a68563bb95635aaab10ebbc7baa23f9782a0e99276faa69c85561d3fa316588"
+        },
+        "SKYGRND.DAX": {
+          "size": 5257,
+          "sha256": "592e258c4d0cb92fc4f0aca744d4c3f8a76ea85cc7befa97969dc891bb7959b1"
+        },
+        "SOUND.DAX": {
+          "size": 14206,
+          "sha256": "7df3bde460feacf8372e01a282b99691d61dfa0a832f2cfd06ce5f39cd4246a5"
+        },
+        "SPRIT1.DAX": {
+          "size": 4542,
+          "sha256": "573a1024e4db256ec85ea77423503fc100485259d5b992de579e58feeb0f5829"
+        },
+        "SPRIT2.DAX": {
+          "size": 8462,
+          "sha256": "2e940a151ac564030f150159770287276775e6ade86c631dce522facff71af3b"
+        },
+        "SPRIT3.DAX": {
+          "size": 14714,
+          "sha256": "cd6c191411d55af0a97d9fa8232c69fa56982ce03d3195eae392d4b6819e63eb"
+        },
+        "SPRIT4.DAX": {
+          "size": 7321,
+          "sha256": "cc4abbfadf4b012d834b102ae8f595b996bb115aff434c874e137321edd3d25b"
+        },
+        "START.EXE": {
+          "size": 74299,
+          "sha256": "91b672327e7a950bcf8f044990156bbe254103c79820a4b07433aee86d3dde40"
+        },
+        "TITLE.DAX": {
+          "size": 68110,
+          "sha256": "53157905e76886a6601767600622daa01000efe2cdeaec87c2279264777fdd83"
+        },
+        "WALLDEF1.DAX": {
+          "size": 2182,
+          "sha256": "f0a30e9bb820cb928a64efd1b76371c85468cd231da6b31666dc18ed97a8e934"
+        },
+        "WALLDEF2.DAX": {
+          "size": 3847,
+          "sha256": "f4418630ff6819d5e950baf2c98ccb64bcabf7f91ada76f5aa8b964cedcae922"
+        },
+        "WALLDEF3.DAX": {
+          "size": 4010,
+          "sha256": "2a1297551ed14c6aadcb26223855f5532664cc2c9b7466f25f0cbc1720cd6b71"
+        },
+        "WALLDEF4.DAX": {
+          "size": 1510,
+          "sha256": "3fc6436f8b83c8533e0a874ec6c60f90825bbf89bb3f4ae94a6869a17088d642"
+        },
+        "WALLDEF5.DAX": {
+          "size": 1778,
+          "sha256": "d9352545229fb1c17e6c4f2d2d08800b8c776ea8ad68f604af1a0ea6a761c252"
+        },
+        "WILDCOM.DAX": {
+          "size": 7213,
+          "sha256": "d3e26e13dc031431432de9bc1b3586610cd62664aed2f2b2e3d6e1fdf0263c0a"
+        }
+      }
+    }
+  ],
+  "missing": "Choose the folder containing START.EXE, GAME.OVR and the DAX files from your own Death Knights copy."
+}

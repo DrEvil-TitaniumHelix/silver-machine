@@ -9,7 +9,7 @@
   const pixels = context.createImageData(canvas.width, canvas.height);
   const keysyms = new Map(Object.entries({
     ArrowLeft: "Left", ArrowRight: "Right", ArrowUp: "Up", ArrowDown: "Down",
-    Enter: "Return", Escape: "Escape", Backspace: "BackSpace",
+    Enter: "Return", Escape: "Escape", Backspace: "BackSpace", Delete: "Delete",
     PageUp: "Prior", PageDown: "Next", Home: "Home", End: "End",
     F2: "F2", F10: "F10"
   }));

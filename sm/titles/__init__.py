@@ -20,6 +20,16 @@ def startup(arguments):
     return select(options.title), rest
 
 
+def saved_folders():
+    import os
+    from importlib import import_module
+    for name in ('cok', 'coab', 'por', 'dkk'):
+        intake = import_module('sm.titles.%s.intake' % name)
+        folder = intake.configured()
+        if folder:
+            os.environ.setdefault(intake.ENV, folder)
+
+
 def test():
     from importlib.util import find_spec
     from unittest import SkipTest
@@ -27,6 +37,7 @@ def test():
         raise SkipTest('optional title package sm.titles.dqk is not included in this cut')
     from sm.titles import dqk
     dqk.test()
+    saved_folders()
     from sm.titles import cok
     cok.test()
     from sm.titles import coab
